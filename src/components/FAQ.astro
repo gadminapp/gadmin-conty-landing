@@ -1,0 +1,135 @@
+---
+const faqs = [
+  {
+    question: "¿Es gratis Conty?",
+    answer:
+      "No. Conty se puede probar gratis, pero para seguir usándola se requiere una suscripción mensual ($10/mes) o anual ($100/año). Así podemos seguir mejorando la app y ofrecerte soporte real.",
+  },
+  {
+    question: "¿Funciona sin internet?",
+    answer:
+      "Absolutamente. Puedes registrar ventas y gastos sin conexión. Tus datos son tuyos y se guardan en tu dispositivo.",
+  },
+  {
+    question: "¿Para qué tipo de negocios es ideal?",
+    answer:
+      "Para cualquier emprendedor que vende a diario: tiendas, vendedores ambulantes, repostería, ropa, bodegas, barberías y más.",
+  },
+  {
+    question: "¿Necesito saber contabilidad?",
+    answer:
+      "Para nada. La interfaz es intuitiva y se encarga de los cálculos difíciles por ti, tú solo registra tus ventas y gastos.",
+  },
+  {
+    question: "¿En qué se diferencia de una libreta?",
+    answer:
+      "A diferencia de una libreta, Conty te ofrece reportes automáticos, copias de seguridad en la nube y búsquedas instantáneas.",
+  },
+  {
+    question: "¿Qué pasa cuando se acaba el período de prueba?",
+    answer:
+      "Puedes ver tus datos pero no podrás registrar nuevas ventas ni gastos hasta que actives tu suscripción. Tus datos nunca se pierden.",
+  },
+];
+---
+
+<section id="faq" class="py-24 bg-white">
+  <div class="max-w-3xl mx-auto px-5">
+    <div class="text-center mb-14 animate-fade-in-up">
+      <span
+        class="inline-block text-[#00CC07] text-sm font-semibold uppercase tracking-widest mb-3"
+        >FAQ</span
+      >
+      <h2 class="text-3xl sm:text-4xl font-bold text-[#082109]">
+        Preguntas frecuentes
+      </h2>
+    </div>
+
+    <div class="space-y-3">
+      {
+        faqs.map((faq, index) => (
+          <div
+            class="faq-item border border-gray-100 rounded-2xl overflow-hidden hover:border-[#00CC07]/30 transition-colors animate-fade-in-up"
+            style={`animation-delay: ${index * 100}ms`}
+          >
+            <button
+              class="faq-button w-full flex items-center justify-between px-6 py-4 text-left focus:outline-none"
+              aria-expanded="false"
+            >
+              <span class="font-semibold text-[#082109] text-sm pr-4">
+                {faq.question}
+              </span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-chevron-down text-[#00CC07] shrink-0 transition-transform duration-300"
+                aria-hidden="true"
+              >
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </button>
+
+            <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-gray-50/50">
+              <div class="px-6 pb-4 text-sm text-gray-600 leading-relaxed">
+                {faq.answer}
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<script>
+  function setupFaq() {
+    const faqItems = document.querySelectorAll(".faq-item");
+
+    faqItems.forEach((item) => {
+      const button = item.querySelector(".faq-button");
+      const answer = item.querySelector(".faq-answer");
+      const icon = item.querySelector("svg");
+
+      button?.addEventListener("click", () => {
+        const isOpen = button.getAttribute("aria-expanded") === "true";
+
+        // Opcional: Cerrar otros acordeones abiertos (Acordeón exclusivo)
+        // closeAll(faqItems);
+
+        if (isOpen) {
+          button.setAttribute("aria-expanded", "false");
+          (answer as HTMLElement).style.maxHeight = "0";
+          icon?.classList.remove("rotate-90");
+        } else {
+          button.setAttribute("aria-expanded", "true");
+          (answer as HTMLElement).style.maxHeight = answer?.scrollHeight + "px";
+          icon?.classList.add("rotate-90");
+        }
+      });
+    });
+  }
+
+  // Función para cerrar todos (si prefieres que solo uno esté abierto a la vez)
+  function closeAll(items: NodeListOf<Element>) {
+    items.forEach((item) => {
+      item.querySelector(".faq-button")?.setAttribute("aria-expanded", "false");
+      (item.querySelector(".faq-answer") as HTMLElement).style.maxHeight = "0";
+      item.querySelector("svg")?.classList.remove("rotate-90");
+    });
+  }
+
+  setupFaq();
+</script>
+
+<style>
+  .rotate-90 {
+    transform: rotate(-90deg);
+  }
+</style>

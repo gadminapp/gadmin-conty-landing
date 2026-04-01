@@ -1,0 +1,94 @@
+---
+import contyLogo from "../assets/logo-no-bg.png";
+---
+
+<nav class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+  <div class="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
+    <a href="#" class="flex items-center gap-2">
+      <img src={contyLogo.src} width="40" height="40" alt="Gadmin Conty Logo" />
+      <span class="font-bold text-xl text-[#082109]">Conty</span>
+      <span class="text-xs text-[#082109]/60 font-medium hidden sm:block"
+        >de Gadmin</span
+      >
+    </a>
+    <div class="hidden md:flex items-center gap-6">
+      <a
+        href="#funciones"
+        class="text-sm font-medium text-[#082109]/70 hover:text-[#00CC07] transition-colors"
+        >Funciones
+      </a>
+      <a
+        href="#testimonios"
+        class="text-sm font-medium text-[#082109]/70 hover:text-[#00CC07] transition-colors"
+        >Testimonios
+      </a>
+      <a
+        href="#precios"
+        class="text-sm font-medium text-[#082109]/70 hover:text-[#00CC07] transition-colors"
+        >Precios
+      </a>
+      <a
+        href="#faq"
+        class="text-sm font-medium text-[#082109]/70 hover:text-[#00CC07] transition-colors"
+        >FAQ
+      </a>
+      <a
+        href="#descargar"
+        class="bg-[#00CC07] text-[#082109] text-sm font-semibold px-5 py-2.5 rounded-full hover:brightness-110 transition-all shadow-md animate-pulse-brand"
+        >Descargar Gratis
+      </a>
+    </div>
+    <button class="md:hidden p-2 text-[#082109]" aria-label="Menu">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="22"
+        height="22"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="lucide lucide-menu"
+        aria-hidden="true"
+      >
+        <path d="M4 5h16"></path>
+        <path d="M4 12h16"></path>
+        <path d="M4 19h16"></path>
+      </svg>
+    </button>
+  </div>
+</nav>
+
+<script>
+  const onScroll = ["bg-white/95", "backdrop-blur-md", "shadow-sm"];
+  const offScroll = ["bg-transparent"];
+  window.addEventListener("scroll", () => {
+    const navbar = document.querySelector("nav");
+    if (window.scrollY > 0) {
+      navbar?.classList.add(...onScroll);
+      navbar?.classList.remove(...offScroll);
+    } else {
+      navbar?.classList.remove(...onScroll);
+      navbar?.classList.add(...offScroll);
+    }
+  });
+</script>
+
+<style>
+  @keyframes pulse-brand {
+    0% {
+      box-shadow: 0 0 0 0 rgba(0, 204, 7, 0.4);
+    }
+    70% {
+      box-shadow: 0 0 0 10px rgba(0, 204, 7, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(0, 204, 7, 0);
+    }
+  }
+
+  .animate-pulse-brand {
+    animation: pulse-brand 2s infinite;
+  }
+</style>

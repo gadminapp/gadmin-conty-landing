@@ -1,0 +1,202 @@
+<section id="precios" class="py-24 bg-white">
+  <div class="max-w-4xl mx-auto px-5">
+    <div class="text-center mb-12 animate-fade-in-up">
+      <span
+        class="inline-block text-[#00CC07] text-sm font-semibold uppercase tracking-widest mb-3"
+        >Precios</span
+      >
+      <h2 class="text-3xl sm:text-4xl font-bold text-[#082109] mb-4">
+        Un solo plan, <span class="text-[#00CC07]">sin sorpresas</span>
+      </h2>
+      <p class="text-gray-500 text-base max-w-md mx-auto">
+        Conty no es gratuita para siempre — pero puedes probarla antes de
+        suscribirte. Sin tarjeta al inicio.
+      </p>
+
+      <div
+        class="inline-flex items-center gap-3 mt-8 bg-gray-100 rounded-full p-1.5"
+      >
+        <button
+          id="btn-mensual"
+          class="pricing-tab px-5 py-2 rounded-full text-sm font-semibold transition-all bg-white text-[#082109] shadow-sm"
+        >
+          Mensual
+        </button>
+        <button
+          id="btn-anual"
+          class="pricing-tab px-5 py-2 rounded-full text-sm font-semibold transition-all flex items-center gap-2 text-gray-500"
+        >
+          Anual
+          <span
+            class="bg-[#00CC07] text-white text-xs px-2 py-0.5 rounded-full font-bold"
+            >-17%</span
+          >
+        </button>
+      </div>
+    </div>
+
+    <div class="max-w-sm mx-auto animate-fade-in-up delay-200">
+      <div
+        class="relative bg-[#082109] rounded-3xl p-8 shadow-2xl overflow-hidden"
+      >
+        <div
+          id="save-badge"
+          class="hidden absolute top-5 right-5 bg-[#00CC07] text-[#082109] text-xs font-bold px-3 py-1 rounded-full z-20"
+        >
+          Ahorras 2 meses
+        </div>
+
+        <div
+          class="absolute inset-0 pointer-events-none"
+          style="background: radial-gradient(80% 60% at 50% 0%, rgba(0, 204, 7, 0.15) 0%, transparent 70%);"
+        >
+        </div>
+
+        <div class="relative z-10">
+          <div class="flex items-center gap-2 mb-6">
+            <div
+              class="w-9 h-9 rounded-xl bg-[#00CC07] flex items-center justify-center"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-calendar text-[#082109]"
+                aria-hidden="true"
+                ><path d="M8 2v4"></path><path d="M16 2v4"></path><rect
+                  width="18"
+                  height="18"
+                  x="3"
+                  y="4"
+                  rx="2"></rect><path d="M3 10h18"></path></svg
+              >
+            </div>
+            <span id="plan-title" class="text-white font-bold text-lg"
+              >Plan Mensual</span
+            >
+          </div>
+
+          <div class="mb-2">
+            <div class="flex items-end gap-2">
+              <span id="plan-price" class="text-5xl font-bold text-white"
+                >$10</span
+              >
+              <span id="plan-period" class="text-white/50 mb-2 text-sm"
+                >/ mes</span
+              >
+            </div>
+            <p id="plan-desc" class="text-white/40 text-sm mt-1">
+              O paga anual y ahorra 2 meses
+            </p>
+          </div>
+
+          <ul class="space-y-3 my-8">
+            {
+              [
+                "Registro ilimitado",
+                "Meta semanal",
+                "Funciona offline",
+                "Gráficos",
+                "Exportar reportes",
+                "WhatsApp Soporte",
+                "Actualizaciones",
+              ].map((feat) => (
+                <li class="flex items-center gap-3">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="text-[#00CC07] shrink-0"
+                  >
+                    <>
+                      <path d="M21.801 10A10 10 0 1 1 17 3.335" />
+                      <path d="m9 11 3 3L22 4" />
+                    </>
+                  </svg>
+                  <span class="text-white/80 text-sm">{feat}</span>
+                </li>
+              ))
+            }
+          </ul>
+
+          <a
+            href="#"
+            class="block w-full text-center bg-[#00CC07] text-[#082109] font-bold py-4 rounded-2xl hover:brightness-110 transition-all shadow-lg shadow-[#00CC07]/20"
+          >
+            Probar gratis ahora
+          </a>
+          <p class="text-white/30 text-xs text-center mt-4">
+            Sin tarjeta al inicio. Cancela cuando quieras.
+          </p>
+        </div>
+      </div>
+
+      <div
+        class="mt-6 bg-[#00CC07]/5 border border-[#00CC07]/10 rounded-2xl p-4 text-center"
+      >
+        <p class="text-[#082109]/70 text-sm">
+          <span class="font-semibold text-[#082109]"
+            >¿Por qué no es gratis para siempre?</span
+          > Porque queremos que Conty siga mejorando. Tu suscripción paga el desarrollo
+          y mantenimiento.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const btnMensual = document.getElementById("btn-mensual");
+  const btnAnual = document.getElementById("btn-anual");
+  const planTitle = document.getElementById("plan-title");
+  const planPrice = document.getElementById("plan-price");
+  const planPeriod = document.getElementById("plan-period");
+  const planDesc = document.getElementById("plan-desc");
+  const saveBadge = document.getElementById("save-badge");
+
+  function setPricing(mode) {
+    if (mode === "anual") {
+      // Clases de los botones
+      btnAnual.classList.add("bg-white", "text-[#082109]", "shadow-sm");
+      btnAnual.classList.remove("text-gray-500");
+      btnMensual.classList.remove("bg-white", "text-[#082109]", "shadow-sm");
+      btnMensual.classList.add("text-gray-500");
+
+      // Contenido
+      planTitle.textContent = "Plan Anual";
+      planPrice.textContent = "$100";
+      planPeriod.textContent = "/ año";
+      planDesc.innerHTML =
+        '<span class="text-[#00CC07] font-medium">Equivale a $8.33/mes — 2 meses gratis</span>';
+      saveBadge.classList.remove("hidden");
+    } else {
+      // Clases de los botones
+      btnMensual.classList.add("bg-white", "text-[#082109]", "shadow-sm");
+      btnMensual.classList.remove("text-gray-500");
+      btnAnual.classList.remove("bg-white", "text-[#082109]", "shadow-sm");
+      btnAnual.classList.add("text-gray-500");
+
+      // Contenido
+      planTitle.textContent = "Plan Mensual";
+      planPrice.textContent = "$10";
+      planPeriod.textContent = "/ mes";
+      planDesc.textContent = "O paga anual y ahorra 2 meses";
+      saveBadge.classList.add("hidden");
+    }
+  }
+
+  btnMensual?.addEventListener("click", () => setPricing("mensual"));
+  btnAnual?.addEventListener("click", () => setPricing("anual"));
+</script>
