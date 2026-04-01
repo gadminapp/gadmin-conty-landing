@@ -166,8 +166,19 @@
   const planDesc = document.getElementById("plan-desc");
   const saveBadge = document.getElementById("save-badge");
 
-  function setPricing(mode) {
-    if (mode === "anual") {
+  function setPricing(mode: "yearly" | "monthly") {
+    if (
+      !btnAnual ||
+      !btnMensual ||
+      !planTitle ||
+      !planPrice ||
+      !planPeriod ||
+      !planDesc ||
+      !saveBadge
+    )
+      return;
+
+    if (mode === "yearly") {
       // Clases de los botones
       btnAnual.classList.add("bg-white", "text-[#082109]", "shadow-sm");
       btnAnual.classList.remove("text-gray-500");
@@ -197,6 +208,6 @@
     }
   }
 
-  btnMensual?.addEventListener("click", () => setPricing("mensual"));
-  btnAnual?.addEventListener("click", () => setPricing("anual"));
+  btnMensual?.addEventListener("click", () => setPricing("monthly"));
+  btnAnual?.addEventListener("click", () => setPricing("yearly"));
 </script>
