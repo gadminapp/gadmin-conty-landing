@@ -1,0 +1,62 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+  keywords?: string;
+  image?: string;
+  canonicalURL?: URL | string;
+  type?: string;
+}
+
+const {
+  title = "Conty - Tu negocio en tu bolsillo",
+  description = "La forma más sencilla y rápida de llevar las cuentas de tus negocios. Ventas, gastos y reportes en un solo lugar.",
+  keywords = "contabilidad, negocios, ventas, gastos, reportes financieros, pymes, emprendedores, venezuela",
+  image = "/meta-banner.png",
+  canonicalURL = Astro.url,
+  type = "website",
+} = Astro.props;
+
+const siteTitle = title.includes("Conty") ? title : `${title} | Conty`;
+---
+
+<!-- Global Metadata -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="icon" type="image/png" href="/favicon.png" />
+<link rel="icon" href="/favicon.ico" />
+<meta name="generator" content={Astro.generator} />
+
+<!-- Canonical URL -->
+<link rel="canonical" href={canonicalURL} />
+
+<!-- Primary Meta Tags -->
+<title>{siteTitle}</title>
+<meta name="title" content={siteTitle} />
+<meta name="description" content={description} />
+<meta name="keywords" content={keywords} />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content={type} />
+<meta property="og:url" content={Astro.url} />
+<meta property="og:title" content={siteTitle} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={new URL(image, Astro.url)} />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content={Astro.url} />
+<meta property="twitter:title" content={siteTitle} />
+<meta property="twitter:description" content={description} />
+<meta property="twitter:image" content={new URL(image, Astro.url)} />
+
+<!-- Robots -->
+<meta name="robots" content="index, follow" />
+
+<!-- Preconnect to Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap"
+  rel="stylesheet"
+/>

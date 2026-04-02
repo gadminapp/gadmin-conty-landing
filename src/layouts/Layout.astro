@@ -1,23 +1,33 @@
 ---
 import Navbar from "../components/Navbar.astro";
+
+import SEO from "../components/SEO.astro";
+
+interface Props {
+  title?: string;
+  description?: string;
+  keywords?: string;
+  image?: string;
+  canonicalURL?: string | URL;
+  type?: string;
+}
+
+const { title, description, keywords, image, canonicalURL, type } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/png" href="/favicon.png" />
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Conty - Tu negocio en tu bolsillo</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap"
-      rel="stylesheet"
+    <SEO
+      title={title}
+      description={description}
+      keywords={keywords}
+      image={image}
+      canonicalURL={canonicalURL}
+      type={type}
     />
   </head>
+
   <body>
     <Navbar />
     <slot />
