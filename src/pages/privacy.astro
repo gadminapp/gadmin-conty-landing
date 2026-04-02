@@ -1,0 +1,461 @@
+---
+import "../styles/global.css";
+import Layout from "../layouts/Layout.astro";
+import CTA from "../components/CTA.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout>
+  <section class="relative min-h-screen py-20 pt-24 overflow-hidden">
+    <div
+      class="absolute inset-0 pointer-events-none"
+      style="background: radial-gradient(80% 60% at 50% 0%, rgba(0, 204, 7, 0.08) 0%, transparent 70%);"
+    >
+    </div>
+    <div class="max-w-4xl mx-auto px-5 relative z-10">
+      <div class="mb-12">
+        <h1
+          class="text-4xl sm:text-5xl font-bold text-[#082109] leading-tight mb-6 animate-fade-in-up"
+        >
+          Política de Privacidad
+        </h1>
+        <p class="text-sm text-[#082109]/60 font-medium mb-8">
+          Vigente a partir del 1 de Abril de 2026
+        </p>
+        <div
+          class="prose prose-slate prose-headings:text-[#082109] prose-p:text-[#082109]/80 max-w-none text-lg leading-relaxed space-y-6"
+        >
+          <p>
+            La Política de Privacidad de <strong>Gadmin Conty</strong> describe cómo
+            <strong>Conty</strong> recopila, usa y divulga su información.
+          </p>
+          <p>
+            Esta Política de Privacidad también explica sus opciones sobre cómo
+            usamos su información personal e incluye cómo puede oponerse a
+            ciertos usos de la información y cómo puede acceder y actualizar
+            cierta información.
+          </p>
+          <p>
+            Aquí hay algunas definiciones importantes para ayudarlo a comprender
+            nuestros términos y esta Política de privacidad:
+          </p>
+          <ul class="list-disc pl-6 space-y-2">
+            <li>
+              <strong>Gadmin Conty</strong>, se denomina como "Gadmin Conty",
+              "Conty", "nosotros", y "nuestro".
+            </li>
+            <li>
+              Nuestros sitios web públicos, incluido <strong
+                >www.gadminconty.com</strong
+              > se denominan el "Sitio web.".
+            </li>
+            <li>
+              Nuestra plataforma de software como servicio en línea, incluidas
+              las API relacionadas proporcionadas por Conty, junto con todas las
+              aplicaciones móviles y de escritorio relacionadas se denominan
+              colectivamente como los "Servicios.".
+            </li>
+            <li>
+              El contenido enviado, publicado o modificado por los usuarios en
+              el Servicio se organiza en secciones separadas que se denominan
+              "Espacios de trabajo". Dentro de cada espacio de trabajo, los
+              usuarios pueden crear y gestionar múltiples sitios web, blogs o
+              tiendas online.
+            </li>
+          </ul>
+
+          <div
+            class="bg-[#00cc07]/5 p-8 rounded-2xl border border-[#00cc07]/10 my-12"
+          >
+            <h2 class="text-2xl font-bold mb-6">Tabla de Contenidos</h2>
+            <ol
+              class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2 list-decimal pl-6"
+            >
+              <li>
+                <a
+                  href="#recopilamos"
+                  class="hover:text-[#00cc07] transition-colors"
+                  >Información que recopilamos</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#como-utilizamos"
+                  class="hover:text-[#00cc07] transition-colors"
+                  >Cómo utilizamos su información</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#divulgacion"
+                  class="hover:text-[#00cc07] transition-colors"
+                  >Divulgación de su información</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#transferencias"
+                  class="hover:text-[#00cc07] transition-colors"
+                  >Transferencias internacionales de datos</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#opciones"
+                  class="hover:text-[#00cc07] transition-colors">Tus opciones</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#derechos"
+                  class="hover:text-[#00cc07] transition-colors"
+                  >Sus derechos de privacidad</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#retencion"
+                  class="hover:text-[#00cc07] transition-colors"
+                  >Retención de datos</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#seguridad"
+                  class="hover:text-[#00cc07] transition-colors"
+                  >Seguridad de su información</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#terceros"
+                  class="hover:text-[#00cc07] transition-colors"
+                  >Sitios web y aplicaciones de terceros</a
+                >
+              </li>
+              <li>
+                <a href="#ninos" class="hover:text-[#00cc07] transition-colors"
+                  >Información para niños</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#control"
+                  class="hover:text-[#00cc07] transition-colors"
+                  >Autoridad de control</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#cambios"
+                  class="hover:text-[#00cc07] transition-colors"
+                  >Cambios a Nuestra Política de Privacidad</a
+                >
+              </li>
+            </ol>
+          </div>
+
+          <h2
+            id="recopilamos"
+            class="text-3xl font-bold mt-16 mb-8 text-[#082109]"
+          >
+            1. Información que recopilamos
+          </h2>
+          <p>
+            Recopilamos información cuando usted nos la proporciona, cuando
+            utiliza nuestro sitio web o nuestros servicios y cuando otras
+            fuentes nos la proporcionan, como se describe con más detalle a
+            continuación.
+          </p>
+
+          <h3 class="text-xl font-bold mt-6 mb-4">
+            A. Información que usted nos proporciona
+          </h3>
+          <ul class="list-disc pl-6 space-y-4">
+            <li>
+              <strong>Creación de cuenta:</strong> cuando crea una cuenta o utiliza
+              los Servicios de otra manera, recopilamos información como su nombre,
+              dirección de correo electrónico, contraseña, función dentro de su equipo
+              o empresa y una foto de perfil opcional.
+            </li>
+            <li>
+              <strong>Sus comunicaciones con nosotros:</strong> recopilamos información
+              suya, como su dirección de correo electrónico, número de teléfono o
+              dirección postal, cuando solicita información sobre nuestros Servicios,
+              se registra para recibir nuestro boletín informativo, solicita asistencia
+              técnica o de atención al cliente o se comunica con nosotros de cualquier
+              otra forma. También recopilamos el contenido de los mensajes o archivos
+              adjuntos que nos envíe, así como otra información que elija proporcionar
+              y que pueda estar asociada a sus comunicaciones.
+            </li>
+            <li>
+              <strong>Información de pago:</strong> cuando compre una suscripción
+              a los Servicios, deberá proporcionar información de pago (por ejemplo,
+              detalles de la cuenta financiera, información de envío) para procesar
+              su suscripción. Utilizamos proveedores de pago externos para procesar
+              los pagos en los Servicios. Podemos recibir información asociada con
+              su información de pago, como la dirección de facturación y la información
+              de la transacción, pero no almacenamos directamente la información de
+              pago en los Servicios. La información de pago es almacenada y procesada
+              por nuestros proveedores de pago en nuestro nombre.
+            </li>
+            <li>
+              <strong>Encuestas:</strong> Podemos comunicarnos con usted para que
+              participe en encuestas. Si decide participar, es posible que se le solicite
+              que proporcione cierta información, que puede incluir información de
+              contacto y otra información sobre usted.
+            </li>
+            <li>
+              <strong>Funciones interactivas:</strong> Podemos ofrecer funciones interactivas
+              como foros, blogs, servicios de chat y mensería, y páginas de redes
+              sociales. Nosotros y otras personas que utilizan nuestro sitio web o
+              nuestros servicios podemos recopilar la información que usted envía
+              o pone a disposición a través de estas funciones interactivas. Cualquier
+              contenido que proporcione a través de las secciones públicas de estas
+              funciones se considerará "público" y no está sujeto a las protecciones
+              de privacidad a las que se hace referencia en este documento.
+            </li>
+            <li>
+              <strong>Registro para sorteos o concursos:</strong> Podemos realizar
+              sorteos y concursos. La información de contacto que proporcione puede
+              utilizarse para informarle sobre el sorteo o concurso y para otros fines
+              comerciales, promocionales y de marketing.
+            </li>
+            <li>
+              <strong>Solicitudes de empleo:</strong> Podemos publicar ofertas de
+              empleo. Si responde a una de estas publicaciones enviándonos su solicitud,
+              CV o carta de presentación, recopilaremos y utilizaremos su información
+              para evaluar sus calificaciones.
+            </li>
+          </ul>
+
+          <h3 class="text-xl font-bold mt-12 mb-4">
+            B. Información Recopilada Automáticamente
+          </h3>
+          <p>
+            Hacemos un seguimiento de cierta información sobre usted cuando
+            visita e interactúa con nuestro sitio web o nuestros servicios. Esta
+            información puede incluir su dirección de protocolo de Internet
+            (IP), configuración de usuario, dirección MAC, identificadores de
+            cookies, detalles sobre su navegador, sistema operativo o
+            dispositivo, información de ubicación general inferida en función de
+            su dirección IP, e información sobre cómo interactúa con el sitio
+            web o los servicios.
+          </p>
+          <p>
+            <strong>Cookies y Tecnologías Similares:</strong> Nosotros y nuestros
+            socios podemos utilizar cookies, etiquetas de píxeles, almacenamiento
+            local y otras tecnologías para recopilar información automáticamente a
+            través del Sitio web o los Servicios.
+          </p>
+
+          <h3 class="text-xl font-bold mt-12 mb-4">
+            C. Información de Otras Fuentes
+          </h3>
+          <p>
+            Podemos obtener información sobre usted de otras fuentes, incluso a
+            través de servicios y organizaciones de terceros. Por ejemplo, si
+            accede a nuestro sitio web o nuestros servicios a través de una
+            aplicación de terceros (redes sociales o inicio de sesión de
+            terceros).
+          </p>
+          <p>
+            Si decide utilizar la función <strong>Contactos de Google</strong> dentro
+            de nuestros Servicios, podremos ver sus contactos a través de la API de
+            Google People. El único uso de estos datos es completar automáticamente
+            sus contactos al enviar correos electrónicos de invitación. Conty no utilizará
+            estos datos para ningún otro fin.
+          </p>
+
+          <h2
+            id="como-utilizamos"
+            class="text-3xl font-bold mt-16 mb-8 text-[#082109]"
+          >
+            2. Cómo utilizamos su información
+          </h2>
+          <p>
+            Utilizamos su información para una variedad de propósitos
+            comerciales, que incluyen:
+          </p>
+          <ul class="list-disc pl-6 space-y-2">
+            <li>
+              <strong
+                >Proporcionar los Servicios o la Información Solicitada:</strong
+              > Cumplir nuestro contrato, identificarlo, procesar pagos y responder
+              a solicitudes de soporte.
+            </li>
+            <li>
+              <strong>Propósitos Administrativos y de Comunicación:</strong> Investigación
+              y desarrollo, seguridad, envío de comunicaciones sobre nuevas características,
+              y cumplimiento de obligaciones legales.
+            </li>
+            <li>
+              <strong>Facilitar la colaboración:</strong> Compartir información básica
+              (nombre, email, foto) con otros usuarios del mismo espacio de trabajo.
+            </li>
+            <li>
+              <strong
+                >Gestión de espacios de trabajo para organizaciones:</strong
+              > Si usa un correo corporativo, podemos compartir información del espacio
+              de trabajo con su organización.
+            </li>
+            <li>
+              <strong>Comercialización:</strong> De conformidad con los requisitos
+              legales, podemos personalizar contenido y anuncios.
+            </li>
+          </ul>
+
+          <h2
+            id="divulgacion"
+            class="text-3xl font-bold mt-16 mb-8 text-[#082109]"
+          >
+            3. Divulgación de su información
+          </h2>
+          <p>Podemos divulgar su información a:</p>
+          <ul class="list-disc pl-6 space-y-2">
+            <li>
+              <strong>Proveedores de servicios:</strong> Terceros que nos ayudan con
+              la prestación de servicios, marketing, procesamiento de pagos y TI.
+            </li>
+            <li>
+              <strong>Socios comerciales:</strong> Si solicita productos o servicios
+              conjuntos.
+            </li>
+            <li><strong>Afiliados:</strong> Entidades bajo propiedad común.</li>
+            <li>
+              <strong>Divulgaciones legales:</strong> Para cumplir con la ley, proteger
+              derechos o en caso de fusión/venta de activos.
+            </li>
+          </ul>
+
+          <h2
+            id="transferencias"
+            class="text-3xl font-bold mt-16 mb-8 text-[#082109]"
+          >
+            4. Transferencias internacionales de datos
+          </h2>
+          <p>
+            Toda la información que procesamos puede ser transferida, procesada
+            y almacenada en cualquier parte del mundo, incluidos los Estados
+            Unidos. Nos esforzamos por proteger su información de conformidad
+            con las leyes aplicables.
+          </p>
+
+          <h2
+            id="opciones"
+            class="text-3xl font-bold mt-16 mb-8 text-[#082109]"
+          >
+            5. Tus opciones
+          </h2>
+          <p>
+            Usted puede oponerse o rechazar determinados usos de su información.
+            Puede retirar su consentimiento en cualquier momento. Puede cancelar
+            la suscripción a correos electrónicos promocionales mediante el
+            enlace al final de los mismos.
+          </p>
+
+          <h2
+            id="derechos"
+            class="text-3xl font-bold mt-16 mb-8 text-[#082109]"
+          >
+            6. Sus derechos de privacidad
+          </h2>
+          <p>
+            Dependiendo de su ubicación, puede tener derecho a acceder,
+            corregir, eliminar o restringir el procesamiento de su información.
+            Para ejercer estos derechos, comuníquese con nosotros a <strong
+              >contacto@gadminconty.com</strong
+            >.
+          </p>
+
+          <h2
+            id="retencion"
+            class="text-3xl font-bold mt-16 mb-8 text-[#082109]"
+          >
+            7. Retención de datos
+          </h2>
+          <p>
+            Almacenamos la información mientras utilice nuestros Servicios o
+            según sea necesario para cumplir con fines legales, auditorías y
+            acuerdos comerciales.
+          </p>
+
+          <h2
+            id="seguridad"
+            class="text-3xl font-bold mt-16 mb-8 text-[#082109]"
+          >
+            8. Seguridad de su información
+          </h2>
+          <p>
+            Tomamos medidas para garantizar el trato seguro de su información.
+            Aunque ningún sistema es 100% seguro, implementamos protocolos de
+            protección y le notificaremos en caso de brechas de seguridad
+            identificadas.
+          </p>
+
+          <h2
+            id="terceros"
+            class="text-3xl font-bold mt-16 mb-8 text-[#082109]"
+          >
+            9. Sitios web y aplicaciones de terceros
+          </h2>
+          <p>
+            Nuestros servicios pueden contener enlaces a terceros. No somos
+            responsables de sus prácticas de privacidad y recomendamos leer sus
+            políticas individuales.
+          </p>
+
+          <h2 id="ninos" class="text-3xl font-bold mt-16 mb-8 text-[#082109]">
+            10. Información para niños
+          </h2>
+          <p>
+            Nuestros Servicios no están dirigidos a niños. Si detectamos datos
+            de menores recopilados sin consentimiento legal competente,
+            procederemos a su eliminación.
+          </p>
+
+          <h2 id="control" class="text-3xl font-bold mt-16 mb-8 text-[#082109]">
+            11. Autoridad de control
+          </h2>
+          <p>
+            Tiene derecho a presentar una queja ante una autoridad supervisora
+            si cree que nuestro procesamiento viola la ley aplicable.
+          </p>
+
+          <h2 id="cambios" class="text-3xl font-bold mt-16 mb-8 text-[#082109]">
+            12. Cambios a Nuestra Política de Privacidad
+          </h2>
+          <p>
+            Podemos revisar esta política. El uso continuo de los Servicios tras
+            cambios sustanciales implica la aceptación de los nuevos términos.
+          </p>
+
+          <div class="mt-20 p-8 bg-[#082109] text-white rounded-3xl">
+            <h2 class="text-2xl font-bold mb-4 text-white">Contáctanos</h2>
+            <p class="mb-6 opacity-80">
+              Si tiene alguna pregunta sobre nuestras prácticas de privacidad o
+              esta Política de privacidad, contáctenos a:
+            </p>
+            <address class="not-italic space-y-2">
+              <p class="font-bold text-xl text-[#00cc07]">Gadmin Conty</p>
+              <p>
+                <a
+                  href="mailto:contacto@gadminconty.com"
+                  class="hover:underline">contacto@gadminconty.com</a
+                >
+              </p>
+              <p>
+                <a href="https://www.gadminconty.com" class="hover:underline"
+                  >www.gadminconty.com</a
+                >
+              </p>
+            </address>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTA />
+  <Footer />
+</Layout>
