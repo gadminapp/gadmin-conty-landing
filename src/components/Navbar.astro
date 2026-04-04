@@ -2,8 +2,8 @@
 import contyLogo from "../assets/logo-no-bg.png";
 ---
 
-<nav class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
-  <div class="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
+<header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" role="banner">
+  <nav class="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between" role="navigation">
     <a href="/" class="flex items-center gap-2">
       <img src={contyLogo.src} width="40" height="40" alt="Gadmin Conty Logo" />
       <span class="font-bold text-xl text-[#082109]">Conty</span>
@@ -57,20 +57,20 @@ import contyLogo from "../assets/logo-no-bg.png";
         <path d="M4 19h16"></path>
       </svg>
     </button>
-  </div>
-</nav>
+  </nav>
+</header>
 
 <script>
   const onScroll = ["bg-white/95", "backdrop-blur-md", "shadow-sm"];
   const offScroll = ["bg-transparent"];
   window.addEventListener("scroll", () => {
-    const navbar = document.querySelector("nav");
+    const header = document.querySelector("header");
     if (window.scrollY > 0) {
-      navbar?.classList.add(...onScroll);
-      navbar?.classList.remove(...offScroll);
+      header?.classList.add(...onScroll);
+      header?.classList.remove(...offScroll);
     } else {
-      navbar?.classList.remove(...onScroll);
-      navbar?.classList.add(...offScroll);
+      header?.classList.remove(...onScroll);
+      header?.classList.add(...offScroll);
     }
   });
 </script>

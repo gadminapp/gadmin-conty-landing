@@ -1,6 +1,6 @@
 ---
 import Navbar from "../components/Navbar.astro";
-
+import Footer from "../components/Footer.astro";
 import SEO from "../components/SEO.astro";
 
 interface Props {
@@ -30,7 +30,10 @@ const { title, description, keywords, image, canonicalURL, type } = Astro.props;
 
   <body>
     <Navbar />
-    <slot />
+    <main role="main">
+      <slot />
+    </main>
+    <Footer />
   </body>
 </html>
 
