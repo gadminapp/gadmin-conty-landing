@@ -26,22 +26,7 @@
             <div
               class="w-9 h-9 rounded-xl bg-gray-100 flex items-center justify-center"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="lucide lucide-heart text-[#00CC07]"
-                aria-hidden="true"
-                ><path
-                  d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"
-                ></path></svg
-              >
+             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-gift-icon lucide-gift text-[#08210990]"><path d="M12 7v14"/><path d="M20 11v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8"/><path d="M7.5 7a1 1 0 0 1 0-5A4.8 8 0 0 1 12 7a4.8 8 0 0 1 4.5-5 1 1 0 0 1 0 5"/><rect x="3" y="7" width="18" height="4" rx="1"/></svg>
             </div>
             <span class="text-[#082109] font-bold text-lg">Plan Gratuito</span>
           </div>
@@ -52,20 +37,21 @@
               <span class="text-gray-400 mb-2 text-sm">/ siempre</span>
             </div>
             <p class="text-gray-500 text-sm mt-1">
-              Todo lo esencial para llevar tu negocio
+              Todo lo esencial para empezar a usar Conty
             </p>
           </div>
 
           <ul class="space-y-3 my-8 flex-1">
             {
               [
+                "10 consultas Asistente IA por día",
                 "Registro ilimitado de ventas",
                 "Registro ilimitado de gastos",
-                "Meta semanal",
-                "Funciona offline",
+                "Hasta 1 solo miembro por negocio",
+                "Define tu meta semanal",
                 "Gráficos y reportes",
-                "Múltiples negocios",
-                "Soporte por WhatsApp",
+                "Exportación a Excel",
+                "Funciona offline (App)",
               ].map((feat) => (
                 <li class="flex items-center gap-3">
                   <svg
@@ -124,26 +110,10 @@
               <div
                 class="w-9 h-9 rounded-xl bg-[#00CC07] flex items-center justify-center"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="lucide lucide-sparkles text-[#082109]"
-                  aria-hidden="true"
-                  ><path
-                    d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"
-                  ></path><path d="M20 3v4"></path><path d="M22 5h-4"
-                  ></path></svg
-                >
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-gem-icon lucide-gem text-[#082109]"><path d="M10.5 3 8 9l4 13 4-13-2.5-6"/><path d="M17 3a2 2 0 0 1 1.6.8l3 4a2 2 0 0 1 .013 2.382l-7.99 10.986a2 2 0 0 1-3.247 0l-7.99-10.986A2 2 0 0 1 2.4 7.8l2.998-3.997A2 2 0 0 1 7 3z"/><path d="M2 9h20"/></svg>
               </div>
               <span id="plan-title" class="text-white font-bold text-lg"
-                >Plan Mensual</span
+                >Plan Premium</span
               >
             </div>
 
@@ -157,7 +127,7 @@
                 >
               </div>
               <p id="plan-desc" class="text-white/75 text-sm mt-1">
-                O paga anual y ahorra 2 meses
+                O paga anualmente y ahorra 2 meses
               </p>
             </div>
 
@@ -191,11 +161,11 @@
             <ul class="space-y-3 mb-8 flex-1">
               {
                 [
-                  "Predicciones inteligentes de ventas",
-                  "Cargar gastos desde ticket/factura",
-                  "Gestión de inventario y stock",
-                  "Exportar reportes avanzados",
-                  "Actualizaciones prioritarias",
+                  "Hasta 15000 consultas Asistente IA",
+                  "Hasta 10 miembros por negocio",
+                  "Predicciones inteligentes",
+                  "Cargar gastos desde fotos (recibos/tickets)",
+                  "Soporte prioritario 24/7",
                 ].map((feat) => (
                   <li class="flex items-center gap-3">
                     <svg
@@ -240,10 +210,8 @@
     >
       <p class="text-[#082109]/70 text-sm">
         <span class="font-semibold text-[#082109]"
-          >¿Por qué ofrecer un plan de pago?</span
-        > Porque las funciones premium requieren inteligencia artificial y servidores
-        avanzados. Tu suscripción nos permite seguir innovando y brindarte la mejor
-        experiencia.
+          >Puedes empezar gratis,</span
+        > cuando experimentes que Conty te ahorra más de 21 horas por semana, puedes pasarte al Premium para tener aún más. 
       </p>
     </div>
   </div>
@@ -252,7 +220,6 @@
 <script>
   const btnMensual = document.getElementById("btn-mensual");
   const btnAnual = document.getElementById("btn-anual");
-  const planTitle = document.getElementById("plan-title");
   const planPrice = document.getElementById("plan-price");
   const planPeriod = document.getElementById("plan-period");
   const planDesc = document.getElementById("plan-desc");
@@ -261,7 +228,6 @@
     if (
       !btnAnual ||
       !btnMensual ||
-      !planTitle ||
       !planPrice ||
       !planPeriod ||
       !planDesc
@@ -274,21 +240,19 @@
       btnMensual.classList.remove("bg-white", "text-[#082109]", "shadow-sm");
       btnMensual.classList.add("text-white/60");
 
-      planTitle.textContent = "Plan Anual";
       planPrice.textContent = "$199.99";
       planPeriod.textContent = "/ año";
       planDesc.innerHTML =
-        '<span class="text-[#00CC07] font-medium">Equivale a $8.33/mes (2 meses gratis)</span>';
+        '<span class="text-[#00CC07] font-medium">Equivale a $16.67/mes (2 meses gratis)</span>';
     } else {
       btnMensual.classList.add("bg-white", "text-[#082109]", "shadow-sm");
       btnMensual.classList.remove("text-white/60");
       btnAnual.classList.remove("bg-white", "text-[#082109]", "shadow-sm");
       btnAnual.classList.add("text-white/60");
 
-      planTitle.textContent = "Plan Mensual";
       planPrice.textContent = "$19.99";
       planPeriod.textContent = "/ mes";
-      planDesc.textContent = "O paga anual y ahorra 2 meses";
+      planDesc.textContent = "O paga anualmente y ahorra 2 meses";
     }
   }
 

@@ -13,6 +13,11 @@ import contyLogo from "../assets/logo-no-bg.png";
     </a>
     <div class="hidden md:flex items-center gap-6">
       <a
+        href="#asistente"
+        class="text-sm font-medium text-[#04910a] hover:text-[#00CC07] transition-colors"
+        >Asistente IA
+      </a>
+      <a
         href="#funciones"
         class="text-sm font-medium text-[#082109]/70 hover:text-[#00CC07] transition-colors"
         >Funciones
@@ -63,8 +68,9 @@ import contyLogo from "../assets/logo-no-bg.png";
 <script>
   const onScroll = ["bg-white/95", "backdrop-blur-md", "shadow-sm"];
   const offScroll = ["bg-transparent"];
-  window.addEventListener("scroll", () => {
-    const header = document.querySelector("header");
+  const header = document.querySelector("header");
+
+  const updateHeader = () => {
     if (window.scrollY > 0) {
       header?.classList.add(...onScroll);
       header?.classList.remove(...offScroll);
@@ -72,7 +78,11 @@ import contyLogo from "../assets/logo-no-bg.png";
       header?.classList.remove(...onScroll);
       header?.classList.add(...offScroll);
     }
-  });
+  };
+
+  window.addEventListener("scroll", updateHeader);
+  // Initial check
+  updateHeader();
 </script>
 
 <style>
