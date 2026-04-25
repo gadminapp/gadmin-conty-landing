@@ -1,3 +1,7 @@
+---
+const { isAppAvailable = false } = Astro.props;
+---
+
 <section class="py-16 bg-white border-y border-gray-100">
   <div class="max-w-6xl mx-auto px-5 text-center">
     <div class="animate-fade-in-up">
@@ -27,8 +31,11 @@
       </div>
 
       <div class="bg-gray-50 p-8 rounded-3xl border border-gray-100 hover:border-[#00CC07]/30 transition-all group animate-fade-in-right delay-200">
-        <div class="w-12 h-12 rounded-2xl bg-[#00CC07]/10 flex items-center justify-center text-[#00CC07] mb-6 group-hover:bg-[#00CC07] group-hover:text-white transition-all">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+        <div class="flex justify-between items-start mb-6">
+          <div class="w-12 h-12 rounded-2xl bg-[#00CC07]/10 flex items-center justify-center text-[#00CC07] group-hover:bg-[#00CC07] group-hover:text-white transition-all">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+          </div>
+          {!isAppAvailable && <span class="bg-gray-200 text-gray-500 text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-tighter">Próximamente</span>}
         </div>
         <h3 class="text-xl font-bold text-[#082109] mb-3">Conty App</h3>
         <p class="text-gray-500 text-sm mb-4 leading-relaxed">

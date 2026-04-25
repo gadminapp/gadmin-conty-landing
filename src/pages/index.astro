@@ -11,6 +11,7 @@ import Disclaimer from "../components/Disclaimer.astro";
 import Pricing from "../components/Pricing.astro";
 import FAQ from "../components/FAQ.astro";
 import CTA from "../components/CTA.astro";
+const isAppAvailable = true; // Cambiar a true cuando la app esté oficialmente disponible
 ---
 
 <Layout
@@ -18,14 +19,14 @@ import CTA from "../components/CTA.astro";
   description="La forma más sencilla y rápida de llevar las cuentas de tus negocios. Regístrate por WhatsApp o descarga nuestra App. Controla ventas, gastos y reportes."
   keywords="contabilidad, pymes, gestión de negocios, administración, ventas, gastos, venezuela, emprendimiento, whatsapp assistant, ai assistant"
 >
-  <Hero />
+  <Hero isAppAvailable={isAppAvailable} />
   <WhatsAppAssistant />
-  <Features />  
-  <Choice />
+  <Features />
+  <Choice isAppAvailable={isAppAvailable} />
   <Comparison />
   <Testimonials />
   <Disclaimer />
-  <Pricing />
+  <Pricing isAppAvailable={isAppAvailable} />
   <FAQ />
-  <CTA />
+  <CTA isAppAvailable={isAppAvailable} />
 </Layout>

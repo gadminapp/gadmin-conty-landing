@@ -1,3 +1,7 @@
+---
+const { isAppAvailable = false } = Astro.props;
+---
+
 <section id="precios" class="py-24 bg-white">
   <div class="max-w-5xl mx-auto px-5">
     <div class="text-center mb-12 animate-fade-in-up">
@@ -93,7 +97,9 @@
           </ul>
 
           <a
-            href="https://play.google.com/store/apps/details?id=com.gadmin.conty"
+            href={isAppAvailable
+              ? "https://play.google.com/store/apps/details?id=com.gadmin.conty"
+              : "https://wa.me/12013538852?text=%C2%A1Hola!%20Quiero%20probar%20Conty."}
             target="_blank"
             rel="noopener noreferrer"
             class="block w-full text-center bg-[#082109] text-white font-bold py-4 rounded-2xl hover:bg-[#082109]/90 transition-all"
@@ -237,7 +243,11 @@
               Cancela cuando quieras. Sin compromisos.
             </p>
             <a
-              href="#"
+              href={isAppAvailable
+                ? "#"
+                : "https://wa.me/12013538852?text=%C2%A1Hola!%20Quiero%20informaci%C3%B3n%20sobre%20el%20Plan%20Premium."}
+              target="_blank"
+              rel="noopener noreferrer"
               class="block w-full text-center bg-[#00CC07] text-[#082109] font-bold py-4 rounded-2xl hover:brightness-110 transition-all shadow-lg shadow-[#00CC07]/20"
             >
               Empezar

@@ -1,3 +1,7 @@
+---
+const { isAppAvailable = false } = Astro.props;
+---
+
 <section id="descargar" class="py-24 bg-[#082109] relative overflow-hidden">
   <div
     class="absolute inset-0 pointer-events-none"
@@ -13,43 +17,61 @@
       tu negocio hoy mismo.
     </p><div class="flex flex-col sm:flex-row gap-4 justify-center">
       <a
-        href="https://play.google.com/store/apps/details?id=com.gadmin.conty"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="flex items-center justify-center gap-3 bg-[#00CC07] text-[#082109] font-bold px-8 py-4 rounded-2xl hover:brightness-110 transition-all shadow-xl shadow-[#00CC07]/20 hover:-translate-y-0.5 active:translate-y-0 animate-pulse-brand"
-        ><svg
-          width="22"
-          height="22"
-          viewBox="0 0 45 49"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M0.773336 0.624512C0.193336 1.38451 0 2.14451 0 3.47451V45.2745C0 46.4145 0.386667 47.3645 0.966667 47.9345L1.16 48.1245L25.1333 24.5645V24.3745V24.1845L0.773336 0.624512Z"
-            fill="#082109"></path>
-          <path
-            d="M32.8666 32.5443L24.94 24.7543V24.3743V24.1843L32.8666 16.3943L33.06 16.5843L42.5333 21.9043C45.24 23.4243 45.24 25.8943 42.5333 27.4143L32.8666 32.5443Z"
-            fill="#082109"></path>
-          <path
-            d="M33.06 32.3543L24.94 24.3743L0.773315 48.1243C1.73998 49.0743 3.09331 49.0743 4.83331 48.3143L33.06 32.3543Z"
-            fill="#082109"></path>
-          <path
-            d="M33.06 16.3946L4.83331 0.624579C3.09331 -0.325421 1.73998 -0.135423 0.773315 0.814577L24.94 24.3746L33.06 16.3946Z"
-            fill="#082109"></path>
-        </svg>
-        Descargar en Google Play</a
-      >
-      <a
         href="https://wa.me/12013538852?text=%C2%A1Hola!%20Quiero%20tener%20mi%20asistente."
         target="_blank"
         rel="noopener noreferrer"
-        class="flex items-center justify-center gap-3 bg-white/10 border border-white/20 text-white font-bold px-8 py-4 rounded-2xl hover:bg-white/20 transition-all hover:-translate-y-0.5 active:translate-y-0"
+        class="flex items-center justify-center gap-3 bg-[#00CC07] text-[#082109] font-bold px-8 py-4 rounded-2xl hover:brightness-110 transition-all shadow-xl shadow-[#00CC07]/20 hover:-translate-y-0.5 active:translate-y-0 animate-pulse-brand"
       >
         <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.438 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+          <path
+            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.438 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
+          ></path>
         </svg>
         Hablar con el Asistente
       </a>
+
+      {
+        isAppAvailable ? (
+          <a
+            href="https://play.google.com/store/apps/details?id=com.gadmin.conty"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center justify-center gap-3 bg-white/10 border border-white/20 text-white font-bold px-8 py-4 rounded-2xl hover:bg-white/20 transition-all hover:-translate-y-0.5 active:translate-y-0"
+          >
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 45 49"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0.773336 0.624512C0.193336 1.38451 0 2.14451 0 3.47451V45.2745C0 46.4145 0.386667 47.3645 0.966667 47.9345L1.16 48.1245L25.1333 24.5645V24.3745V24.1845L0.773336 0.624512Z"
+                fill="currentColor"
+              />
+              <path
+                d="M32.8666 32.5443L24.94 24.7543V24.3743V24.1843L32.8666 16.3943L33.06 16.5843L42.5333 21.9043C45.24 23.4243 45.24 25.8943 42.5333 27.4143L32.8666 32.5443Z"
+                fill="currentColor"
+              />
+              <path
+                d="M33.06 32.3543L24.94 24.3743L0.773315 48.1243C1.73998 49.0743 3.09331 49.0743 4.83331 48.3143L33.06 32.3543Z"
+                fill="currentColor"
+              />
+              <path
+                d="M33.06 16.3946L4.83331 0.624579C3.09331 -0.325421 1.73998 -0.135423 0.773315 0.814577L24.94 24.3746L33.06 16.3946Z"
+                fill="currentColor"
+              />
+            </svg>
+            Google Play
+          </a>
+        ) : (
+          <div class="flex items-center justify-center gap-3 bg-white/5 border border-white/10 text-white/40 font-semibold px-8 py-4 rounded-2xl cursor-default select-none">
+            <span class="text-xs uppercase tracking-wider font-bold">
+              App Próximamente
+            </span>
+          </div>
+        )
+      }
       <!-- <div
         class="flex items-center justify-center gap-3 bg-white/10 text-white/40 font-semibold px-8 py-4 rounded-2xl cursor-not-allowed select-none"
       >
