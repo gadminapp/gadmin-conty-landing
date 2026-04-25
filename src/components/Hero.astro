@@ -1,3 +1,9 @@
+---
+import orlandoProfile from "../assets/orlando-profile.png";
+import pgLogo from "../assets/pg-logo-web.png";
+import bgLogo from "../assets/bg-logo.png";
+---
+
 <section
   class="relative min-h-screen flex flex-col items-center justify-center overflow-hidden"
 >
@@ -37,8 +43,10 @@
       </h1><p
         class="text-lg sm:text-xl text-[#082109]/60 leading-relaxed mb-10 max-w-xl mx-auto lg:mx-0 animate-fade-in-up delay-200"
       >
-        Registra tus ventas y gastos enviando un simple mensaje. Olvida la libreta y alcanza tu
-        meta semanal <strong class="text-[#082109]">fácilmente</strong>.
+        Registra tus ventas y gastos enviando un simple mensaje. Olvida la
+        libreta y alcanza tu meta semanal <strong class="text-[#082109]"
+          >fácilmente</strong
+        >.
       </p><div
         class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-in-up delay-300"
       >
@@ -78,26 +86,24 @@
           >App Store | Próximamente
         </div>
       </div><div
-        class="flex items-center gap-6 mt-10 justify-center lg:justify-start animate-fade-in-up delay-400"
+        class="flex items-center gap-3 mt-10 justify-center lg:justify-start animate-fade-in-up delay-400"
       >
         <div class="flex -space-x-3">
-          <div
-            class="w-9 h-9 rounded-full border-2 border-white bg-[#00CC07] flex items-center justify-center text-[#082109] text-xs font-bold shadow"
-          >
-            E
-          </div><div
-            class="w-9 h-9 rounded-full border-2 border-white bg-[#00CC07] flex items-center justify-center text-[#082109] text-xs font-bold shadow"
-          >
-            M
-          </div><div
-            class="w-9 h-9 rounded-full border-2 border-white bg-[#00CC07] flex items-center justify-center text-[#082109] text-xs font-bold shadow"
-          >
-            C
-          </div><div
-            class="w-9 h-9 rounded-full border-2 border-white bg-[#00CC07] flex items-center justify-center text-[#082109] text-xs font-bold shadow"
-          >
-            A
-          </div>
+          <img
+            src={orlandoProfile.src}
+            alt="Orlando"
+            class="w-9 h-9 rounded-full flex items-center justify-center text-[#082109] text-xs font-bold shadow"
+          />
+          <img
+            src={pgLogo.src}
+            alt="PG"
+            class="w-9 h-9 rounded-full flex items-center justify-center text-[#082109] text-xs font-bold shadow"
+          />
+          <img
+            src={bgLogo.src}
+            alt="BG"
+            class="w-9 h-9 rounded-full flex items-center justify-center text-[#082109] text-xs font-bold shadow"
+          />
         </div><div>
           <div class="flex items-center gap-1">
             <svg

@@ -26,7 +26,23 @@
             <div
               class="w-9 h-9 rounded-xl bg-gray-100 flex items-center justify-center"
             >
-             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-gift-icon lucide-gift text-[#08210990]"><path d="M12 7v14"/><path d="M20 11v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8"/><path d="M7.5 7a1 1 0 0 1 0-5A4.8 8 0 0 1 12 7a4.8 8 0 0 1 4.5-5 1 1 0 0 1 0 5"/><rect x="3" y="7" width="18" height="4" rx="1"/></svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-gift-icon lucide-gift text-[#08210990]"
+                ><path d="M12 7v14"></path><path
+                  d="M20 11v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8"></path><path
+                  d="M7.5 7a1 1 0 0 1 0-5A4.8 8 0 0 1 12 7a4.8 8 0 0 1 4.5-5 1 1 0 0 1 0 5"
+                ></path><rect x="3" y="7" width="18" height="4" rx="1"
+                ></rect></svg
+              >
             </div>
             <span class="text-[#082109] font-bold text-lg">Plan Gratuito</span>
           </div>
@@ -47,11 +63,10 @@
                 "10 consultas Asistente IA por día",
                 "Registro ilimitado de ventas",
                 "Registro ilimitado de gastos",
-                "Hasta 1 solo miembro por negocio",
+                "Hasta 1 miembro por negocio",
                 "Define tu meta semanal",
                 "Gráficos y reportes",
                 "Exportación a Excel",
-                "Funciona offline (App)",
               ].map((feat) => (
                 <li class="flex items-center gap-3">
                   <svg
@@ -83,7 +98,7 @@
             rel="noopener noreferrer"
             class="block w-full text-center bg-[#082109] text-white font-bold py-4 rounded-2xl hover:bg-[#082109]/90 transition-all"
           >
-            Descargar gratis
+            Empezar
           </a>
         </div>
       </div>
@@ -110,7 +125,21 @@
               <div
                 class="w-9 h-9 rounded-xl bg-[#00CC07] flex items-center justify-center"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-gem-icon lucide-gem text-[#082109]"><path d="M10.5 3 8 9l4 13 4-13-2.5-6"/><path d="M17 3a2 2 0 0 1 1.6.8l3 4a2 2 0 0 1 .013 2.382l-7.99 10.986a2 2 0 0 1-3.247 0l-7.99-10.986A2 2 0 0 1 2.4 7.8l2.998-3.997A2 2 0 0 1 7 3z"/><path d="M2 9h20"/></svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-gem-icon lucide-gem text-[#082109]"
+                  ><path d="M10.5 3 8 9l4 13 4-13-2.5-6"></path><path
+                    d="M17 3a2 2 0 0 1 1.6.8l3 4a2 2 0 0 1 .013 2.382l-7.99 10.986a2 2 0 0 1-3.247 0l-7.99-10.986A2 2 0 0 1 2.4 7.8l2.998-3.997A2 2 0 0 1 7 3z"
+                  ></path><path d="M2 9h20"></path></svg
+                >
               </div>
               <span id="plan-title" class="text-white font-bold text-lg"
                 >Plan Premium</span
@@ -161,13 +190,16 @@
             <ul class="space-y-3 mb-8 flex-1">
               {
                 [
-                  "Hasta 15000 consultas Asistente IA",
-                  "Hasta 10 miembros por negocio",
-                  "Predicciones inteligentes",
-                  "Cargar gastos desde fotos (recibos/tickets)",
-                  "Soporte prioritario 24/7",
-                ].map((feat) => (
-                  <li class="flex items-center gap-3">
+                  {
+                    text: "Hasta 3,000 consultas Asistente IA",
+                    sub: "+$3 por cada 1,000 adicionales",
+                  },
+                  { text: "Hasta 10 miembros por negocio" },
+                  // { text: "Hasta 10 miembros por negocio" },
+                  { text: "Predicciones inteligentes" },
+                  { text: "Cargar gastos desde fotos (recibos/tickets)" },
+                ].map((item) => (
+                  <li class="flex items-start gap-3">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="16"
@@ -178,28 +210,38 @@
                       stroke-width="2"
                       stroke-linecap="round"
                       stroke-linejoin="round"
-                      class="text-[#00CC07] shrink-0"
+                      class="text-[#00CC07] shrink-0 mt-0.5"
                     >
                       <>
                         <path d="M21.801 10A10 10 0 1 1 17 3.335" />
                         <path d="m9 11 3 3L22 4" />
                       </>
                     </svg>
-                    <span class="text-white/80 text-sm">{feat}</span>
+                    <span class="text-white/80 text-sm">
+                      {item.text}
+                      {item.sub && (
+                        <>
+                          <br />
+                          <small class="text-white/60 text-[11px] leading-tight">
+                            ({item.sub})
+                          </small>
+                        </>
+                      )}
+                    </span>
                   </li>
                 ))
               }
             </ul>
 
+            <p class="text-white/75 text-xs text-center mb-4">
+              Cancela cuando quieras. Sin compromisos.
+            </p>
             <a
               href="#"
               class="block w-full text-center bg-[#00CC07] text-[#082109] font-bold py-4 rounded-2xl hover:brightness-110 transition-all shadow-lg shadow-[#00CC07]/20"
             >
-              Activar Plan Premium
+              Empezar
             </a>
-            <p class="text-white/75 text-xs text-center mt-4">
-              Cancela cuando quieras. Sin compromisos.
-            </p>
           </div>
         </div>
       </div>
@@ -209,9 +251,9 @@
       class="mt-8 bg-[#00CC07]/5 border border-[#00CC07]/10 rounded-2xl p-4 text-center max-w-3xl mx-auto"
     >
       <p class="text-[#082109]/70 text-sm">
-        <span class="font-semibold text-[#082109]"
-          >Puedes empezar gratis,</span
-        > cuando experimentes que Conty te ahorra más de 21 horas por semana, puedes pasarte al Premium para tener aún más. 
+        <span class="font-semibold text-[#082109]">Puedes empezar gratis,</span> cuando
+        experimentes que Conty te ahorra más de 21 horas por semana, puedes pasarte
+        al Premium para tener aún más.
       </p>
     </div>
   </div>
@@ -225,13 +267,7 @@
   const planDesc = document.getElementById("plan-desc");
 
   function setPricing(mode: "yearly" | "monthly") {
-    if (
-      !btnAnual ||
-      !btnMensual ||
-      !planPrice ||
-      !planPeriod ||
-      !planDesc
-    )
+    if (!btnAnual || !btnMensual || !planPrice || !planPeriod || !planDesc)
       return;
 
     if (mode === "yearly") {
