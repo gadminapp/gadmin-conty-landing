@@ -44,13 +44,18 @@ import contyLogo from "../assets/logo-no-bg.png";
         >FAQ
       </a>
       <a
-        href="#descargar"
+        href="https://wa.me/12013538852?text=%C2%A1Hola!%20Quiero%20tener%20mi%20asistente."
         class="bg-[#14b81a] text-[#082109] text-sm font-semibold px-5 py-2.5 rounded-full hover:brightness-110 transition-all shadow-md animate-pulse-brand"
-        >Descargar Gratis
+        >Probar Gratis
       </a>
     </div>
-    <button class="md:hidden p-2 text-[#082109]" aria-label="Menu">
+    <button
+      id="menu-btn"
+      class="md:hidden p-2 text-[#082109]"
+      aria-label="Menu"
+    >
       <svg
+        id="menu-icon"
         xmlns="http://www.w3.org/2000/svg"
         width="22"
         height="22"
@@ -67,16 +72,102 @@ import contyLogo from "../assets/logo-no-bg.png";
         <path d="M4 12h16"></path>
         <path d="M4 19h16"></path>
       </svg>
+      <svg
+        id="close-icon"
+        class="hidden"
+        xmlns="http://www.w3.org/2000/svg"
+        width="22"
+        height="22"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="lucide lucide-x"
+        aria-hidden="true"
+      >
+        <path d="M18 6 6 18"></path>
+        <path d="M6 6l12 12"></path>
+      </svg>
     </button>
   </nav>
+
+  <!-- Mobile Menu -->
+  <div
+    id="mobile-menu"
+    class="hidden md:hidden bg-white/98 backdrop-blur-md border-t border-gray-100 flex-col p-6 gap-5 shadow-xl transition-all duration-300 origin-top"
+  >
+    <a
+      href="#asistente"
+      class="mobile-link text-lg font-medium text-[#04910a] hover:text-[#14b81a] transition-colors"
+      >Asistente IA
+    </a>
+    <a
+      href="#funciones"
+      class="mobile-link text-lg font-medium text-[#082109]/70 hover:text-[#14b81a] transition-colors"
+      >Funciones
+    </a>
+    <a
+      href="#testimonios"
+      class="mobile-link text-lg font-medium text-[#082109]/70 hover:text-[#14b81a] transition-colors"
+      >Testimonios
+    </a>
+    <a
+      href="#precios"
+      class="mobile-link text-lg font-medium text-[#082109]/70 hover:text-[#14b81a] transition-colors"
+      >Precios
+    </a>
+    <a
+      href="#faq"
+      class="mobile-link text-lg font-medium text-[#082109]/70 hover:text-[#14b81a] transition-colors"
+      >FAQ
+    </a>
+    <hr class="border-[#082109]/5" />
+    <a
+      href="https://wa.me/12013538852?text=%C2%A1Hola!%20Quiero%20tener%20mi%20asistente."
+      class="mobile-link bg-[#14b81a] text-[#082109] text-center font-bold py-4 rounded-2xl hover:brightness-110 transition-all shadow-md"
+      >Probar Gratis Ahora
+    </a>
+  </div>
 </header>
 
 <script>
   const onScroll = ["bg-white/95", "backdrop-blur-md", "shadow-sm"];
   const offScroll = ["bg-transparent"];
   const header = document.querySelector("header");
+  const menuBtn = document.getElementById("menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const menuIcon = document.getElementById("menu-icon");
+  const closeIcon = document.getElementById("close-icon");
+  const mobileLinks = document.querySelectorAll(".mobile-link");
+
+  let isMenuOpen = false;
+
+  const toggleMenu = () => {
+    isMenuOpen = !isMenuOpen;
+
+    if (isMenuOpen) {
+      mobileMenu?.classList.remove("hidden");
+      mobileMenu?.classList.add("flex");
+      menuIcon?.classList.add("hidden");
+      closeIcon?.classList.remove("hidden");
+      header?.classList.add(...onScroll);
+      header?.classList.remove(...offScroll);
+      document.body.style.overflow = "hidden"; // Prevent scroll
+    } else {
+      mobileMenu?.classList.add("hidden");
+      mobileMenu?.classList.remove("flex");
+      menuIcon?.classList.remove("hidden");
+      closeIcon?.classList.add("hidden");
+      document.body.style.overflow = ""; // Enable scroll
+      updateHeader();
+    }
+  };
 
   const updateHeader = () => {
+    if (isMenuOpen) return; // Keep scroll classes if menu is open
+
     if (window.scrollY > 0) {
       header?.classList.add(...onScroll);
       header?.classList.remove(...offScroll);
@@ -85,6 +176,14 @@ import contyLogo from "../assets/logo-no-bg.png";
       header?.classList.add(...offScroll);
     }
   };
+
+  menuBtn?.addEventListener("click", toggleMenu);
+
+  mobileLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      if (isMenuOpen) toggleMenu();
+    });
+  });
 
   window.addEventListener("scroll", updateHeader);
   // Initial check
