@@ -18,6 +18,65 @@ const {
 } = Astro.props;
 
 const siteTitle = title.includes("Conty") ? title : `${title} | Conty`;
+
+// Construir URLs absolutas para los Rich Schemas
+const siteUrl = Astro.site
+  ? Astro.site.toString().replace(/\/$/, "")
+  : "https://gadminconty.com";
+const logoUrl = `${siteUrl}/favicon.png`;
+const bannerUrl = `${siteUrl}/meta-banner.png`;
+
+// Generar objeto JSON-LD para SoftwareApplication y MobileApplication
+const schemaObject = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "@id": `${siteUrl}/#software`,
+      name: "Conty",
+      url: siteUrl,
+      image: logoUrl,
+      screenshot: bannerUrl,
+      publisher: {
+        "@type": "Organization",
+        name: "Gadmin Conty",
+        url: "https://gadminconty.com",
+        logo: {
+          "@type": "ImageObject",
+          url: logoUrl,
+        },
+      },
+      description: description,
+      applicationCategory: "BusinessApplication, FinanceApplication",
+      operatingSystem: "Android, Web",
+      offers: {
+        "@type": "Offer",
+        price: "0",
+        priceCurrency: "USD",
+      },
+    },
+    {
+      "@type": "MobileApplication",
+      "@id": `${siteUrl}/#mobileapp`,
+      name: "Conty",
+      operatingSystem: "Android",
+      applicationCategory: "BusinessApplication, FinanceApplication",
+      installUrl:
+        "https://play.google.com/store/apps/details?id=com.gadmin.conty",
+      image: logoUrl,
+      publisher: {
+        "@type": "Organization",
+        name: "Gadmin Conty",
+        url: "https://gadminconty.com",
+      },
+      offers: {
+        "@type": "Offer",
+        price: "0",
+        priceCurrency: "USD",
+      },
+    },
+  ],
+};
 ---
 
 <!-- Global Metadata -->
@@ -26,6 +85,9 @@ const siteTitle = title.includes("Conty") ? title : `${title} | Conty`;
 <link rel="icon" type="image/png" href="/favicon.png" />
 <link rel="icon" href="/favicon.ico" />
 <meta name="generator" content={Astro.generator} />
+
+<!-- Smart App Banner for Android Deep Linking -->
+<meta name="google-play-app" content="app-id=com.gadmin.conty" />
 
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
@@ -60,3 +122,6 @@ const siteTitle = title.includes("Conty") ? title : `${title} | Conty`;
   href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap"
   rel="stylesheet"
 />
+
+<!-- Google Rich Schema (JSON-LD) -->
+<script type="application/ld+json" set:html={JSON.stringify(schemaObject)} />

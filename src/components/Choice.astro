@@ -1,5 +1,5 @@
 ---
-const { isAppAvailable = false } = Astro.props;
+const { isAppAvailable = true } = Astro.props;
 ---
 
 <section class="py-16 bg-white border-y border-gray-100">
@@ -77,12 +77,40 @@ const { isAppAvailable = false } = Astro.props;
           La experiencia completa. Gráficos detallados, trabajo sin conexión y
           gestión profunda de tu negocio.
         </p>
-        <div class="flex items-center gap-2">
-          <div class="w-1.5 h-1.5 rounded-full bg-[#14b81a]"></div>
-          <span
-            class="text-xs font-bold text-[#14b81a] uppercase tracking-wider"
-            >Control Total</span
-          >
+        <div
+          class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mt-4 pt-4 border-t border-gray-100"
+        >
+          <div class="flex items-center gap-2">
+            <div class="w-1.5 h-1.5 rounded-full bg-[#14b81a]"></div>
+            <span
+              class="text-xs font-bold text-[#14b81a] uppercase tracking-wider"
+              >Control Total</span
+            >
+          </div>
+          {
+            isAppAvailable && (
+              <a
+                href="https://play.google.com/store/apps/details?id=com.gadmin.conty"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 text-xs font-bold text-[#082109] hover:text-[#14b81a] bg-white border border-gray-200 px-3.5 py-2 rounded-xl transition-all shadow-sm hover:shadow hover:-translate-y-0.5 active:translate-y-0"
+              >
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 45 49"
+                  fill="currentColor"
+                  class="text-[#082109]"
+                >
+                  <path d="M0.773336 0.624512C0.193336 1.38451 0 2.14451 0 3.47451V45.2745C0 46.4145 0.386667 47.3645 0.966667 47.9345L1.16 48.1245L25.1333 24.5645V24.3745V24.1845L0.773336 0.624512Z" />
+                  <path d="M32.8666 32.5443L24.94 24.7543V24.3743V24.1843L32.8666 16.3943L33.06 16.5843L42.5333 21.9043C45.24 23.4243 45.24 25.8943 42.5333 27.4143L32.8666 32.5443Z" />
+                  <path d="M33.06 32.3543L24.94 24.3743L0.773315 48.1243C1.73998 49.0743 3.09331 49.0743 4.83331 48.3143L33.06 32.3543Z" />
+                  <path d="M33.06 16.3946L4.83331 0.624579C3.09331 -0.325421 1.73998 -0.135423 0.773315 0.814577L24.94 24.3746L33.06 16.3946Z" />
+                </svg>
+                Instalar App
+              </a>
+            )
+          }
         </div>
       </div>
     </div>
