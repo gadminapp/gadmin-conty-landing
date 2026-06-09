@@ -3,7 +3,7 @@ const { isAppAvailable = false } = Astro.props;
 ---
 
 <section id="precios" class="py-24 bg-white">
-  <div class="max-w-5xl mx-auto px-5">
+  <div class="max-w-6xl mx-auto px-5">
     <div class="text-center mb-12 animate-fade-in-up">
       <span
         class="inline-block text-[#14b81a] text-sm font-semibold uppercase tracking-widest mb-3"
@@ -15,12 +15,33 @@ const { isAppAvailable = false } = Astro.props;
         >
       </h2>
       <p class="text-gray-500 text-base max-w-lg mx-auto">
-        Usa Conty sin pagar nada. Si necesitas funciones avanzadas, activa el
-        plan Pro.
+        Empieza sin pagar nada. Luego escala al plan que mejor se adapte a tu
+        negocio.
       </p>
+
+      <!-- Selector Global de Facturación -->
+      <div class="flex justify-center mt-8 animate-fade-in-up">
+        <div class="inline-flex items-center gap-3 bg-[#082109]/5 rounded-full p-1.5 shadow-sm border border-[#082109]/10">
+          <button
+            id="btn-mensual"
+            class="px-5 py-2 rounded-full text-sm font-semibold transition-all text-[#082109]/60 hover:text-[#082109]"
+          >
+            Mensual
+          </button>
+          <button
+            id="btn-anual"
+            class="px-5 py-2 rounded-full text-sm font-semibold transition-all flex items-center gap-1.5 bg-white text-[#082109] shadow-sm"
+          >
+            Anual
+            <span class="bg-[#1ec924] text-[#082109] text-[10px] px-1.5 py-0.5 rounded-full font-bold">
+              -17%
+            </span>
+          </button>
+        </div>
+      </div>
     </div>
 
-    <div class="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+    <div class="grid md:grid-cols-3 gap-6">
       <!-- Plan Gratuito -->
       <div class="animate-fade-in-up delay-100">
         <div
@@ -42,7 +63,8 @@ const { isAppAvailable = false } = Astro.props;
                 stroke-linejoin="round"
                 class="lucide lucide-gift-icon lucide-gift text-[#08210990]"
                 ><path d="M12 7v14"></path><path
-                  d="M20 11v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8"></path><path
+                  d="M20 11v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8"
+                ></path><path
                   d="M7.5 7a1 1 0 0 1 0-5A4.8 8 0 0 1 12 7a4.8 8 0 0 1 4.5-5 1 1 0 0 1 0 5"
                 ></path><rect x="3" y="7" width="18" height="4" rx="1"
                 ></rect></svg
@@ -64,13 +86,14 @@ const { isAppAvailable = false } = Astro.props;
           <ul class="space-y-3 my-8 flex-1">
             {
               [
-                "50 consultas Asistente IA por semana",
+                "50 mensajes al Asistente IA por semana",
                 "Registro ilimitado de ventas",
                 "Registro ilimitado de gastos",
                 "Hasta 1 miembro por negocio",
                 "Define tu meta semanal",
                 "Gráficos y reportes",
                 "Exportación a Excel",
+                "30 días de historial de reportes",
               ].map((feat) => (
                 <li class="flex items-center gap-3">
                   <svg
@@ -104,8 +127,133 @@ const { isAppAvailable = false } = Astro.props;
             rel="noopener noreferrer"
             class="block w-full text-center bg-[#082109] text-white font-bold py-4 rounded-2xl hover:bg-[#082109]/90 transition-all"
           >
-            Empezar
+            Empezar gratis
           </a>
+
+          <div
+            class="text-gray-500 text-xs flex items-center justify-center gap-1.5 mt-3 opacity-0"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-info shrink-0"
+              ><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"
+              ></path><path d="M12 8h.01"></path></svg
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- Plan Lite -->
+      <div class="animate-fade-in-up delay-150">
+        <div
+          class="relative bg-white border-2 border-gray-200 rounded-3xl p-8 h-full flex flex-col shadow-lg shadow-[#14b81a]/10"
+        >
+          <div class="flex items-center gap-2 mb-6">
+            <div
+              class="w-9 h-9 rounded-xl bg-[#14b81a]/10 flex items-center justify-center"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="text-[#14b81a]"
+                ><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg
+              >
+            </div>
+            <span class="text-[#082109] font-bold text-lg">Plan Lite</span>
+          </div>
+
+          <div class="mb-2">
+            <div class="flex items-end gap-2">
+              <span id="lite-price" class="text-5xl font-bold text-[#082109]">$49.99</span>
+              <span id="lite-period" class="text-gray-400 mb-2 text-sm">/ año</span>
+            </div>
+            <p id="lite-desc" class="text-gray-500 text-sm mt-1">
+              <span class="text-[#14b81a] font-medium">Equivale a $4.17/mes</span><br /><span class="text-gray-500 text-sm">o 4 cuotas de $12.49 sin interés</span>
+            </p>
+          </div>
+
+          <p
+            class="text-[#082109]/40 text-xs uppercase tracking-wider font-semibold mb-3 mt-6"
+          >
+            Todo lo gratuito, más:
+          </p>
+
+          <ul class="space-y-3 mb-8 flex-1">
+            {
+              [
+                "500 mensajes al Asistente IA al mes",
+                "90 días de historial de reportes",
+              ].map((feat) => (
+                <li class="flex items-center gap-3">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="text-[#14b81a] shrink-0"
+                  >
+                    <>
+                      <path d="M21.801 10A10 10 0 1 1 17 3.335" />
+                      <path d="m9 11 3 3L22 4" />
+                    </>
+                  </svg>
+                  <span class="text-[#082109]/80 text-sm">{feat}</span>
+                </li>
+              ))
+            }
+          </ul>
+
+          <a
+            href={isAppAvailable
+              ? "https://play.google.com/store/apps/details?id=com.gadmin.conty"
+              : "https://wa.me/message/2PRRXWEZKSPGC1"}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="block w-full text-center bg-[#14b81a] text-white font-bold py-4 rounded-2xl hover:brightness-105 transition-all shadow-md shadow-[#14b81a]/20"
+          >
+            Empezar con Lite
+          </a>
+
+          <div
+            id="lite-installments"
+            class="text-gray-500 text-xs flex items-center justify-center gap-1.5 mt-3 transition-opacity duration-200"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-info shrink-0"
+              ><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"
+              ></path><path d="M12 8h.01"></path></svg
+            >
+            <p>Paga a <strong>4 cuotas</strong> sin intereses de $12.49</p>
+          </div>
         </div>
       </div>
 
@@ -154,41 +302,24 @@ const { isAppAvailable = false } = Astro.props;
 
             <div class="mb-2">
               <div class="flex items-end gap-2">
-                <span id="plan-price" class="text-5xl font-bold text-white"
-                  >$19.99</span
+                <span id="premium-price" class="text-5xl font-bold text-white"
+                  >$199.99</span
                 >
-                <span id="plan-period" class="text-white/75 mb-2 text-sm"
-                  >/ mes</span
+                <span id="premium-period" class="text-white/75 mb-2 text-sm"
+                  >/ año</span
                 >
               </div>
-              <p id="plan-desc" class="text-white/75 text-sm mt-1">
-                O paga anualmente y ahorra 2 meses
+              <p id="premium-desc" class="text-white/75 text-sm mt-1">
+                <span class="text-[#14b81a] font-medium"
+                  >Equivale a $16.67/mes</span
+                ><br /><span class="text-white/75 text-sm"
+                  >o 4 cuotas de $49.99 sin interés</span
+                >
               </p>
             </div>
 
-            <div
-              class="inline-flex items-center gap-3 mt-4 mb-6 bg-white/10 rounded-full p-1.5 self-start"
-            >
-              <button
-                id="btn-mensual"
-                class="pricing-tab px-4 py-1.5 rounded-full text-xs font-semibold transition-all bg-white text-[#082109] shadow-sm"
-              >
-                Mensual
-              </button>
-              <button
-                id="btn-anual"
-                class="pricing-tab px-4 py-1.5 rounded-full text-xs font-semibold transition-all flex items-center gap-1.5 text-white/60"
-              >
-                Anual
-                <span
-                  class="bg-[#1ec924] text-[#082109] text-[10px] px-1.5 py-0.5 rounded-full font-bold"
-                  >-17%</span
-                >
-              </button>
-            </div>
-
             <p
-              class="text-white/50 text-xs uppercase tracking-wider font-semibold mb-3"
+              class="text-white/50 text-xs uppercase tracking-wider font-semibold mb-3 mt-6"
             >
               Todo lo gratuito, más:
             </p>
@@ -197,11 +328,11 @@ const { isAppAvailable = false } = Astro.props;
               {
                 [
                   {
-                    text: "Hasta 3,000 consultas Asistente IA",
+                    text: "Hasta 3,000 mensajes al Asistente IA",
                     sub: "+$3 por cada 1,000 adicionales",
                   },
                   { text: "Hasta 10 miembros por negocio" },
-                  // { text: "Hasta 10 miembros por negocio" },
+                  { text: "Historial de reportes ilimitado" },
                   { text: "Predicciones inteligentes" },
                   { text: "Cargar gastos desde fotos (recibos/tickets)" },
                 ].map((item) => (
@@ -239,9 +370,6 @@ const { isAppAvailable = false } = Astro.props;
               }
             </ul>
 
-            <p class="text-white/75 text-xs text-center mb-4">
-              Cancela cuando quieras. Sin compromisos.
-            </p>
             <a
               href={isAppAvailable
                 ? "https://play.google.com/store/apps/details?id=com.gadmin.conty"
@@ -250,20 +378,40 @@ const { isAppAvailable = false } = Astro.props;
               rel="noopener noreferrer"
               class="block w-full text-center bg-[#1ec924] text-[#082109] font-bold py-4 rounded-2xl hover:brightness-110 transition-all shadow-lg shadow-[#1ec924]/20"
             >
-              Empezar
+              Empezar con Premium
             </a>
+            <div
+              id="premium-installments"
+              class="text-white/75 text-xs flex items-center justify-center gap-1.5 mt-3 transition-opacity duration-200"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-info shrink-0"
+                ><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"
+                ></path><path d="M12 8h.01"></path></svg
+              >
+              <p>Paga a <strong>4 cuotas</strong> sin intereses de $49.99</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
     <div
-      class="mt-8 bg-[#14b81a]/5 border border-[#14b81a]/10 rounded-2xl p-4 text-center max-w-3xl mx-auto"
+      class="mt-8 bg-[#14b81a]/5 border border-[#14b81a]/10 rounded-2xl p-4 text-center max-w-4xl mx-auto"
     >
       <p class="text-[#082109]/70 text-sm">
         <span class="font-semibold text-[#082109]">Puedes empezar gratis,</span> cuando
         experimentes que Conty te ahorra más de 21 horas por semana, puedes pasarte
-        al Premium para tener aún más.
+        al Lite o al Premium para tener aún más.
       </p>
     </div>
   </div>
@@ -272,33 +420,74 @@ const { isAppAvailable = false } = Astro.props;
 <script>
   const btnMensual = document.getElementById("btn-mensual");
   const btnAnual = document.getElementById("btn-anual");
-  const planPrice = document.getElementById("plan-price");
-  const planPeriod = document.getElementById("plan-period");
-  const planDesc = document.getElementById("plan-desc");
+
+  // Lite elements
+  const litePrice = document.getElementById("lite-price");
+  const litePeriod = document.getElementById("lite-period");
+  const liteDesc = document.getElementById("lite-desc");
+  const liteInstallments = document.getElementById("lite-installments");
+
+  // Premium elements
+  const premiumPrice = document.getElementById("premium-price");
+  const premiumPeriod = document.getElementById("premium-period");
+  const premiumDesc = document.getElementById("premium-desc");
+  const premiumInstallments = document.getElementById("premium-installments");
 
   function setPricing(mode: "yearly" | "monthly") {
-    if (!btnAnual || !btnMensual || !planPrice || !planPeriod || !planDesc)
-      return;
+    if (!btnAnual || !btnMensual) return;
 
     if (mode === "yearly") {
       btnAnual.classList.add("bg-white", "text-[#082109]", "shadow-sm");
-      btnAnual.classList.remove("text-white/60");
+      btnAnual.classList.remove("text-[#082109]/60");
       btnMensual.classList.remove("bg-white", "text-[#082109]", "shadow-sm");
-      btnMensual.classList.add("text-white/60");
+      btnMensual.classList.add("text-[#082109]/60");
 
-      planPrice.textContent = "$199.99";
-      planPeriod.textContent = "/ año";
-      planDesc.innerHTML =
-        '<span class="text-[#14b81a] font-medium">Equivale a $16.67/mes (2 meses gratis)</span>';
+      // Update Lite Card to Anual details
+      if (litePrice) litePrice.textContent = "$49.99";
+      if (litePeriod) litePeriod.textContent = "/ año";
+      if (liteDesc) {
+        liteDesc.innerHTML =
+          '<span class="text-[#14b81a] font-medium">Equivale a $4.17/mes</span><br/><span class="text-gray-500 text-sm">o 4 cuotas de $12.49 sin interés</span>';
+      }
+      if (liteInstallments) {
+        liteInstallments.style.opacity = "1";
+      }
+
+      // Update Premium Card to Anual details
+      if (premiumPrice) premiumPrice.textContent = "$199.99";
+      if (premiumPeriod) premiumPeriod.textContent = "/ año";
+      if (premiumDesc) {
+        premiumDesc.innerHTML =
+          '<span class="text-[#14b81a] font-medium">Equivale a $16.67/mes</span><br/><span class="text-white/75 text-sm">o 4 cuotas de $49.99 sin interés</span>';
+      }
+      if (premiumInstallments) {
+        premiumInstallments.style.opacity = "1";
+      }
     } else {
       btnMensual.classList.add("bg-white", "text-[#082109]", "shadow-sm");
-      btnMensual.classList.remove("text-white/60");
+      btnMensual.classList.remove("text-[#082109]/60");
       btnAnual.classList.remove("bg-white", "text-[#082109]", "shadow-sm");
-      btnAnual.classList.add("text-white/60");
+      btnAnual.classList.add("text-[#082109]/60");
 
-      planPrice.textContent = "$19.99";
-      planPeriod.textContent = "/ mes";
-      planDesc.textContent = "O paga anualmente y ahorra 2 meses";
+      // Update Lite Card to Mensual details
+      if (litePrice) litePrice.textContent = "$4.99";
+      if (litePeriod) litePeriod.textContent = "/ mes";
+      if (liteDesc) {
+        liteDesc.textContent = "O paga anualmente y ahorra 2 meses";
+      }
+      if (liteInstallments) {
+        liteInstallments.style.opacity = "0";
+      }
+
+      // Update Premium Card to Mensual details
+      if (premiumPrice) premiumPrice.textContent = "$19.99";
+      if (premiumPeriod) premiumPeriod.textContent = "/ mes";
+      if (premiumDesc) {
+        premiumDesc.textContent = "O paga anualmente y ahorra 2 meses";
+      }
+      if (premiumInstallments) {
+        premiumInstallments.style.opacity = "0";
+      }
     }
   }
 
