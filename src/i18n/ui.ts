@@ -297,6 +297,48 @@ export const ui = {
     "delete.help.title": "Need help with this process?",
     "delete.help.desc":
       "If you have trouble accessing the application or prefer us to handle your request manually, contact us.",
+
+    // Pages - ROI Calculator
+    "roi.title": "ROI Calculator - Conty Investors",
+    "roi.description":
+      "Calculate your estimated return on investment in Conty. See how much you could earn monthly based on Conty's MRR and your share of the total invested capital.",
+    "roi.keywords":
+      "ROI, return on investment, Conty investors, MRR, monthly earnings, investment calculator",
+    "roi.badge": "Investor Tool",
+    "roi.h1a": "Calculate your",
+    "roi.h1b": "return with Conty",
+    "roi.intro":
+      "Adjust the sliders below to see how your investment in Conty translates into monthly earnings based on Conty's real MRR growth.",
+    "roi.mrr.label": "Conty's Monthly Recurring Revenue (MRR)",
+    "roi.mrr.hint": "Drag to simulate Conty's MRR growth",
+    "roi.capital.label": "Your invested capital in Conty",
+    "roi.capital.placeholder": "e.g. 500",
+    "roi.total.label": "Total capital invested in Conty",
+    "roi.total.placeholder": "e.g. 10000",
+    "roi.roi.label": "Your ROI multiplier",
+    "roi.roi.hint": "Default 2x. Modify if a special deal was agreed.",
+    "roi.results.title": "Your Estimated Returns",
+    "roi.results.share": "Your revenue share",
+    "roi.results.net": "Net MRR after 30% operating costs",
+    "roi.results.monthly": "Your estimated monthly earnings",
+    "roi.results.annual": "Estimated annual earnings",
+    "roi.results.breakeven": "Estimated break-even",
+    "roi.results.total": "Total return at ROI",
+    "roi.results.months": "months",
+    "roi.results.never": "N/A",
+    "roi.results.annual.exceeds": "Your annual earnings already exceed the total ROI target — you'll recover your investment in under a year.",
+    "roi.disclaimer.title": "Important disclaimer",
+    "roi.disclaimer.text":
+      "These projections are estimates based on the inputs provided. Actual returns depend on Conty's real MRR performance. This tool is for illustrative purposes only and does not constitute a financial guarantee.",
+    "roi.cta.title": "Interested in investing?",
+    "roi.cta.text": "Contact us to learn about current investment opportunities in Conty.",
+    "roi.cta.button": "Contact us",
+    "roi.inputs.section": "Investment Parameters",
+    "roi.how.title": "How is this calculated?",
+    "roi.how.1": "Your share % = Your capital ÷ Total invested capital × 100",
+    "roi.how.2": "Net MRR = Conty MRR × 70% (after 30% operating costs)",
+    "roi.how.3": "Monthly earnings = Net MRR × Your share %",
+    "roi.how.4": "Total return = Your capital × ROI multiplier",
   },
 
   es: {
@@ -590,6 +632,48 @@ export const ui = {
     "delete.help.title": "¿Necesitas ayuda con este proceso?",
     "delete.help.desc":
       "Si tienes problemas para acceder a la aplicación o prefieres que gestionemos tu solicitud manualmente, contáctanos.",
+
+    // Pages - ROI Calculator
+    "roi.title": "Calculadora de ROI - Inversores de Conty",
+    "roi.description":
+      "Calcula tu retorno de inversión estimado en Conty. Ve cuánto podrías ganar mensualmente según el MRR de Conty y tu participación en el capital total invertido.",
+    "roi.keywords":
+      "ROI, retorno de inversión, inversores Conty, MRR, ganancias mensuales, calculadora de inversión",
+    "roi.badge": "Herramienta para Inversores",
+    "roi.h1a": "Calcula tu",
+    "roi.h1b": "retorno con Conty",
+    "roi.intro":
+      "Ajusta los controles para ver cómo tu inversión en Conty se traduce en ganancias mensuales basadas en el crecimiento real del MRR de Conty.",
+    "roi.mrr.label": "Ingreso Mensual Recurrente (MRR) de Conty",
+    "roi.mrr.hint": "Arrastra para simular el crecimiento del MRR de Conty",
+    "roi.capital.label": "Tu capital invertido en Conty",
+    "roi.capital.placeholder": "ej. 5000",
+    "roi.total.label": "Capital total invertido en Conty",
+    "roi.total.placeholder": "ej. 50000",
+    "roi.roi.label": "Tu multiplicador de ROI",
+    "roi.roi.hint": "Por defecto 2x. Modifica si se acordó un trato especial.",
+    "roi.results.title": "Tus Retornos Estimados",
+    "roi.results.share": "Tu participación",
+    "roi.results.net": "MRR neto tras 30% de gastos operativos",
+    "roi.results.monthly": "Tus ganancias mensuales estimadas",
+    "roi.results.annual": "Ganancias anuales estimadas",
+    "roi.results.breakeven": "Break-even estimado",
+    "roi.results.total": "Retorno total al ROI",
+    "roi.results.months": "meses",
+    "roi.results.never": "N/A",
+    "roi.results.annual.exceeds": "Tus ganancias anuales ya superan el retorno total del ROI — recuperarás tu inversión en menos de un año.",
+    "roi.disclaimer.title": "Aviso importante",
+    "roi.disclaimer.text":
+      "Estas proyecciones son estimaciones basadas en los datos ingresados. Los retornos reales dependen del desempeño real del MRR de Conty. Esta herramienta es solo ilustrativa y no constituye una garantía financiera.",
+    "roi.cta.title": "¿Interesado en invertir?",
+    "roi.cta.text": "Contáctanos para conocer las oportunidades de inversión actuales en Conty.",
+    "roi.cta.button": "Contáctanos",
+    "roi.inputs.section": "Parámetros de Inversión",
+    "roi.how.title": "¿Cómo se calcula?",
+    "roi.how.1": "Tu participación % = Tu capital ÷ Capital total × 100",
+    "roi.how.2": "MRR neto = MRR de Conty × 70% (tras 30% de gastos operativos)",
+    "roi.how.3": "Ganancias mensuales = MRR neto × Tu participación %",
+    "roi.how.4": "Retorno total = Tu capital × Multiplicador de ROI",
   },
 } as const;
 

@@ -13,6 +13,7 @@ interface Props {
   canonicalURL?: string | URL;
   type?: string;
   lang?: Lang;
+  robots?: string;
 }
 
 const {
@@ -23,6 +24,7 @@ const {
   canonicalURL,
   type,
   lang = "en",
+  robots,
 } = Astro.props;
 ---
 
@@ -37,6 +39,7 @@ const {
       canonicalURL={canonicalURL}
       type={type}
       lang={lang}
+      robots={robots}
     />
   </head>
 

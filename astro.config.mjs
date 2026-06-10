@@ -8,6 +8,7 @@ export default defineConfig({
   site: 'https://gadminconty.com',
   integrations: [
     sitemap({
+      filter: (page) => !page.includes('/roi-calculator'),
       i18n: {
         defaultLocale: 'en',
         locales: {

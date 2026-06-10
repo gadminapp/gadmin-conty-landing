@@ -11,6 +11,7 @@ interface Props {
   canonicalURL?: URL | string;
   type?: string;
   lang?: Lang;
+  robots?: string;
 }
 
 const {
@@ -21,6 +22,7 @@ const {
   canonicalURL = Astro.url,
   type = "website",
   lang = "en",
+  robots = "index, follow",
 } = Astro.props;
 
 const siteTitle = title.includes("Conty") ? title : `${title} | Conty`;
@@ -145,7 +147,7 @@ const schemaObject = {
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
 
 <!-- Robots -->
-<meta name="robots" content="index, follow" />
+<meta name="robots" content={robots} />
 
 <!-- Preconnect to Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
