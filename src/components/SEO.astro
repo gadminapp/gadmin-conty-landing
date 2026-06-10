@@ -1,4 +1,8 @@
 ---
+import { getAlternateUrls } from "../i18n/utils";
+import type { Lang } from "../i18n/ui";
+import { PLAY_STORE_CONFIG, getPlayStoreUrl } from "../config/playStore";
+
 interface Props {
   title?: string;
   description?: string;
@@ -6,27 +10,35 @@ interface Props {
   image?: string;
   canonicalURL?: URL | string;
   type?: string;
+  lang?: Lang;
 }
 
 const {
-  title = "Conty - Tu negocio en tu bolsillo",
-  description = "La forma más sencilla y rápida de llevar las cuentas de tus negocios. Ventas, gastos y reportes en un solo lugar.",
-  keywords = "contabilidad, negocios, ventas, gastos, reportes financieros, pymes, emprendedores, venezuela",
+  title = "Conty - Your business in your pocket",
+  description = "The simplest and fastest way to manage your business accounts. Sales, expenses and reports in one place.",
+  keywords = "accounting, business, sales, expenses, financial reports, sme, entrepreneurs, venezuela",
   image = "/meta-banner.png",
   canonicalURL = Astro.url,
   type = "website",
+  lang = "en",
 } = Astro.props;
 
 const siteTitle = title.includes("Conty") ? title : `${title} | Conty`;
 
-// Construir URLs absolutas para los Rich Schemas
 const siteUrl = Astro.site
   ? Astro.site.toString().replace(/\/$/, "")
   : "https://gadminconty.com";
 const logoUrl = `${siteUrl}/favicon.png`;
 const bannerUrl = `${siteUrl}/meta-banner.png`;
 
-// Generar objeto JSON-LD para SoftwareApplication y MobileApplication
+// hreflang alternate URLs
+const alternates = getAlternateUrls(Astro.url.pathname, siteUrl);
+
+// Locale for OG tags
+const ogLocale = lang === "es" ? "es_ES" : "en_US";
+const ogLocaleAlt = lang === "es" ? "en_US" : "es_ES";
+
+// Rich Schema (JSON-LD)
 const schemaObject = {
   "@context": "https://schema.org",
   "@graph": [
@@ -37,6 +49,7 @@ const schemaObject = {
       url: siteUrl,
       image: logoUrl,
       screenshot: bannerUrl,
+      inLanguage: lang === "es" ? "es" : "en",
       publisher: {
         "@type": "Organization",
         name: "Gadmin Conty",
@@ -61,9 +74,9 @@ const schemaObject = {
       name: "Conty",
       operatingSystem: "Android",
       applicationCategory: "BusinessApplication, FinanceApplication",
-      installUrl:
-        "https://play.google.com/store/apps/details?id=com.gadmin.conty",
+      installUrl: getPlayStoreUrl(),
       image: logoUrl,
+      inLanguage: lang === "es" ? "es" : "en",
       publisher: {
         "@type": "Organization",
         name: "Gadmin Conty",
@@ -73,6 +86,18 @@ const schemaObject = {
         "@type": "Offer",
         price: "0",
         priceCurrency: "USD",
+      },
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${siteUrl}/#website`,
+      url: siteUrl,
+      name: "Conty",
+      inLanguage: lang === "es" ? "es" : "en",
+      publisher: {
+        "@type": "Organization",
+        name: "Gadmin Conty",
+        url: siteUrl,
       },
     },
   ],
@@ -87,10 +112,15 @@ const schemaObject = {
 <meta name="generator" content={Astro.generator} />
 
 <!-- Smart App Banner for Android Deep Linking -->
-<meta name="google-play-app" content="app-id=com.gadmin.conty" />
+<meta name="google-play-app" content={`app-id=${PLAY_STORE_CONFIG.appId}`} />
 
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
+
+<!-- hreflang alternate links (SEO for multilingual) -->
+<link rel="alternate" hreflang="en" href={alternates.en} />
+<link rel="alternate" hreflang="es" href={alternates.es} />
+<link rel="alternate" hreflang="x-default" href={alternates.en} />
 
 <!-- Primary Meta Tags -->
 <title>{siteTitle}</title>
@@ -104,6 +134,8 @@ const schemaObject = {
 <meta property="og:title" content={siteTitle} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={new URL(image, Astro.url)} />
+<meta property="og:locale" content={ogLocale} />
+<meta property="og:locale:alternate" content={ogLocaleAlt} />
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />

@@ -2,12 +2,17 @@
 import "../styles/global.css";
 import Layout from "../layouts/Layout.astro";
 import CTA from "../components/CTA.astro";
+import { useTranslations } from "../i18n/utils";
+
+const lang = "en" as const;
+const t = useTranslations(lang);
 ---
 
 <Layout
-  title="Política de Privacidad - Conty"
-  description="Consulta cómo protegemos tus datos y los de tu negocio en Conty. Transparencia y seguridad en el manejo de tu información financiera."
-  keywords="privacidad, datos, seguridad, política de cookies, protección de datos"
+  title={t("privacy.title")}
+  description={t("privacy.description")}
+  keywords={t("privacy.keywords")}
+  lang={lang}
 >
   <section class="relative min-h-screen py-20 pt-24 overflow-hidden">
     <div

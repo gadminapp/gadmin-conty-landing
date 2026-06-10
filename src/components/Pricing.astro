@@ -1,5 +1,26 @@
 ---
-const { isAppAvailable = false } = Astro.props;
+import { useTranslations } from "../i18n/utils";
+import type { Lang } from "../i18n/ui";
+
+interface Props {
+  lang?: Lang;
+}
+const { lang = "en" } = Astro.props;
+const t = useTranslations(lang);
+import { getPlayStoreUrl } from "../config/playStore";
+
+const storeUrl = getPlayStoreUrl();
+
+const freeFeat = [
+  t("pricing.free.feat1"),
+  t("pricing.free.feat2"),
+  t("pricing.free.feat3"),
+  t("pricing.free.feat4"),
+  t("pricing.free.feat5"),
+  t("pricing.free.feat6"),
+  t("pricing.free.feat7"),
+  t("pricing.free.feat8"),
+];
 ---
 
 <section id="precios" class="py-24 bg-white">
@@ -7,42 +28,40 @@ const { isAppAvailable = false } = Astro.props;
     <div class="text-center mb-12 animate-fade-in-up">
       <span
         class="inline-block text-[#14b81a] text-sm font-semibold uppercase tracking-widest mb-3"
-        >Precios</span
+        >{t("pricing.badge")}</span
       >
       <h2 class="text-3xl sm:text-4xl font-bold text-[#082109] mb-4">
-        Gratis para siempre, <span class="text-[#14b81a]"
-          >premium si quieres más</span
-        >
+        {t("pricing.title1")}
+        <span class="text-[#14b81a]">{t("pricing.title2")}</span>
       </h2>
-      <p class="text-gray-500 text-base max-w-lg mx-auto">
-        Empieza sin pagar nada. Luego escala al plan que mejor se adapte a tu
-        negocio.
-      </p>
 
-      <!-- Selector Global de Facturación -->
+      <!-- Billing toggle -->
       <div class="flex justify-center mt-8 animate-fade-in-up">
-        <div class="inline-flex items-center gap-3 bg-[#082109]/5 rounded-full p-1.5 shadow-sm border border-[#082109]/10">
+        <div
+          class="inline-flex items-center gap-3 bg-[#082109]/5 rounded-full p-1.5 shadow-sm border border-[#082109]/10"
+        >
           <button
             id="btn-mensual"
             class="px-5 py-2 rounded-full text-sm font-semibold transition-all text-[#082109]/60 hover:text-[#082109]"
           >
-            Mensual
+            {t("pricing.billing.monthly")}
           </button>
           <button
             id="btn-anual"
             class="px-5 py-2 rounded-full text-sm font-semibold transition-all flex items-center gap-1.5 bg-white text-[#082109] shadow-sm"
           >
-            Anual
-            <span class="bg-[#1ec924] text-[#082109] text-[10px] px-1.5 py-0.5 rounded-full font-bold">
-              -17%
-            </span>
+            {t("pricing.billing.yearly")}
+            <span
+              class="bg-[#1ec924] text-[#082109] text-[10px] px-1.5 py-0.5 rounded-full font-bold"
+              >-17%</span
+            >
           </button>
         </div>
       </div>
     </div>
 
     <div class="grid md:grid-cols-3 gap-6">
-      <!-- Plan Gratuito -->
+      <!-- Free Plan -->
       <div class="animate-fade-in-up delay-100">
         <div
           class="relative bg-white border-2 border-gray-200 rounded-3xl p-8 h-full flex flex-col"
@@ -61,40 +80,34 @@ const { isAppAvailable = false } = Astro.props;
                 stroke-width="2"
                 stroke-linecap="round"
                 stroke-linejoin="round"
-                class="lucide lucide-gift-icon lucide-gift text-[#08210990]"
+                class="text-[#08210990]"
                 ><path d="M12 7v14"></path><path
-                  d="M20 11v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8"
-                ></path><path
+                  d="M20 11v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8"></path><path
                   d="M7.5 7a1 1 0 0 1 0-5A4.8 8 0 0 1 12 7a4.8 8 0 0 1 4.5-5 1 1 0 0 1 0 5"
                 ></path><rect x="3" y="7" width="18" height="4" rx="1"
                 ></rect></svg
               >
             </div>
-            <span class="text-[#082109] font-bold text-lg">Plan Gratuito</span>
+            <span class="text-[#082109] font-bold text-lg"
+              >{t("pricing.free.name")}</span
+            >
           </div>
 
           <div class="mb-2">
             <div class="flex items-end gap-2">
-              <span class="text-5xl font-bold text-[#082109]">$0</span>
-              <span class="text-gray-400 mb-2 text-sm">/ siempre</span>
+              <span class="text-5xl font-bold text-[#082109]"
+                >{t("pricing.free.price")}</span
+              >
+              <span class="text-gray-400 mb-2 text-sm"
+                >{t("pricing.free.period")}</span
+              >
             </div>
-            <p class="text-gray-500 text-sm mt-1">
-              Todo lo esencial para empezar a usar Conty
-            </p>
+            <p class="text-gray-500 text-sm mt-1">{t("pricing.free.desc")}</p>
           </div>
 
           <ul class="space-y-3 my-8 flex-1">
             {
-              [
-                "50 mensajes al Asistente IA por semana",
-                "Registro ilimitado de ventas",
-                "Registro ilimitado de gastos",
-                "Hasta 1 miembro por negocio",
-                "Define tu meta semanal",
-                "Gráficos y reportes",
-                "Exportación a Excel",
-                "30 días de historial de reportes",
-              ].map((feat) => (
+              freeFeat.map((feat) => (
                 <li class="flex items-center gap-3">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -120,38 +133,23 @@ const { isAppAvailable = false } = Astro.props;
           </ul>
 
           <a
-            href={isAppAvailable
-              ? "https://play.google.com/store/apps/details?id=com.gadmin.conty"
-              : "https://wa.me/message/2PRRXWEZKSPGC1"}
+            href={storeUrl}
+            data-play-store-link
             target="_blank"
             rel="noopener noreferrer"
             class="block w-full text-center bg-[#082109] text-white font-bold py-4 rounded-2xl hover:bg-[#082109]/90 transition-all"
           >
-            Empezar gratis
+            {t("pricing.free.cta")}
           </a>
-
           <div
             class="text-gray-500 text-xs flex items-center justify-center gap-1.5 mt-3 opacity-0"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="14"
-              height="14"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="lucide lucide-info shrink-0"
-              ><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"
-              ></path><path d="M12 8h.01"></path></svg
-            >
+            <span>&nbsp;</span>
           </div>
         </div>
       </div>
 
-      <!-- Plan Lite -->
+      <!-- Lite Plan -->
       <div class="animate-fade-in-up delay-150">
         <div
           class="relative bg-white border-2 border-gray-200 rounded-3xl p-8 h-full flex flex-col shadow-lg shadow-[#14b81a]/10"
@@ -174,31 +172,39 @@ const { isAppAvailable = false } = Astro.props;
                 ><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg
               >
             </div>
-            <span class="text-[#082109] font-bold text-lg">Plan Lite</span>
+            <span class="text-[#082109] font-bold text-lg"
+              >{t("pricing.lite.name")}</span
+            >
           </div>
 
           <div class="mb-2">
             <div class="flex items-end gap-2">
-              <span id="lite-price" class="text-5xl font-bold text-[#082109]">$49.99</span>
-              <span id="lite-period" class="text-gray-400 mb-2 text-sm">/ año</span>
+              <span id="lite-price" class="text-5xl font-bold text-[#082109]"
+                >{t("pricing.lite.yearly.price")}</span
+              >
+              <span id="lite-period" class="text-gray-400 mb-2 text-sm"
+                >{t("pricing.lite.yearly.period")}</span
+              >
             </div>
             <p id="lite-desc" class="text-gray-500 text-sm mt-1">
-              <span class="text-[#14b81a] font-medium">Equivale a $4.17/mes</span><br /><span class="text-gray-500 text-sm">o 4 cuotas de $12.49 sin interés</span>
+              <span class="text-[#14b81a] font-medium"
+                >{t("pricing.lite.yearly.equiv")}</span
+              ><br />
+              <span class="text-gray-500 text-sm"
+                >{t("pricing.lite.yearly.installments")}</span
+              >
             </p>
           </div>
 
           <p
             class="text-[#082109]/40 text-xs uppercase tracking-wider font-semibold mb-3 mt-6"
           >
-            Todo lo gratuito, más:
+            {t("pricing.lite.plus")}
           </p>
 
           <ul class="space-y-3 mb-8 flex-1">
             {
-              [
-                "500 mensajes al Asistente IA al mes",
-                "90 días de historial de reportes",
-              ].map((feat) => (
+              [t("pricing.lite.feat1"), t("pricing.lite.feat2")].map((feat) => (
                 <li class="flex items-center gap-3">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -224,14 +230,13 @@ const { isAppAvailable = false } = Astro.props;
           </ul>
 
           <a
-            href={isAppAvailable
-              ? "https://play.google.com/store/apps/details?id=com.gadmin.conty"
-              : "https://wa.me/message/2PRRXWEZKSPGC1"}
+            href={storeUrl}
+            data-play-store-link
             target="_blank"
             rel="noopener noreferrer"
             class="block w-full text-center bg-[#14b81a] text-white font-bold py-4 rounded-2xl hover:brightness-105 transition-all shadow-md shadow-[#14b81a]/20"
           >
-            Empezar con Lite
+            {t("pricing.lite.cta")}
           </a>
 
           <div
@@ -252,12 +257,14 @@ const { isAppAvailable = false } = Astro.props;
               ><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"
               ></path><path d="M12 8h.01"></path></svg
             >
-            <p>Paga a <strong>4 cuotas</strong> sin intereses de $12.49</p>
+            <p
+              set:html={`${t("pricing.lite.installments.label")} <strong>4</strong> ${t("pricing.lite.installments.of")}`}
+            />
           </div>
         </div>
       </div>
 
-      <!-- Plan Premium -->
+      <!-- Premium Plan -->
       <div class="animate-fade-in-up delay-200">
         <div
           class="relative bg-[#082109] rounded-3xl p-8 shadow-2xl overflow-hidden h-full flex flex-col"
@@ -265,9 +272,8 @@ const { isAppAvailable = false } = Astro.props;
           <div
             class="absolute top-5 right-5 bg-[#1ec924] text-[#082109] text-xs font-bold px-3 py-1 rounded-full z-20"
           >
-            Recomendado
+            {t("pricing.premium.badge")}
           </div>
-
           <div
             class="absolute inset-0 pointer-events-none"
             style="background: radial-gradient(80% 60% at 50% 0%, rgba(0, 204, 7, 0.15) 0%, transparent 70%);"
@@ -289,31 +295,32 @@ const { isAppAvailable = false } = Astro.props;
                   stroke-width="2"
                   stroke-linecap="round"
                   stroke-linejoin="round"
-                  class="lucide lucide-gem-icon lucide-gem text-[#082109]"
+                  class="text-[#082109]"
                   ><path d="M10.5 3 8 9l4 13 4-13-2.5-6"></path><path
                     d="M17 3a2 2 0 0 1 1.6.8l3 4a2 2 0 0 1 .013 2.382l-7.99 10.986a2 2 0 0 1-3.247 0l-7.99-10.986A2 2 0 0 1 2.4 7.8l2.998-3.997A2 2 0 0 1 7 3z"
                   ></path><path d="M2 9h20"></path></svg
                 >
               </div>
-              <span id="plan-title" class="text-white font-bold text-lg"
-                >Plan Premium</span
+              <span class="text-white font-bold text-lg"
+                >{t("pricing.premium.name")}</span
               >
             </div>
 
             <div class="mb-2">
               <div class="flex items-end gap-2">
                 <span id="premium-price" class="text-5xl font-bold text-white"
-                  >$199.99</span
+                  >{t("pricing.premium.yearly.price")}</span
                 >
                 <span id="premium-period" class="text-white/75 mb-2 text-sm"
-                  >/ año</span
+                  >{t("pricing.premium.yearly.period")}</span
                 >
               </div>
               <p id="premium-desc" class="text-white/75 text-sm mt-1">
                 <span class="text-[#14b81a] font-medium"
-                  >Equivale a $16.67/mes</span
-                ><br /><span class="text-white/75 text-sm"
-                  >o 4 cuotas de $49.99 sin interés</span
+                  >{t("pricing.premium.yearly.equiv")}</span
+                ><br />
+                <span class="text-white/75 text-sm"
+                  >{t("pricing.premium.yearly.installments")}</span
                 >
               </p>
             </div>
@@ -321,21 +328,39 @@ const { isAppAvailable = false } = Astro.props;
             <p
               class="text-white/50 text-xs uppercase tracking-wider font-semibold mb-3 mt-6"
             >
-              Todo lo gratuito, más:
+              {t("pricing.premium.plus")}
             </p>
 
             <ul class="space-y-3 mb-8 flex-1">
+              <li class="flex items-start gap-3">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="text-[#1ec924] shrink-0 mt-0.5"
+                  ><path d="M21.801 10A10 10 0 1 1 17 3.335"></path><path
+                    d="m9 11 3 3L22 4"></path></svg
+                >
+                <span class="text-white/80 text-sm">
+                  {t("pricing.premium.feat1")}<br />
+                  <small class="text-white/60 text-[11px] leading-tight"
+                    >({t("pricing.premium.feat1.sub")})</small
+                  >
+                </span>
+              </li>
               {
                 [
-                  {
-                    text: "Hasta 3,000 mensajes al Asistente IA",
-                    sub: "+$3 por cada 1,000 adicionales",
-                  },
-                  { text: "Hasta 10 miembros por negocio" },
-                  { text: "Historial de reportes ilimitado" },
-                  { text: "Predicciones inteligentes" },
-                  { text: "Cargar gastos desde fotos (recibos/tickets)" },
-                ].map((item) => (
+                  t("pricing.premium.feat2"),
+                  t("pricing.premium.feat3"),
+                  t("pricing.premium.feat4"),
+                  t("pricing.premium.feat5"),
+                ].map((feat) => (
                   <li class="flex items-start gap-3">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -354,32 +379,22 @@ const { isAppAvailable = false } = Astro.props;
                         <path d="m9 11 3 3L22 4" />
                       </>
                     </svg>
-                    <span class="text-white/80 text-sm">
-                      {item.text}
-                      {item.sub && (
-                        <>
-                          <br />
-                          <small class="text-white/60 text-[11px] leading-tight">
-                            ({item.sub})
-                          </small>
-                        </>
-                      )}
-                    </span>
+                    <span class="text-white/80 text-sm">{feat}</span>
                   </li>
                 ))
               }
             </ul>
 
             <a
-              href={isAppAvailable
-                ? "https://play.google.com/store/apps/details?id=com.gadmin.conty"
-                : "https://wa.me/message/2PRRXWEZKSPGC1"}
+              href={storeUrl}
+              data-play-store-link
               target="_blank"
               rel="noopener noreferrer"
               class="block w-full text-center bg-[#1ec924] text-[#082109] font-bold py-4 rounded-2xl hover:brightness-110 transition-all shadow-lg shadow-[#1ec924]/20"
             >
-              Empezar con Premium
+              {t("pricing.premium.cta")}
             </a>
+
             <div
               id="premium-installments"
               class="text-white/75 text-xs flex items-center justify-center gap-1.5 mt-3 transition-opacity duration-200"
@@ -398,7 +413,9 @@ const { isAppAvailable = false } = Astro.props;
                 ><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"
                 ></path><path d="M12 8h.01"></path></svg
               >
-              <p>Paga a <strong>4 cuotas</strong> sin intereses de $49.99</p>
+              <p
+                set:html={`${t("pricing.premium.installments.label")} <strong>4</strong> ${t("pricing.premium.installments.of")}`}
+              />
             </div>
           </div>
         </div>
@@ -408,87 +425,114 @@ const { isAppAvailable = false } = Astro.props;
     <div
       class="mt-8 bg-[#14b81a]/5 border border-[#14b81a]/10 rounded-2xl p-4 text-center max-w-4xl mx-auto"
     >
-      <p class="text-[#082109]/70 text-sm">
-        <span class="font-semibold text-[#082109]">Puedes empezar gratis,</span> cuando
-        experimentes que Conty te ahorra más de 21 horas por semana, puedes pasarte
-        al Lite o al Premium para tener aún más.
-      </p>
+      <p class="text-[#082109]/70 text-sm">{t("pricing.footer")}</p>
     </div>
   </div>
 </section>
 
 <script>
+  // Grab translated strings injected via data attributes on the section
+  const section = document.getElementById("precios");
+  const lang = document.documentElement.lang || "en";
+  const isEs = lang === "es";
+
   const btnMensual = document.getElementById("btn-mensual");
   const btnAnual = document.getElementById("btn-anual");
-
-  // Lite elements
   const litePrice = document.getElementById("lite-price");
   const litePeriod = document.getElementById("lite-period");
   const liteDesc = document.getElementById("lite-desc");
   const liteInstallments = document.getElementById("lite-installments");
-
-  // Premium elements
   const premiumPrice = document.getElementById("premium-price");
   const premiumPeriod = document.getElementById("premium-period");
   const premiumDesc = document.getElementById("premium-desc");
   const premiumInstallments = document.getElementById("premium-installments");
 
+  const strings = isEs
+    ? {
+        liteYearlyPrice: "$49.99",
+        liteYearlyPeriod: "/ año",
+        liteYearlyEquiv: "Equivale a $4.17/mes",
+        liteYearlyInstall: "o 4 cuotas de $12.49 sin interés",
+        liteMonthlyPrice: "$4.99",
+        liteMonthlyPeriod: "/ mes",
+        liteMonthlySave: "O paga anualmente y ahorra 2 meses",
+        liteInstallText:
+          "Paga a <strong>4 cuotas</strong> sin intereses de $12.49",
+        premiumYearlyPrice: "$199.99",
+        premiumYearlyPeriod: "/ año",
+        premiumYearlyEquiv: "Equivale a $16.67/mes",
+        premiumYearlyInstall: "o 4 cuotas de $49.99 sin interés",
+        premiumMonthlyPrice: "$19.99",
+        premiumMonthlyPeriod: "/ mes",
+        premiumMonthlySave: "O paga anualmente y ahorra 2 meses",
+        premiumInstallText:
+          "Paga a <strong>4 cuotas</strong> sin intereses de $49.99",
+      }
+    : {
+        liteYearlyPrice: "$49.99",
+        liteYearlyPeriod: "/ year",
+        liteYearlyEquiv: "Equals $4.17/month",
+        liteYearlyInstall: "or 4 installments of $12.49 interest-free",
+        liteMonthlyPrice: "$4.99",
+        liteMonthlyPeriod: "/ month",
+        liteMonthlySave: "Or pay annually and save 2 months",
+        liteInstallText:
+          "Pay in <strong>4</strong> installments interest-free of $12.49",
+        premiumYearlyPrice: "$199.99",
+        premiumYearlyPeriod: "/ year",
+        premiumYearlyEquiv: "Equals $16.67/month",
+        premiumYearlyInstall: "or 4 installments of $49.99 interest-free",
+        premiumMonthlyPrice: "$19.99",
+        premiumMonthlyPeriod: "/ month",
+        premiumMonthlySave: "Or pay annually and save 2 months",
+        premiumInstallText:
+          "Pay in <strong>4</strong> installments interest-free of $49.99",
+      };
+
   function setPricing(mode: "yearly" | "monthly") {
     if (!btnAnual || !btnMensual) return;
 
-    if (mode === "yearly") {
-      btnAnual.classList.add("bg-white", "text-[#082109]", "shadow-sm");
-      btnAnual.classList.remove("text-[#082109]/60");
-      btnMensual.classList.remove("bg-white", "text-[#082109]", "shadow-sm");
-      btnMensual.classList.add("text-[#082109]/60");
+    const yearly = mode === "yearly";
 
-      // Update Lite Card to Anual details
-      if (litePrice) litePrice.textContent = "$49.99";
-      if (litePeriod) litePeriod.textContent = "/ año";
-      if (liteDesc) {
-        liteDesc.innerHTML =
-          '<span class="text-[#14b81a] font-medium">Equivale a $4.17/mes</span><br/><span class="text-gray-500 text-sm">o 4 cuotas de $12.49 sin interés</span>';
-      }
-      if (liteInstallments) {
-        liteInstallments.style.opacity = "1";
-      }
+    btnAnual.classList.toggle("bg-white", yearly);
+    btnAnual.classList.toggle("text-[#082109]", yearly);
+    btnAnual.classList.toggle("shadow-sm", yearly);
+    btnAnual.classList.toggle("text-[#082109]/60", !yearly);
+    btnMensual.classList.toggle("bg-white", !yearly);
+    btnMensual.classList.toggle("text-[#082109]", !yearly);
+    btnMensual.classList.toggle("shadow-sm", !yearly);
+    btnMensual.classList.toggle("text-[#082109]/60", yearly);
 
-      // Update Premium Card to Anual details
-      if (premiumPrice) premiumPrice.textContent = "$199.99";
-      if (premiumPeriod) premiumPeriod.textContent = "/ año";
-      if (premiumDesc) {
-        premiumDesc.innerHTML =
-          '<span class="text-[#14b81a] font-medium">Equivale a $16.67/mes</span><br/><span class="text-white/75 text-sm">o 4 cuotas de $49.99 sin interés</span>';
-      }
-      if (premiumInstallments) {
-        premiumInstallments.style.opacity = "1";
-      }
-    } else {
-      btnMensual.classList.add("bg-white", "text-[#082109]", "shadow-sm");
-      btnMensual.classList.remove("text-[#082109]/60");
-      btnAnual.classList.remove("bg-white", "text-[#082109]", "shadow-sm");
-      btnAnual.classList.add("text-[#082109]/60");
-
-      // Update Lite Card to Mensual details
-      if (litePrice) litePrice.textContent = "$4.99";
-      if (litePeriod) litePeriod.textContent = "/ mes";
-      if (liteDesc) {
-        liteDesc.textContent = "O paga anualmente y ahorra 2 meses";
-      }
-      if (liteInstallments) {
-        liteInstallments.style.opacity = "0";
-      }
-
-      // Update Premium Card to Mensual details
-      if (premiumPrice) premiumPrice.textContent = "$19.99";
-      if (premiumPeriod) premiumPeriod.textContent = "/ mes";
-      if (premiumDesc) {
-        premiumDesc.textContent = "O paga anualmente y ahorra 2 meses";
-      }
-      if (premiumInstallments) {
-        premiumInstallments.style.opacity = "0";
-      }
+    if (litePrice)
+      litePrice.textContent = yearly
+        ? strings.liteYearlyPrice
+        : strings.liteMonthlyPrice;
+    if (litePeriod)
+      litePeriod.textContent = yearly
+        ? strings.liteYearlyPeriod
+        : strings.liteMonthlyPeriod;
+    if (liteDesc) {
+      liteDesc.innerHTML = yearly
+        ? `<span class="text-[#14b81a] font-medium">${strings.liteYearlyEquiv}</span><br/><span class="text-gray-500 text-sm">${strings.liteYearlyInstall}</span>`
+        : strings.liteMonthlySave;
     }
+    if (liteInstallments) liteInstallments.style.opacity = yearly ? "1" : "0";
+
+    if (premiumPrice)
+      premiumPrice.textContent = yearly
+        ? strings.premiumYearlyPrice
+        : strings.premiumMonthlyPrice;
+    if (premiumPeriod)
+      premiumPeriod.textContent = yearly
+        ? strings.premiumYearlyPeriod
+        : strings.premiumMonthlyPeriod;
+    if (premiumDesc) {
+      premiumDesc.innerHTML = yearly
+        ? `<span class="text-[#14b81a] font-medium">${strings.premiumYearlyEquiv}</span><br/><span class="text-white/75 text-sm">${strings.premiumYearlyInstall}</span>`
+        : strings.premiumMonthlySave;
+    }
+    if (premiumInstallments)
+      premiumInstallments.style.opacity = yearly ? "1" : "0";
   }
 
   btnMensual?.addEventListener("click", () => setPricing("monthly"));

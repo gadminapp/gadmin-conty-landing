@@ -6,7 +6,17 @@ import sitemap from "@astrojs/sitemap";
 // https://astro.build/config
 export default defineConfig({
   site: 'https://gadminconty.com',
-  integrations: [sitemap()],
+  integrations: [
+    sitemap({
+      i18n: {
+        defaultLocale: 'en',
+        locales: {
+          en: 'en-US',
+          es: 'es-ES',
+        },
+      },
+    }),
+  ],
   vite: {
     plugins: [tailwindcss()],
   },

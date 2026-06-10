@@ -1,5 +1,13 @@
 ---
 import WhatsAppMockup from "./WhatsAppMockup.astro";
+import { useTranslations } from "../i18n/utils";
+import type { Lang } from "../i18n/ui";
+
+interface Props {
+  lang?: Lang;
+}
+const { lang = "en" } = Astro.props;
+const t = useTranslations(lang);
 ---
 
 <section id="asistente" class="py-24 bg-gray-50 overflow-hidden">
@@ -14,85 +22,45 @@ import WhatsAppMockup from "./WhatsAppMockup.astro";
               d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.438 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
             ></path>
           </svg>
-          Nuevo: Asistente WhatsApp
+          {t("assistant.badge")}
         </div>
         <h2
           class="text-3xl sm:text-4xl font-bold text-[#082109] mb-6 leading-tight"
         >
-          Tu contabilidad, tan fácil como <span class="text-[#14b81a]"
-            >chatear.</span
-          >
+          {t("assistant.title1")}
+          <span class="text-[#14b81a]">{t("assistant.title2")}</span>
         </h2>
         <p class="text-lg text-gray-600 mb-8 leading-relaxed">
-          ¿No tienes tiempo de abrir una app? Mándale un mensaje o un audio a tu
-          asistente Conty. Él se encarga de registrar todo y darte reportes al
-          instante.
+          {t("assistant.subtitle")}
         </p>
 
         <ul class="space-y-4 mb-10">
-          <li class="flex items-center gap-3">
-            <div
-              class="w-6 h-6 rounded-full bg-[#14b81a]/20 flex items-center justify-center text-[#14b81a]"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="14"
-                height="14"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="3"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                ><polyline points="20 6 9 17 4 12"></polyline></svg
-              >
-            </div>
-            <span class="text-gray-700 font-medium"
-              >Registra ventas y gastos por voz o texto</span
-            >
-          </li>
-          <li class="flex items-center gap-3">
-            <div
-              class="w-6 h-6 rounded-full bg-[#14b81a]/20 flex items-center justify-center text-[#14b81a]"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="14"
-                height="14"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="3"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                ><polyline points="20 6 9 17 4 12"></polyline></svg
-              >
-            </div>
-            <span class="text-gray-700 font-medium"
-              >Pregunta "¿Cuánto vendí hoy?" y obtén respuesta</span
-            >
-          </li>
-          <li class="flex items-center gap-3">
-            <div
-              class="w-6 h-6 rounded-full bg-[#14b81a]/20 flex items-center justify-center text-[#14b81a]"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="14"
-                height="14"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="3"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                ><polyline points="20 6 9 17 4 12"></polyline></svg
-              >
-            </div>
-            <span class="text-gray-700 font-medium"
-              >Sincronizado con tu App de Conty</span
-            >
-          </li>
+          {
+            [
+              t("assistant.feat1"),
+              t("assistant.feat2"),
+              t("assistant.feat3"),
+            ].map((feat) => (
+              <li class="flex items-center gap-3">
+                <div class="w-6 h-6 rounded-full bg-[#14b81a]/20 flex items-center justify-center text-[#14b81a]">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                </div>
+                <span class="text-gray-700 font-medium">{feat}</span>
+              </li>
+            ))
+          }
         </ul>
 
         <a
@@ -101,7 +69,7 @@ import WhatsAppMockup from "./WhatsAppMockup.astro";
           rel="noopener noreferrer"
           class="inline-flex items-center gap-3 bg-[#14b81a] text-[#082109] font-bold px-8 py-4 rounded-2xl hover:bg-[#14b81a]/90 transition-all shadow-lg hover:shadow-xl"
         >
-          Probar Asistente Gratis
+          {t("assistant.cta")}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="20"
@@ -120,32 +88,45 @@ import WhatsAppMockup from "./WhatsAppMockup.astro";
 
       <div class="flex-1 relative animate-fade-in-right delay-200 w-full">
         <WhatsAppMockup
+          lang={lang}
           version="assistant"
           messages={[
             {
               type: "user",
-              text: "¿Qué puedes hacer, Conty?",
+              text:
+                lang === "es"
+                  ? "¿Qué puedes hacer, Conty?"
+                  : "What can you do, Conty?",
               time: "2:15 PM",
             },
             {
               type: "bot",
-              text: '¡Hola! Soy tu asistente Conty y ayudo a organizar tus finanzas así:<br /><br />💰 Registra ventas: "Vendí $10 café"<br />💸 Registra gastos: "Gasté $5 azúcar"<br />🎙️ También acepto notas de voz breves.<br />📊 Pide reportes: "¿Cuánto llevo hoy?", "¿Resumen semanal?" o "¿Balance mensual?".<br /><br />Recuerda: una operación por mensaje y máximo 150 caracteres. ¡Todo es privado y seguro!',
+              text:
+                lang === "es"
+                  ? '¡Hola! Soy tu asistente Conty y ayudo a organizar tus finanzas así:<br /><br />💰 Registra ventas: "Vendí $10 café"<br />💸 Registra gastos: "Gasté $5 azúcar"<br />🎙️ También acepto notas de voz breves.<br />📊 Pide reportes: "¿Cuánto llevo hoy?", "¿Resumen semanal?" o "¿Balance mensual?".<br /><br />Recuerda: una operación por mensaje y máximo 150 caracteres. ¡Todo es privado y seguro!'
+                  : 'Hi! I\'m your Conty assistant and I help organize your finances:<br /><br />💰 Record sales: "Sold $10 coffee"<br />💸 Record expenses: "Spent $5 sugar"<br />🎙️ I also accept short voice notes.<br />📊 Request reports: "How much today?", "Weekly summary?" or "Monthly balance?".<br /><br />Remember: one operation per message, max 150 characters. Everything is private and secure!',
               time: "2:15 PM",
             },
             { type: "user", isAudio: true, time: "2:16 PM" },
             {
               type: "bot",
-              text: "¡Entendido! Registré un gasto de <b>$150</b> por renta del local.<br /><br />Mantén ese control férreo, tu balance final te lo agradecerá. ⚖️",
+              text:
+                lang === "es"
+                  ? "¡Entendido! Registré un gasto de <b>$150</b> por renta del local.<br /><br />Mantén ese control férreo, tu balance final te lo agradecerá. ⚖️"
+                  : "Got it! I recorded an expense of <b>$150</b> for store rent.<br /><br />Keep that firm control, your final balance will thank you. ⚖️",
               time: "2:17 PM",
             },
             {
               type: "user",
-              text: "Vendí un café $2.5",
+              text: lang === "es" ? "Vendí un café $2.5" : "Sold a coffee $2.5",
               time: "2:18 PM",
             },
             {
               type: "bot",
-              text: "¡Anotado! ✅<br />Venta de café por <b>$2.5</b>.<br /><br />¡Venta registrada! Tu capacidad de ejecución es admirable. ⚡",
+              text:
+                lang === "es"
+                  ? "¡Anotado! ✅<br />Venta de café por <b>$2.5</b>.<br /><br />¡Venta registrada! Tu capacidad de ejecución es admirable. ⚡"
+                  : "Noted! ✅<br />Coffee sale for <b>$2.5</b>.<br /><br />Sale recorded! Your execution capacity is admirable. ⚡",
               time: "2:15 PM",
             },
           ]}

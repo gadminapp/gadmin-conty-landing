@@ -1,5 +1,8 @@
 ---
 import contyLogo from "../assets/logo-no-bg.png";
+import { useTranslations } from "../i18n/utils";
+import type { Lang } from "../i18n/ui";
+
 interface Message {
   type: string;
   time: string;
@@ -10,27 +13,29 @@ interface Message {
 interface Props {
   version?: string;
   messages?: Message[];
+  lang?: Lang;
 }
 
-const { version = "default", messages = null } = Astro.props;
+const { version = "default", messages = null, lang = "en" } = Astro.props;
+const t = useTranslations(lang);
 
 const DEFAULT_MESSAGES = [
-  { type: "user", text: "Vendí 1 Hamburguesa $3.2", time: "10:45 AM" },
+  { type: "user", text: t("mockup.msg1"), time: "10:45 AM" },
   {
     type: "bot",
-    text: "¡Anotado! ✅ <br/>Venta de Hamburguesa por <b>$3.2</b>.<br/><br/>Estás construyendo algo increíble, paso a paso. 🧱",
+    text: t("mockup.msg2"),
     time: "10:45 AM",
   },
   { type: "user", isAudio: true, time: "10:47 AM" },
   {
     type: "bot",
-    text: "¡Entendido! Registré un gasto de <b>$3.00</b> en Papeles.<br/><br/>Invertir sabiamente es clave para un crecimiento sostenible. 🌱",
+    text: t("mockup.msg3"),
     time: "10:47 AM",
   },
-  { type: "user", text: "¿Cuánto vendí hoy?", time: "11:02 AM" },
+  { type: "user", text: t("mockup.msg4"), time: "11:02 AM" },
   {
     type: "bot",
-    text: "Hoy llevas <b>$48.50</b> en ventas. Vas muy bien, ¡Estás al 85% de tu meta diaria! 🚀",
+    text: t("mockup.msg5"),
     time: "11:02 AM",
   },
 ];
@@ -52,7 +57,7 @@ const messagesToUse = messages || DEFAULT_MESSAGES;
     </div>
     <div class="text-left">
       <p class="text-white font-bold text-sm">Conty</p>
-      <p class="text-white/70 text-[10px]">En línea</p>
+      <p class="text-white/70 text-[10px]">{lang === "es" ? "En línea" : "Online"}</p>
     </div>
   </div>
 

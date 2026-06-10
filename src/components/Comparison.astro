@@ -1,275 +1,91 @@
+---
+import { useTranslations } from "../i18n/utils";
+import type { Lang } from "../i18n/ui";
+
+interface Props {
+  lang?: Lang;
+}
+const { lang = "en" } = Astro.props;
+const t = useTranslations(lang);
+
+const xIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-x text-[#D41500] mt-0.5 shrink-0" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="m15 9-6 6"></path><path d="m9 9 6 6"></path></svg>`;
+const checkIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check-big text-[#1ec924] mt-0.5 shrink-0" aria-hidden="true"><path d="M21.801 10A10 10 0 1 1 17 3.335"></path><path d="m9 11 3 3L22 4"></path></svg>`;
+const sparkleIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles text-[#1ec924] mt-0.5 shrink-0" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"></path><path d="M20 3v4"></path><path d="M22 5h-4"></path></svg>`;
+
+const beforeItems = [
+  t("comparison.before.1"),
+  t("comparison.before.2"),
+  t("comparison.before.3"),
+  t("comparison.before.4"),
+  t("comparison.before.5"),
+];
+
+const afterItems = [
+  t("comparison.after.1"),
+  t("comparison.after.2"),
+  t("comparison.after.3"),
+  t("comparison.after.4"),
+  t("comparison.after.5"),
+];
+---
+
 <section class="py-24 bg-[#082109]">
   <div class="max-w-6xl mx-auto px-5">
     <div class="text-center mb-14 animate-fade-in-up">
       <span
         class="inline-block text-[#1ec924] text-sm font-semibold uppercase tracking-widest mb-3"
-        >La diferencia</span
+        >{t("comparison.badge")}</span
       ><h2 class="text-3xl sm:text-4xl font-bold text-white">
-        Deja atrás el caos, <span class="text-[#1ec924]">empieza a crecer</span>
+        {t("comparison.title1")} <span class="text-[#1ec924]">{t("comparison.title2")}</span>
       </h2>
-    </div><div class="grid md:grid-cols-2 gap-6">
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      <!-- Before: Without Conty -->
       <div class="animate-fade-in-left delay-100">
         <div class="bg-white/5 border border-white/10 rounded-3xl p-8">
           <div class="flex items-center gap-3 mb-6">
-            <div
-              class="w-10 h-10 rounded-xl bg-[#082109]/40 flex items-center justify-center"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="lucide lucide-circle-x text-[#D41500]"
-                aria-hidden="true"
-                ><circle cx="12" cy="12" r="10"></circle><path d="m15 9-6 6"
-                ></path><path d="m9 9 6 6"></path></svg
-              >
-            </div><div>
-              <p
-                class="text-white/75 text-xs font-medium uppercase tracking-wider"
-              >
-                Antes
-              </p><h3 class="text-white font-bold text-lg">Sin Conty</h3>
+            <div class="w-10 h-10 rounded-xl bg-[#082109]/40 flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-x text-[#D41500]" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="m15 9-6 6"></path><path d="m9 9 6 6"></path></svg>
             </div>
-          </div><ul class="space-y-4">
-            <li class="flex items-start gap-3">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="lucide lucide-circle-x text-[#D41500] mt-0.5 shrink-0"
-                aria-hidden="true"
-                ><circle cx="12" cy="12" r="10"></circle><path d="m15 9-6 6"
-                ></path><path d="m9 9 6 6"></path></svg
-              ><span class="text-white/80 text-sm"
-                >Libreta desordenada y manchada</span
-              >
-            </li><li class="flex items-start gap-3">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="lucide lucide-circle-x text-[#D41500] mt-0.5 shrink-0"
-                aria-hidden="true"
-                ><circle cx="12" cy="12" r="10"></circle><path d="m15 9-6 6"
-                ></path><path d="m9 9 6 6"></path></svg
-              ><span class="text-white/80 text-sm"
-                >Nunca sabes cuánto ganaste</span
-              >
-            </li><li class="flex items-start gap-3">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="lucide lucide-circle-x text-[#D41500] mt-0.5 shrink-0"
-                aria-hidden="true"
-                ><circle cx="12" cy="12" r="10"></circle><path d="m15 9-6 6"
-                ></path><path d="m9 9 6 6"></path></svg
-              ><span class="text-white/80 text-sm"
-                >No sabes adónde se fue el dinero</span
-              >
-            </li><li class="flex items-start gap-3">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="lucide lucide-circle-x text-[#D41500] mt-0.5 shrink-0"
-                aria-hidden="true"
-                ><circle cx="12" cy="12" r="10"></circle><path d="m15 9-6 6"
-                ></path><path d="m9 9 6 6"></path></svg
-              ><span class="text-white/80 text-sm"
-                >Calculas a ojo cuánto tienes</span
-              >
-            </li><li class="flex items-start gap-3">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="lucide lucide-circle-x text-[#D41500] mt-0.5 shrink-0"
-                aria-hidden="true"
-                ><circle cx="12" cy="12" r="10"></circle><path d="m15 9-6 6"
-                ></path><path d="m9 9 6 6"></path></svg
-              ><span class="text-white/80 text-sm">Estrés al final del día</span
-              >
-            </li>
+            <div>
+              <p class="text-white/75 text-xs font-medium uppercase tracking-wider">{t("comparison.before.label")}</p>
+              <h3 class="text-white font-bold text-lg">{t("comparison.before.title")}</h3>
+            </div>
+          </div>
+          <ul class="space-y-4">
+            {beforeItems.map((item) => (
+              <li class="flex items-start gap-3">
+                <Fragment set:html={xIcon} />
+                <span class="text-white/80 text-sm">{item}</span>
+              </li>
+            ))}
           </ul>
         </div>
-      </div><div class="animate-fade-in-right delay-200">
+      </div>
+
+      <!-- After: With Conty -->
+      <div class="animate-fade-in-right delay-200">
         <div class="bg-[#1ec924]/10 border border-[#1ec924]/30 rounded-3xl p-8">
           <div class="flex items-center gap-3 mb-6">
-            <div
-              class="w-10 h-10 rounded-xl bg-[#1ec924]/20 flex items-center justify-center"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="lucide lucide-circle-check-big text-[#1ec924]"
-                aria-hidden="true"
-                ><path d="M21.801 10A10 10 0 1 1 17 3.335"></path><path
-                  d="m9 11 3 3L22 4"></path></svg
-              >
-            </div><div>
-              <p
-                class="text-white/75 text-xs font-medium uppercase tracking-wider"
-              >
-                Después
-              </p><h3 class="text-white font-bold text-lg">Con Conty</h3>
+            <div class="w-10 h-10 rounded-xl bg-[#1ec924]/20 flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check-big text-[#1ec924]" aria-hidden="true"><path d="M21.801 10A10 10 0 1 1 17 3.335"></path><path d="m9 11 3 3L22 4"></path></svg>
             </div>
-          </div><ul class="space-y-4">
-            <li class="flex items-start gap-3">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="lucide lucide-circle-check-big text-[#1ec924] mt-0.5 shrink-0"
-                aria-hidden="true"
-                ><path d="M21.801 10A10 10 0 1 1 17 3.335"></path><path
-                  d="m9 11 3 3L22 4"></path></svg
-              ><span class="text-white text-sm"
-                >App limpia, todo en un lugar</span
-              >
-            </li><li class="flex items-start gap-3">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="lucide lucide-circle-check-big text-[#1ec924] mt-0.5 shrink-0"
-                aria-hidden="true"
-                ><path d="M21.801 10A10 10 0 1 1 17 3.335"></path><path
-                  d="m9 11 3 3L22 4"></path></svg
-              ><span class="text-white text-sm"
-                >Ve tus ganancias en tiempo real</span
-              >
-            </li><li class="flex items-start gap-3">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="lucide lucide-circle-check-big text-[#1ec924] mt-0.5 shrink-0"
-                aria-hidden="true"
-                ><path d="M21.801 10A10 10 0 1 1 17 3.335"></path><path
-                  d="m9 11 3 3L22 4"></path></svg
-              ><span class="text-white text-sm"
-                >Registra ventas/gastos en 3 segundos</span
-              >
-            </li><li class="flex items-start gap-3">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="lucide lucide-circle-check-big text-[#1ec924] mt-0.5 shrink-0"
-                aria-hidden="true"
-                ><path d="M21.801 10A10 10 0 1 1 17 3.335"></path><path
-                  d="m9 11 3 3L22 4"></path></svg
-              ><span class="text-white text-sm"
-                >Meta semanal visible siempre</span
-              >
-            </li><li class="flex items-start gap-3">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="lucide lucide-circle-check-big text-[#1ec924] mt-0.5 shrink-0"
-                aria-hidden="true"
-                ><path d="M21.801 10A10 10 0 1 1 17 3.335"></path><path
-                  d="m9 11 3 3L22 4"></path></svg
-              ><span class="text-white text-sm"
-                >Cierra el día con tranquilidad</span
-              >
-            </li>
-            <li
-              class="flex items-start gap-3 mt-2 pt-3 border-t border-white/10"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="lucide lucide-sparkles text-[#1ec924] mt-0.5 shrink-0"
-                aria-hidden="true"
-                ><path
-                  d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"
-                ></path><path d="M20 3v4"></path><path d="M22 5h-4"></path></svg
-              ><span class="text-white/75 text-sm font-medium"
-                >+ Funciones premium opcionales por $19.99/mes</span
-              >
+            <div>
+              <p class="text-white/75 text-xs font-medium uppercase tracking-wider">{t("comparison.after.label")}</p>
+              <h3 class="text-white font-bold text-lg">{t("comparison.after.title")}</h3>
+            </div>
+          </div>
+          <ul class="space-y-4">
+            {afterItems.map((item) => (
+              <li class="flex items-start gap-3">
+                <Fragment set:html={checkIcon} />
+                <span class="text-white text-sm">{item}</span>
+              </li>
+            ))}
+            <li class="flex items-start gap-3 mt-2 pt-3 border-t border-white/10">
+              <Fragment set:html={sparkleIcon} />
+              <span class="text-white/75 text-sm font-medium">{t("comparison.after.premium")}</span>
             </li>
           </ul>
         </div>

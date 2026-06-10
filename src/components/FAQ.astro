@@ -1,40 +1,21 @@
 ---
+import { useTranslations } from "../i18n/utils";
+import type { Lang } from "../i18n/ui";
+
+interface Props {
+  lang?: Lang;
+}
+const { lang = "en" } = Astro.props;
+const t = useTranslations(lang);
+
 const faqs = [
-  {
-    question: "¿Es gratis Conty?",
-    answer:
-      "¡Sí! Conty es una aplicación gratuita. Puedes registrar ventas, gastos, ver reportes, usar gráficos y establecer tu meta semanal sin pagar nada. Solo si quieres funciones avanzadas como predicciones inteligentes, cargar gastos desde tickets o gestionar inventario, puedes activar el Plan Premium.",
-  },
-  {
-    question: "¿Qué incluye el Plan Premium?",
-    answer:
-      "El Plan Premium desbloquea funciones como predicciones inteligentes, carga automática de gastos, gestión de inventario y reportes avanzados. Lo mejor es que es un plan único y compartido: una sola suscripción activa las funciones premium tanto en la aplicación como en el asistente de WhatsApp.",
-  },
-  {
-    question: "¿Funciona sin internet?",
-    answer:
-      "¡Sí! La aplicación móvil funciona perfectamente sin conexión para que registres tus ventas y gastos en cualquier lugar. Ten en cuenta que el asistente de IA (vía WhatsApp) sí requiere internet para procesar tus consultas con inteligencia artificial.",
-  },
-  {
-    question: "¿Para qué tipo de negocios es ideal?",
-    answer:
-      "Para cualquier emprendedor que vende a diario: tiendas, vendedores ambulantes, repostería, ropa, bodegas, barberías y más.",
-  },
-  {
-    question: "¿Necesito saber contabilidad?",
-    answer:
-      "Para nada. La interfaz es intuitiva y se encarga de los cálculos difíciles por ti, tú solo registra tus ventas y gastos.",
-  },
-  {
-    question: "¿En qué se diferencia de una libreta?",
-    answer:
-      "A diferencia de una libreta, Conty te ofrece reportes automáticos, copias de seguridad en la nube y búsquedas instantáneas. Y todo esto gratis.",
-  },
-  {
-    question: "¿Puedo cancelar el Plan Premium en cualquier momento?",
-    answer:
-      "Sí, puedes cancelar cuando quieras. Tu app seguirá funcionando con todas las funciones gratuitas. Solo perderás acceso a las funciones premium.",
-  },
+  { question: t("faq.1.q"), answer: t("faq.1.a") },
+  { question: t("faq.2.q"), answer: t("faq.2.a") },
+  { question: t("faq.3.q"), answer: t("faq.3.a") },
+  { question: t("faq.4.q"), answer: t("faq.4.a") },
+  { question: t("faq.5.q"), answer: t("faq.5.a") },
+  { question: t("faq.6.q"), answer: t("faq.6.a") },
+  { question: t("faq.7.q"), answer: t("faq.7.a") },
 ];
 ---
 
@@ -43,10 +24,10 @@ const faqs = [
     <div class="text-center mb-14 animate-fade-in-up">
       <span
         class="inline-block text-[#14b81a] text-sm font-semibold uppercase tracking-widest mb-3"
-        >FAQ</span
+        >{t("faq.badge")}</span
       >
       <h2 class="text-3xl sm:text-4xl font-bold text-[#082109]">
-        Preguntas frecuentes
+        {t("faq.title")}
       </h2>
     </div>
 
@@ -105,9 +86,6 @@ const faqs = [
       button?.addEventListener("click", () => {
         const isOpen = button.getAttribute("aria-expanded") === "true";
 
-        // Opcional: Cerrar otros acordeones abiertos (Acordeón exclusivo)
-        // closeAll(faqItems);
-
         if (isOpen) {
           button.setAttribute("aria-expanded", "false");
           (answer as HTMLElement).style.maxHeight = "0";
@@ -118,15 +96,6 @@ const faqs = [
           icon?.classList.add("rotate-90");
         }
       });
-    });
-  }
-
-  // Función para cerrar todos (si prefieres que solo uno esté abierto a la vez)
-  function closeAll(items: NodeListOf<Element>) {
-    items.forEach((item) => {
-      item.querySelector(".faq-button")?.setAttribute("aria-expanded", "false");
-      (item.querySelector(".faq-answer") as HTMLElement).style.maxHeight = "0";
-      item.querySelector("svg")?.classList.remove("rotate-90");
     });
   }
 

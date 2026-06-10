@@ -1,5 +1,22 @@
 ---
 import contyLogo from "../assets/logo-no-bg.png";
+import { useTranslations } from "../i18n/utils";
+import type { Lang } from "../i18n/ui";
+import { getPlayStoreUrl } from "../config/playStore";
+
+interface Props {
+  lang?: Lang;
+}
+
+const { lang = "en" } = Astro.props;
+const t = useTranslations(lang);
+
+const base = lang === "es" ? "/es" : "";
+
+const pathname = Astro.url.pathname;
+const cleanPath = pathname.replace(/^\/(es)(\/|$)/, "/");
+const englishPath = cleanPath + Astro.url.search;
+const spanishPath = (cleanPath === "/" ? "/es" : `/es${cleanPath}`) + Astro.url.search;
 ---
 
 <header
@@ -10,43 +27,52 @@ import contyLogo from "../assets/logo-no-bg.png";
     class="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between"
     role="navigation"
   >
-    <a href="/" class="flex items-center gap-2">
+    <a href={`${base}/`} class="flex items-center gap-2">
       <img src={contyLogo.src} width="40" height="40" alt="Gadmin Conty Logo" />
       <span class="font-bold text-xl text-[#082109]">Conty</span>
       <span class="text-xs text-[#082109]/60 font-medium hidden sm:block"
-        >de Gadmin</span
+        >{lang === "es" ? "de Gadmin" : "by Gadmin"}</span
       >
     </a>
     <div class="hidden md:flex items-center gap-6">
       <a
-        href="#asistente"
+        href={`${base}/#asistente`}
         class="text-sm font-medium text-[#04910a] hover:text-[#14b81a] transition-colors"
-        >Asistente IA
+        >{t("nav.assistant")}
       </a>
       <a
-        href="#funciones"
+        href={`${base}/#funciones`}
         class="text-sm font-medium text-[#082109]/70 hover:text-[#14b81a] transition-colors"
-        >Funciones
+        >{t("nav.features")}
       </a>
       <a
-        href="#testimonios"
+        href={`${base}/#testimonios`}
         class="text-sm font-medium text-[#082109]/70 hover:text-[#14b81a] transition-colors"
-        >Testimonios
+        >{t("nav.testimonials")}
       </a>
       <a
-        href="#precios"
+        href={`${base}/#precios`}
         class="text-sm font-medium text-[#082109]/70 hover:text-[#14b81a] transition-colors"
-        >Precios
+        >{t("nav.pricing")}
       </a>
       <a
-        href="#faq"
+        href={`${base}/#faq`}
         class="text-sm font-medium text-[#082109]/70 hover:text-[#14b81a] transition-colors"
         >FAQ
       </a>
+      <!-- Language switcher -->
+      {lang === "en" ? (
+        <a href={spanishPath} class="text-xs font-semibold text-[#082109]/50 hover:text-[#14b81a] transition-colors px-2 py-1 rounded-lg border border-[#082109]/10 hover:border-[#14b81a]/30">ES</a>
+      ) : (
+        <a href={englishPath} class="text-xs font-semibold text-[#082109]/50 hover:text-[#14b81a] transition-colors px-2 py-1 rounded-lg border border-[#082109]/10 hover:border-[#14b81a]/30">EN</a>
+      )}
       <a
-        href="https://wa.me/message/2PRRXWEZKSPGC1"
+        href={getPlayStoreUrl()}
+        data-play-store-link
+        target="_blank"
+        rel="noopener noreferrer"
         class="bg-[#14b81a] text-[#082109] text-sm font-semibold px-5 py-2.5 rounded-full hover:brightness-110 transition-all shadow-md animate-pulse-brand"
-        >Probar Gratis
+        >{t("nav.tryfree")}
       </a>
     </div>
     <button
@@ -99,35 +125,43 @@ import contyLogo from "../assets/logo-no-bg.png";
     class="hidden md:hidden bg-white/98 backdrop-blur-md border-t border-gray-100 flex-col p-6 gap-5 shadow-xl transition-all duration-300 origin-top"
   >
     <a
-      href="#asistente"
+      href={`${base}/#asistente`}
       class="mobile-link text-lg font-medium text-[#04910a] hover:text-[#14b81a] transition-colors"
-      >Asistente IA
+      >{t("nav.assistant")}
     </a>
     <a
-      href="#funciones"
+      href={`${base}/#funciones`}
       class="mobile-link text-lg font-medium text-[#082109]/70 hover:text-[#14b81a] transition-colors"
-      >Funciones
+      >{t("nav.features")}
     </a>
     <a
-      href="#testimonios"
+      href={`${base}/#testimonios`}
       class="mobile-link text-lg font-medium text-[#082109]/70 hover:text-[#14b81a] transition-colors"
-      >Testimonios
+      >{t("nav.testimonials")}
     </a>
     <a
-      href="#precios"
+      href={`${base}/#precios`}
       class="mobile-link text-lg font-medium text-[#082109]/70 hover:text-[#14b81a] transition-colors"
-      >Precios
+      >{t("nav.pricing")}
     </a>
     <a
-      href="#faq"
+      href={`${base}/#faq`}
       class="mobile-link text-lg font-medium text-[#082109]/70 hover:text-[#14b81a] transition-colors"
       >FAQ
     </a>
     <hr class="border-[#082109]/5" />
+    {lang === "en" ? (
+      <a href={spanishPath} class="mobile-link text-sm font-semibold text-[#082109]/50 hover:text-[#14b81a] transition-colors">🌐 Ver en Español</a>
+    ) : (
+      <a href={englishPath} class="mobile-link text-sm font-semibold text-[#082109]/50 hover:text-[#14b81a] transition-colors">🌐 View in English</a>
+    )}
     <a
-      href="https://wa.me/message/2PRRXWEZKSPGC1"
+      href={getPlayStoreUrl()}
+      data-play-store-link
+      target="_blank"
+      rel="noopener noreferrer"
       class="mobile-link bg-[#14b81a] text-[#082109] text-center font-bold py-4 rounded-2xl hover:brightness-110 transition-all shadow-md"
-      >Probar Gratis Ahora
+      >{t("nav.tryfreeNow")}
     </a>
   </div>
 </header>
@@ -154,19 +188,19 @@ import contyLogo from "../assets/logo-no-bg.png";
       closeIcon?.classList.remove("hidden");
       header?.classList.add(...onScroll);
       header?.classList.remove(...offScroll);
-      document.body.style.overflow = "hidden"; // Prevent scroll
+      document.body.style.overflow = "hidden";
     } else {
       mobileMenu?.classList.add("hidden");
       mobileMenu?.classList.remove("flex");
       menuIcon?.classList.remove("hidden");
       closeIcon?.classList.add("hidden");
-      document.body.style.overflow = ""; // Enable scroll
+      document.body.style.overflow = "";
       updateHeader();
     }
   };
 
   const updateHeader = () => {
-    if (isMenuOpen) return; // Keep scroll classes if menu is open
+    if (isMenuOpen) return;
 
     if (window.scrollY > 0) {
       header?.classList.add(...onScroll);
@@ -186,7 +220,6 @@ import contyLogo from "../assets/logo-no-bg.png";
   });
 
   window.addEventListener("scroll", updateHeader);
-  // Initial check
   updateHeader();
 </script>
 

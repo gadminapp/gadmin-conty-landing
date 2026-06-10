@@ -2,6 +2,8 @@
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 import SEO from "../components/SEO.astro";
+import type { Lang } from "../i18n/ui";
+import { useTranslations } from "../i18n/utils";
 
 interface Props {
   title?: string;
@@ -10,13 +12,22 @@ interface Props {
   image?: string;
   canonicalURL?: string | URL;
   type?: string;
+  lang?: Lang;
 }
 
-const { title, description, keywords, image, canonicalURL, type } = Astro.props;
+const {
+  title,
+  description,
+  keywords,
+  image,
+  canonicalURL,
+  type,
+  lang = "en",
+} = Astro.props;
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang={lang}>
   <head>
     <SEO
       title={title}
@@ -25,15 +36,16 @@ const { title, description, keywords, image, canonicalURL, type } = Astro.props;
       image={image}
       canonicalURL={canonicalURL}
       type={type}
+      lang={lang}
     />
   </head>
 
   <body>
-    <Navbar />
+    <Navbar lang={lang} />
     <main role="main">
       <slot />
     </main>
-    <Footer />
+    <Footer lang={lang} />
   </body>
 </html>
 
@@ -49,6 +61,28 @@ const { title, description, keywords, image, canonicalURL, type } = Astro.props;
 </style>
 
 <script>
+  import { getPlayStoreUrl, PLAY_STORE_CONFIG } from "../config/playStore";
+
+  // Capture referral code as early as possible
+  const urlParams = new URLSearchParams(window.location.search);
+  const ref = urlParams.get(PLAY_STORE_CONFIG.referralQueryParam);
+  if (ref) {
+    try {
+      sessionStorage.setItem("conty_referral", ref);
+
+      // Clean up the URL by removing the referral query param without reloading the page
+      urlParams.delete(PLAY_STORE_CONFIG.referralQueryParam);
+      const newSearch = urlParams.toString();
+      const cleanUrl =
+        window.location.pathname +
+        (newSearch ? `?${newSearch}` : "") +
+        window.location.hash;
+      window.history.replaceState({}, document.title, cleanUrl);
+    } catch (e) {
+      console.warn("sessionStorage is not available:", e);
+    }
+  }
+
   document.addEventListener("DOMContentLoaded", () => {
     const observerOptions = {
       root: null,
@@ -66,8 +100,27 @@ const { title, description, keywords, image, canonicalURL, type } = Astro.props;
     }, observerOptions);
 
     const animatedElements = document.querySelectorAll(
-      ".animate-fade-in-up, .animate-fade-in-left, .animate-fade-in-right"
+      ".animate-fade-in-up, .animate-fade-in-left, .animate-fade-in-right",
     );
     animatedElements.forEach((el) => observer.observe(el));
+
+    // 2. Resolve Active Referral Code (check URL first, fallback to sessionStorage)
+    let activeRef = ref;
+    if (!activeRef) {
+      try {
+        activeRef = sessionStorage.getItem("conty_referral");
+      } catch (e) {
+        // Ignore
+      }
+    }
+
+    // 3. Update Play Store Links
+    const playStoreUrl = getPlayStoreUrl(activeRef);
+    const playStoreLinks = document.querySelectorAll<HTMLAnchorElement>(
+      "[data-play-store-link]",
+    );
+    playStoreLinks.forEach((link) => {
+      link.href = playStoreUrl;
+    });
   });
 </script>

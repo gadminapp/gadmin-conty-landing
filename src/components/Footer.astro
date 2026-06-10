@@ -1,5 +1,15 @@
 ---
 import contyLogo from "../assets/logo-dark-no-bg.png";
+import { useTranslations } from "../i18n/utils";
+import type { Lang } from "../i18n/ui";
+
+interface Props {
+  lang?: Lang;
+}
+
+const { lang = "en" } = Astro.props;
+const t = useTranslations(lang);
+const base = lang === "es" ? "/es" : "";
 ---
 
 <footer class="bg-[#082109] border-t border-white/5 py-10" role="contentinfo">
@@ -13,19 +23,19 @@ import contyLogo from "../assets/logo-dark-no-bg.png";
           alt="Gadmin Conty Logo"
         /><span class="text-[#1ec924] font-bold">Conty</span><span
           class="text-white/75 text-sm"
-          >· Un producto de <a
+          >· {t("footer.product")} <a
             href="https://gadmin.app"
             target="_blank"
             class="text-white hover:text-[#1ec924] transition-colors">Gadmin</a
           ></span
         >
       </div><div class="flex gap-6 text-sm text-white/40">
-        <a href="/privacy" class="hover:text-[#1ec924] transition-colors"
-          >Privacidad</a
-        ><a href="/terms" class="hover:text-[#1ec924] transition-colors"
-          >Términos</a
-        ><a href="/contact" class="hover:text-[#1ec924] transition-colors"
-          >Contacto</a
+        <a href={`${base}/privacy`} class="hover:text-[#1ec924] transition-colors"
+          >{t("footer.privacy")}</a
+        ><a href={`${base}/terms`} class="hover:text-[#1ec924] transition-colors"
+          >{t("footer.terms")}</a
+        ><a href={`${base}/contact`} class="hover:text-[#1ec924] transition-colors"
+          >{t("footer.contact")}</a
         >
       </div><div class="flex gap-4">
         <a
@@ -98,7 +108,7 @@ import contyLogo from "../assets/logo-dark-no-bg.png";
     </div>
     <div class="mt-8 pt-6 text-center">
       <p class="text-white/50 text-sm">
-        © 2026 Gadmin LLC. Todos los derechos reservados.
+        © 2026 Gadmin LLC. {t("footer.rights")}
       </p>
     </div>
   </div>

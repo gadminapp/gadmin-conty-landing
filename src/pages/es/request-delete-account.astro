@@ -1,0 +1,94 @@
+---
+import "../../styles/global.css";
+import Layout from "../../layouts/Layout.astro";
+import CTA from "../../components/CTA.astro";
+import { useTranslations } from "../../i18n/utils";
+
+const lang = "es" as const;
+const t = useTranslations(lang);
+---
+
+<Layout
+  title={t("delete.title")}
+  description={t("delete.description")}
+  keywords={t("delete.keywords")}
+  lang={lang}
+>
+  <section class="relative min-h-screen py-20 pt-24 overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none" style="background: radial-gradient(80% 60% at 50% 0%, rgba(0, 204, 7, 0.08) 0%, transparent 70%);"></div>
+    <div class="absolute top-1/4 -right-20 w-96 h-96 bg-[#14b81a]/5 rounded-full blur-[120px] pointer-events-none"></div>
+
+    <div class="max-w-4xl mx-auto px-5 relative z-10">
+      <div class="text-center mb-16 animate-fade-in-up">
+        <h1 class="text-4xl sm:text-6xl font-bold text-[#082109] leading-tight mb-8">
+          {t("delete.h1a")} <span class="text-[#14b81a]">{t("delete.h1b")}</span>
+        </h1>
+        <p class="text-xl text-[#082109]/60 leading-relaxed max-w-2xl mx-auto">
+          {t("delete.intro")}
+        </p>
+      </div>
+
+      <div class="grid gap-8 mb-20 animate-fade-in-up delay-100">
+        <div class="bg-white p-8 sm:p-10 rounded-[2.5rem] border border-[#082109]/5 shadow-[0_20px_50px_rgba(8,33,9,0.03)]">
+          <div class="flex flex-col md:flex-row gap-8">
+            <div class="flex-shrink-0">
+              <div class="w-16 h-16 bg-[#14b81a] text-[#082109] rounded-2xl flex items-center justify-center text-2xl font-bold">1</div>
+            </div>
+            <div>
+              <h3 class="text-2xl font-bold text-[#082109] mb-4">{t("delete.step1.title")}</h3>
+              <p class="text-[#082109]/60 text-lg leading-relaxed" set:html={t("delete.step1.desc")} />
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white p-8 sm:p-10 rounded-[2.5rem] border border-[#082109]/5 shadow-[0_20px_50px_rgba(8,33,9,0.03)]">
+          <div class="flex flex-col md:flex-row gap-8">
+            <div class="flex-shrink-0">
+              <div class="w-16 h-16 bg-[#082109] text-[#14b81a] rounded-2xl flex items-center justify-center text-2xl font-bold">2</div>
+            </div>
+            <div>
+              <h3 class="text-2xl font-bold text-[#082109] mb-4">{t("delete.step2.title")}</h3>
+              <p class="text-[#082109]/60 text-lg leading-relaxed space-y-4" set:html={t("delete.step2.desc")} />
+              <ul class="mt-4 space-y-3">
+                <li class="flex items-center gap-3 text-[#082109]/80">
+                  <div class="w-2 h-2 bg-[#14b81a] rounded-full"></div>
+                  {t("delete.step2.item1")}
+                </li>
+                <li class="flex items-center gap-3 text-[#082109]/80">
+                  <div class="w-2 h-2 bg-[#14b81a] rounded-full"></div>
+                  {t("delete.step2.item2")}
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white p-8 sm:p-10 rounded-[2.5rem] border border-[#082109]/5 shadow-[0_20px_50px_rgba(8,33,9,0.03)]">
+          <div class="flex flex-col md:flex-row gap-8">
+            <div class="flex-shrink-0">
+              <div class="w-16 h-16 bg-[#14b81a]/10 text-[#14b81a] rounded-2xl flex items-center justify-center text-2xl font-bold">3</div>
+            </div>
+            <div>
+              <h3 class="text-2xl font-bold text-[#082109] mb-4">{t("delete.step3.title")}</h3>
+              <p class="text-[#082109]/60 text-lg leading-relaxed" set:html={t("delete.step3.desc")} />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-[#082109] p-10 sm:p-16 rounded-[3rem] text-center text-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-[#14b81a]/10 rounded-full blur-[80px]"></div>
+        <h3 class="text-3xl font-bold mb-6">{t("delete.help.title")}</h3>
+        <p class="text-white/60 text-lg mb-10 max-w-xl mx-auto">{t("delete.help.desc")}</p>
+        <div class="flex flex-col sm:flex-row justify-center gap-6">
+          <a href="mailto:contacto@gadminconty.com" class="px-8 py-4 bg-[#14b81a] text-[#082109] font-bold rounded-2xl hover:scale-105 transition-transform flex items-center justify-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+            contacto@gadminconty.com
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTA lang={lang} />
+</Layout>

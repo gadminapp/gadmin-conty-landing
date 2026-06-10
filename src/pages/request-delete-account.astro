@@ -2,12 +2,17 @@
 import "../styles/global.css";
 import Layout from "../layouts/Layout.astro";
 import CTA from "../components/CTA.astro";
+import { useTranslations } from "../i18n/utils";
+
+const lang = "en" as const;
+const t = useTranslations(lang);
 ---
 
 <Layout
-  title="Eliminación de Cuenta - Conty"
-  description="Entiende el proceso de eliminación de tu cuenta en Conty, los plazos de gracia y cómo cancelar la solicitud si cambias de opinión."
-  keywords="borrar cuenta, eliminar datos, periodo de gracia, soporte conty"
+  title={t("delete.title")}
+  description={t("delete.description")}
+  keywords={t("delete.keywords")}
+  lang={lang}
 >
   <section class="relative min-h-screen py-20 pt-24 overflow-hidden">
     <!-- Fondos dinámicos -->

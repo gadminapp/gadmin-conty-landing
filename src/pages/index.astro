@@ -11,22 +11,41 @@ import Disclaimer from "../components/Disclaimer.astro";
 import Pricing from "../components/Pricing.astro";
 import FAQ from "../components/FAQ.astro";
 import CTA from "../components/CTA.astro";
-const isAppAvailable = true;
+
+const lang = "en";
 ---
 
 <Layout
-  title="Conty - Tu negocio en tu bolsillo"
-  description="La forma más sencilla y rápida de llevar las cuentas de tus negocios. Regístrate por WhatsApp o descarga nuestra App. Controla ventas, gastos y reportes."
-  keywords="contabilidad, pymes, gestión de negocios, administración, ventas, gastos, venezuela, emprendimiento, whatsapp assistant, ai assistant"
+  title="Conty - Your business in your pocket"
+  description="The simplest and fastest way to manage your business accounts. Register via WhatsApp or download our App. Track sales, expenses and reports."
+  keywords="accounting, sme, business management, administration, sales, expenses, venezuela, entrepreneurship, whatsapp assistant, ai assistant"
+  lang={lang}
 >
-  <Hero isAppAvailable={isAppAvailable} />
-  <WhatsAppAssistant />
-  <Features />
-  <Choice isAppAvailable={isAppAvailable} />
-  <Comparison />
-  <Testimonials />
-  <Disclaimer />
-  <Pricing isAppAvailable={isAppAvailable} />
-  <FAQ />
-  <CTA isAppAvailable={isAppAvailable} />
+  <Hero lang={lang} />
+  <WhatsAppAssistant lang={lang} />
+  <Features lang={lang} />
+  <Choice lang={lang} />
+  <Comparison lang={lang} />
+  <Testimonials lang={lang} />
+  <Disclaimer lang={lang} />
+  <Pricing lang={lang} />
+  <FAQ lang={lang} />
+  <CTA lang={lang} />
 </Layout>
+
+<!-- Browser language detection: redirect Spanish users to /es -->
+<script>
+  (function () {
+    const hasChosen = sessionStorage.getItem("lang-chosen");
+    if (hasChosen) return;
+
+    const browserLang =
+      navigator.language || (navigator as any).userLanguage || "";
+    if (browserLang.toLowerCase().startsWith("es")) {
+      sessionStorage.setItem("lang-chosen", "es");
+      window.location.replace("/es" + window.location.search);
+    } else {
+      sessionStorage.setItem("lang-chosen", "en");
+    }
+  })();
+</script>

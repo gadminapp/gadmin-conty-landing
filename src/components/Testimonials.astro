@@ -2,6 +2,14 @@
 import orlandoProfile from "../assets/orlando-profile.png";
 import pgLogo from "../assets/pg-logo-web.png";
 import bgLogo from "../assets/bg-logo.png";
+import { useTranslations } from "../i18n/utils";
+import type { Lang } from "../i18n/ui";
+
+interface Props {
+  lang?: Lang;
+}
+const { lang = "en" } = Astro.props;
+const t = useTranslations(lang);
 ---
 
 <section id="testimonios" class="py-24 bg-white">
@@ -9,9 +17,9 @@ import bgLogo from "../assets/bg-logo.png";
     <div class="text-center mb-14 animate-fade-in-up">
       <span
         class="inline-block text-[#14b81a] text-sm font-semibold uppercase tracking-widest mb-3"
-        >Testimonios</span
+        >{t("testimonials.badge")}</span
       ><h2 class="text-3xl sm:text-4xl font-bold text-[#082109]">
-        Ellos ya <span class="text-[#14b81a]">controlan su caja</span>
+        {t("testimonials.title1")} <span class="text-[#14b81a]">{t("testimonials.title2")}</span>
       </h2>
     </div><div class="grid md:grid-cols-3 gap-6">
       <div
@@ -95,9 +103,7 @@ import bgLogo from "../assets/bg-logo.png";
             ></path></svg
           >
         </div><p class="text-[#082109]/70 text-sm leading-relaxed mb-6">
-          "Es excelente y muy fácil de usar. Me ha permitido profesionalizar mi
-          contabilidad y tener todo bajo control de forma sencilla. ¡Es una
-          maravilla! 🙏"
+          {t("testimonials.1.quote")}
         </p><div class="flex items-center gap-3">
           <img
             src={pgLogo.src}
@@ -107,7 +113,7 @@ import bgLogo from "../assets/bg-logo.png";
             <p class="text-[#082109] font-semibold text-sm">Miladys G.</p><p
               class="text-gray-400 text-xs"
             >
-              Suministros · Zulia, Venezuela
+              {t("testimonials.1.role")}
             </p>
           </div>
         </div>
@@ -192,9 +198,7 @@ import bgLogo from "../assets/bg-logo.png";
             ></path></svg
           >
         </div><p class="text-[#082109]/70 text-sm leading-relaxed mb-6">
-          "Creé Conty para que tú puedas tener un negocio exitoso. La claridad
-          en las cuentas y una buena administración son el fundamento para el
-          éxito."
+          {t("testimonials.2.quote")}
         </p><div class="flex items-center gap-3">
           <img
             src={orlandoProfile.src}
@@ -203,7 +207,7 @@ import bgLogo from "../assets/bg-logo.png";
           /><div>
             <p class="text-[#082109] font-semibold text-sm">
               Orlando Briceño
-            </p><p class="text-gray-400 text-xs">Fundador de Conty</p>
+            </p><p class="text-gray-400 text-xs">{t("testimonials.2.role")}</p>
           </div>
         </div>
       </div><div
@@ -287,9 +291,7 @@ import bgLogo from "../assets/bg-logo.png";
             ></path></svg
           >
         </div><p class="text-[#082109]/70 text-sm leading-relaxed mb-6">
-          "Tener las cuentas claras tan fácil ha sido lo mejor para Buen Gusto.
-          Poder decir "Gasté en tal cosa" por audio de camino a casa es
-          increíble."
+          {t("testimonials.3.quote")}
         </p><div class="flex items-center gap-3">
           <img
             src={bgLogo.src}
@@ -299,7 +301,7 @@ import bgLogo from "../assets/bg-logo.png";
             <p class="text-[#082109] font-semibold text-sm">Milagros B.</p><p
               class="text-gray-400 text-xs"
             >
-              @buengusto_ve · Mérida, Venezuela
+              {t("testimonials.3.role")}
             </p>
           </div>
         </div>

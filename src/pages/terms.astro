@@ -2,12 +2,17 @@
 import "../styles/global.css";
 import Layout from "../layouts/Layout.astro";
 import CTA from "../components/CTA.astro";
+import { useTranslations } from "../i18n/utils";
+
+const lang = "en" as const;
+const t = useTranslations(lang);
 ---
 
 <Layout
-  title="Términos de Servicio - Conty"
-  description="Lee los términos y condiciones de uso de la plataforma Conty. Conoce tus derechos y responsabilidades como usuario de nuestros servicios."
-  keywords="términos de servicio, condiciones de uso, contrato legal, suscripción conty"
+  title={t("terms.title")}
+  description={t("terms.description")}
+  keywords={t("terms.keywords")}
+  lang={lang}
 >
   <section class="relative min-h-screen py-20 pt-24 overflow-hidden">
     <div
