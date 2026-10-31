@@ -1,8 +1,6 @@
 ---
 import { getAlternateUrls } from "../i18n/utils";
 import type { Lang } from "../i18n/ui";
-import { PLAY_STORE_CONFIG, getPlayStoreUrl } from "../config/playStore";
-
 interface Props {
   title?: string;
   description?: string;
@@ -15,9 +13,9 @@ interface Props {
 }
 
 const {
-  title = "Conty - Your business in your pocket",
-  description = "The simplest and fastest way to manage your business accounts. Sales, expenses and reports in one place.",
-  keywords = "accounting, business, sales, expenses, financial reports, sme, entrepreneurs, venezuela",
+  title = "Conty - Your numbers, turned into decisions",
+  description = "Conty is the agency that turns your income, sales, expenses and restock into detailed strategic reports.",
+  keywords = "business analysis agency, strategic reports, sales analytics, expense control, sme, financial advisory, venezuela",
   image = "/meta-banner.png",
   canonicalURL = Astro.url,
   type = "website",
@@ -45,49 +43,19 @@ const schemaObject = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "SoftwareApplication",
-      "@id": `${siteUrl}/#software`,
+      "@type": "ProfessionalService",
+      "@id": `${siteUrl}/#service`,
       name: "Conty",
       url: siteUrl,
       image: logoUrl,
-      screenshot: bannerUrl,
+      logo: logoUrl,
       inLanguage: lang === "es" ? "es" : "en",
-      publisher: {
-        "@type": "Organization",
-        name: "Gadmin Conty",
-        url: "https://gadminconty.com",
-        logo: {
-          "@type": "ImageObject",
-          url: logoUrl,
-        },
-      },
       description: description,
-      applicationCategory: "BusinessApplication, FinanceApplication",
-      operatingSystem: "Android, Web",
-      offers: {
-        "@type": "Offer",
-        price: "0",
-        priceCurrency: "USD",
-      },
-    },
-    {
-      "@type": "MobileApplication",
-      "@id": `${siteUrl}/#mobileapp`,
-      name: "Conty",
-      operatingSystem: "Android",
-      applicationCategory: "BusinessApplication, FinanceApplication",
-      installUrl: getPlayStoreUrl(),
-      image: logoUrl,
-      inLanguage: lang === "es" ? "es" : "en",
-      publisher: {
+      serviceType: "Business analytics and financial advisory",
+      parentOrganization: {
         "@type": "Organization",
-        name: "Gadmin Conty",
-        url: "https://gadminconty.com",
-      },
-      offers: {
-        "@type": "Offer",
-        price: "0",
-        priceCurrency: "USD",
+        name: "Gadmin",
+        url: "https://gadmin.app",
       },
     },
     {
@@ -112,9 +80,6 @@ const schemaObject = {
 <link rel="icon" type="image/png" href="/favicon.png" />
 <link rel="icon" href="/favicon.ico" />
 <meta name="generator" content={Astro.generator} />
-
-<!-- Smart App Banner for Android Deep Linking -->
-<meta name="google-play-app" content={`app-id=${PLAY_STORE_CONFIG.appId}`} />
 
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />

@@ -2,7 +2,7 @@
 import contyLogo from "../assets/logo-no-bg.png";
 import { useTranslations } from "../i18n/utils";
 import type { Lang } from "../i18n/ui";
-import { getPlayStoreUrl } from "../config/playStore";
+import { whatsappUrl } from "../config/contact";
 
 interface Props {
   lang?: Lang;
@@ -10,6 +10,7 @@ interface Props {
 
 const { lang = "en" } = Astro.props;
 const t = useTranslations(lang);
+const whatsappHref = whatsappUrl(t("cta.whatsappMessage"));
 
 const base = lang === "es" ? "/es" : "";
 
@@ -36,24 +37,19 @@ const spanishPath = (cleanPath === "/" ? "/es" : `/es${cleanPath}`) + Astro.url.
     </a>
     <div class="hidden md:flex items-center gap-6">
       <a
-        href={`${base}/#asistente`}
+        href={`${base}/#como-funciona`}
         class="text-sm font-medium text-[#04910a] hover:text-[#14b81a] transition-colors"
-        >{t("nav.assistant")}
+        >{t("nav.how")}
       </a>
       <a
         href={`${base}/#funciones`}
         class="text-sm font-medium text-[#082109]/70 hover:text-[#14b81a] transition-colors"
-        >{t("nav.features")}
+        >{t("nav.services")}
       </a>
       <a
-        href={`${base}/#testimonios`}
+        href={`${base}/#analisis`}
         class="text-sm font-medium text-[#082109]/70 hover:text-[#14b81a] transition-colors"
-        >{t("nav.testimonials")}
-      </a>
-      <a
-        href={`${base}/#precios`}
-        class="text-sm font-medium text-[#082109]/70 hover:text-[#14b81a] transition-colors"
-        >{t("nav.pricing")}
+        >{t("nav.insights")}
       </a>
       <a
         href={`${base}/#faq`}
@@ -67,12 +63,11 @@ const spanishPath = (cleanPath === "/" ? "/es" : `/es${cleanPath}`) + Astro.url.
         <a href={englishPath} class="text-xs font-semibold text-[#082109]/50 hover:text-[#14b81a] transition-colors px-2 py-1 rounded-lg border border-[#082109]/10 hover:border-[#14b81a]/30">EN</a>
       )}
       <a
-        href={getPlayStoreUrl()}
-        data-play-store-link
+        href={whatsappHref}
         target="_blank"
         rel="noopener noreferrer"
         class="bg-[#14b81a] text-[#082109] text-sm font-semibold px-5 py-2.5 rounded-full hover:brightness-110 transition-all shadow-md animate-pulse-brand"
-        >{t("nav.tryfree")}
+        >{t("nav.cta")}
       </a>
     </div>
     <button
@@ -125,24 +120,19 @@ const spanishPath = (cleanPath === "/" ? "/es" : `/es${cleanPath}`) + Astro.url.
     class="hidden md:hidden bg-white/98 backdrop-blur-md border-t border-gray-100 flex-col p-6 gap-5 shadow-xl transition-all duration-300 origin-top"
   >
     <a
-      href={`${base}/#asistente`}
+      href={`${base}/#como-funciona`}
       class="mobile-link text-lg font-medium text-[#04910a] hover:text-[#14b81a] transition-colors"
-      >{t("nav.assistant")}
+      >{t("nav.how")}
     </a>
     <a
       href={`${base}/#funciones`}
       class="mobile-link text-lg font-medium text-[#082109]/70 hover:text-[#14b81a] transition-colors"
-      >{t("nav.features")}
+      >{t("nav.services")}
     </a>
     <a
-      href={`${base}/#testimonios`}
+      href={`${base}/#analisis`}
       class="mobile-link text-lg font-medium text-[#082109]/70 hover:text-[#14b81a] transition-colors"
-      >{t("nav.testimonials")}
-    </a>
-    <a
-      href={`${base}/#precios`}
-      class="mobile-link text-lg font-medium text-[#082109]/70 hover:text-[#14b81a] transition-colors"
-      >{t("nav.pricing")}
+      >{t("nav.insights")}
     </a>
     <a
       href={`${base}/#faq`}
@@ -156,12 +146,11 @@ const spanishPath = (cleanPath === "/" ? "/es" : `/es${cleanPath}`) + Astro.url.
       <a href={englishPath} class="mobile-link text-sm font-semibold text-[#082109]/50 hover:text-[#14b81a] transition-colors">🌐 View in English</a>
     )}
     <a
-      href={getPlayStoreUrl()}
-      data-play-store-link
+      href={whatsappHref}
       target="_blank"
       rel="noopener noreferrer"
       class="mobile-link bg-[#14b81a] text-[#082109] text-center font-bold py-4 rounded-2xl hover:brightness-110 transition-all shadow-md"
-      >{t("nav.tryfreeNow")}
+      >{t("nav.ctaNow")}
     </a>
   </div>
 </header>

@@ -2,9 +2,10 @@
 import orlandoProfile from "../assets/orlando-profile.png";
 import pgLogo from "../assets/pg-logo-web.png";
 import bgLogo from "../assets/bg-logo.png";
-import WhatsAppMockup from "./WhatsAppMockup.astro";
+import ResultsPreview from "./ResultsPreview.astro";
 import { useTranslations } from "../i18n/utils";
 import type { Lang } from "../i18n/ui";
+import { whatsappUrl } from "../config/contact";
 
 interface Props {
   lang?: Lang;
@@ -12,7 +13,7 @@ interface Props {
 
 const { lang = "en" } = Astro.props;
 const t = useTranslations(lang);
-import { getPlayStoreUrl } from "../config/playStore";
+const whatsappHref = whatsappUrl(t("cta.whatsappMessage"));
 ---
 
 <section
@@ -57,33 +58,12 @@ import { getPlayStoreUrl } from "../config/playStore";
         class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-in-up delay-300"
       >
         <a
-          href={getPlayStoreUrl()}
-          data-play-store-link
+          href={whatsappHref}
           target="_blank"
           rel="noopener noreferrer"
-          class="group flex items-center gap-3 bg-[#14b81a] text-[#082109] font-bold px-7 py-4 rounded-2xl hover:bg-[#14b81a]/90 transition-all shadow-xl hover:shadow-2xl hover:-translate-y-0.5 active:translate-y-0"
+          class="group flex items-center justify-center gap-3 bg-[#14b81a] text-[#082109] font-bold px-7 py-4 rounded-2xl hover:bg-[#14b81a]/90 transition-all shadow-xl hover:shadow-2xl hover:-translate-y-0.5 active:translate-y-0"
         >
-          <svg
-            width="22"
-            height="22"
-            viewBox="0 0 45 49"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M0.773336 0.624512C0.193336 1.38451 0 2.14451 0 3.47451V45.2745C0 46.4145 0.386667 47.3645 0.966667 47.9345L1.16 48.1245L25.1333 24.5645V24.3745V24.1845L0.773336 0.624512Z"
-              fill="#082109"></path>
-            <path
-              d="M32.8666 32.5443L24.94 24.7543V24.3743V24.1843L32.8666 16.3943L33.06 16.5843L42.5333 21.9043C45.24 23.4243 45.24 25.8943 42.5333 27.4143L32.8666 32.5443Z"
-              fill="#082109"></path>
-            <path
-              d="M33.06 32.3543L24.94 24.3743L0.773315 48.1243C1.73998 49.0743 3.09331 49.0743 4.83331 48.3143L33.06 32.3543Z"
-              fill="#082109"></path>
-            <path
-              d="M33.06 16.3946L4.83331 0.624579C3.09331 -0.325421 1.73998 -0.135423 0.773315 0.814577L24.94 24.3746L33.06 16.3946Z"
-              fill="#082109"></path>
-          </svg>
-          {t("hero.ctaPlay")}
+          {t("hero.cta")}
         </a>
       </div><div
         class="flex items-center gap-3 mt-10 justify-center lg:justify-start animate-fade-in-up delay-400 pb-8"
@@ -132,22 +112,19 @@ import { getPlayStoreUrl } from "../config/playStore";
           </p>
         </div>
       </div>
-    </div><div
+    </div>    <div
       class="flex-1 flex justify-center lg:justify-end animate-fade-in-right delay-200 w-full"
     >
-      <div
-        class="relative w-full md:max-w-[320px] max-h-[320px] md:max-h-[100%]"
-      >
+      <div class="relative w-full">
         <div
           class="absolute -inset-10 bg-[#14b81a]/10 rounded-full blur-3xl opacity-50"
         >
         </div>
-
-        <WhatsAppMockup lang={lang} version="hero" />
+        <ResultsPreview lang={lang} />
       </div>
     </div>
   </div><a
-    href="#asistente"
+    href="#como-funciona"
     class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-400 text-xs animate-bounce"
     ><span>{t("hero.learnMore")}</span><svg
       xmlns="http://www.w3.org/2000/svg"

@@ -8,94 +8,95 @@ export const defaultLang = "en";
 export const ui = {
   en: {
     // SEO / Meta
-    "site.title": "Conty - Your business in your pocket",
+    "site.title": "Conty - Your numbers, turned into decisions",
     "site.description":
-      "The simplest and fastest way to manage your business accounts. Register via WhatsApp or download our App. Track sales, expenses and reports.",
+      "Conty is the agency that turns your income, sales, expenses and restock into detailed strategic reports. Save the hours and the team you would otherwise hire.",
     "site.keywords":
-      "accounting, sme, business management, administration, sales, expenses, venezuela, entrepreneurship, whatsapp assistant, ai assistant",
+      "business analysis agency, strategic reports, sales analytics, expense control, sme, financial advisory, cash flow, venezuela",
 
     // Navbar
-    "nav.assistant": "AI Assistant",
-    "nav.features": "Features",
-    "nav.testimonials": "Testimonials",
-    "nav.pricing": "Pricing",
+    "nav.how": "How it works",
+    "nav.services": "What we do",
+    "nav.insights": "Insights",
     "nav.faq": "FAQ",
-    "nav.tryfree": "Get started",
-    "nav.tryfreeNow": "Get started",
+    "nav.cta": "Talk to us",
+    "nav.ctaNow": "Talk to the team",
 
     // Hero
-    "hero.badge": "App & AI Assistant",
-    "hero.title1": "Your business in order,",
-    "hero.title2": "your accounts clear.",
+    "hero.badge": "The agency behind your numbers",
+    "hero.title1": "Your business data,",
+    "hero.title2": "turned into strategy.",
     "hero.subtitle":
-      "Record your sales and expenses by sending a simple message. Forget the notebook and manage your business <strong>effortlessly</strong>.",
-    "hero.ctaWhatsapp": "Try Assistant Free",
-    "hero.ctaPlay": "Get started free",
-    "hero.appSoon": "App Coming Soon",
-    "hero.socialProof": "Join the happy entrepreneurs using Conty",
+      "We receive your income, sales, expenses and restock costs, then deliver detailed reports with the strategic analysis. Hours saved, and a team you do not have to hire.",
+    "hero.cta": "Get your first report",
+    "hero.socialProof": "Businesses already deciding with real data",
+    "hero.learnMore": "Learn more",
 
-    // WhatsApp Assistant
-    "assistant.badge": "New: WhatsApp Assistant",
-    "assistant.title1": "Your accounting, as easy as",
-    "assistant.title2": "chatting.",
-    "assistant.subtitle":
-      "Don't have time to open an app? Send a message or an audio to your Conty assistant. He takes care of recording everything and giving you reports instantly.",
-    "assistant.feat1": "Record sales and expenses by voice or text",
-    "assistant.feat2": 'Ask "How much did I sell today?" and get an answer',
-    "assistant.feat3": "Synced with your Conty App",
-    "assistant.cta": "Try Assistant Free",
+    // How it works
+    "how.badge": "How it works",
+    "how.title1": "You share the data.",
+    "how.title2": "We deliver the analysis.",
+    "how.subtitle":
+      "Conty is not an app and not a chat bot. We are the team that takes the headache of your numbers and returns a report you can act on.",
+    "how.step1.title": "Share what the business did",
+    "how.step1.desc":
+      "Income, sales, expenses and restock. Spreadsheets, exports or the records you already keep.",
+    "how.step2.title": "Our team analyzes it",
+    "how.step2.desc":
+      "We organize every movement and look for what is working, what is leaking and where to move next.",
+    "how.step3.title": "You receive the report",
+    "how.step3.desc":
+      "A detailed report with strategic analysis: margins, restock and average ticket and the decisions worth taking now.",
+    "how.cta": "Talk to the team",
 
-    // Features
-    "features.badge": "Free features",
-    "features.title1": "All this,",
-    "features.title2": "100% free",
-    "features.subtitle":
-      "Start controlling your business today. Essential features are free forever.",
-    "features.fast.title": "Fast Recording",
-    "features.fast.desc":
-      "Note sales in 3 seconds without heavy inventories. As simple as talking to a friend.",
-    "features.goals.title": "Real Goals",
-    "features.goals.desc":
-      "Visualize your weekly growth with intuitive charts. You'll know exactly how much you have left.",
-    "features.offline.title": "Offline Control",
-    "features.offline.desc":
-      "Your data is yours. Works perfectly without internet. No excuses for not recording.",
+    // Services
+    "services.badge": "What we do for you",
+    "services.title1": "Everything your numbers",
+    "services.title2": "have been trying to tell you",
+    "services.subtitle":
+      "You bring the business data. We bring the order, the analysis and the strategy — without you hiring a finance team.",
+    "services.order.title": "Order, without the work",
+    "services.order.desc":
+      "We classify income, sales, expenses and restock so the picture of the business is clean and ready to read.",
+    "services.sales.title": "Know what and when you sell",
+    "services.sales.desc":
+      "Best hours, best days, star products and the ones that just take up space. See your business as it really is.",
+    "services.costs.title": "Spend smarter",
+    "services.costs.desc":
+      "We detect where money leaks and suggest practical ways to cut costs without hurting your sales.",
+    "services.promos.title": "Offers that actually work",
+    "services.promos.desc":
+      "Promotions and bundles designed around your peak dates and best-selling products, not guesses.",
 
-    // Choice
-    "choice.title": "Conty adapts to your pace",
-    "choice.subtitle":
-      "Use the assistant for day-to-day and the app for the details. You choose how to stay in control.",
-    "choice.whatsapp.title": "WhatsApp Assistant",
-    "choice.whatsapp.desc":
-      "Ideal when you're serving customers. Send a quick message and forget the notebook. Even voice notes!",
-    "choice.whatsapp.badge": "Maximum Comfort",
-    "choice.app.title": "Conty App",
-    "choice.app.desc":
-      "The complete experience. Detailed charts, offline work and deep business management.",
-    "choice.app.badge": "Total Control",
-    "choice.app.install": "Install App",
-    "choice.app.soon": "Coming Soon",
-
-    // Testimonials
-    "testimonials.badge": "Testimonials",
-    "testimonials.title1": "They already",
-    "testimonials.title2": "control their cash",
-    "testimonials.1.quote":
-      '"It\'s excellent and very easy to use. It has allowed me to professionalize my accounting and have everything under control in a simple way. It\'s wonderful! 🙏"',
-    "testimonials.1.role": "Supplies · Zulia, Venezuela",
-    "testimonials.2.quote":
-      '"I created Conty so you can have a successful business. Clarity in accounts and good management are the foundation for success."',
-    "testimonials.2.role": "Founder of Conty",
-    "testimonials.3.quote":
-      '"Having clear accounts so easily has been the best for Buen Gusto. Being able to say \'I spent on this\' by audio on the way home is incredible."',
-    "testimonials.3.role": "@buengusto_ve · Mérida, Venezuela",
-
-    // Disclaimer
-    "disclaimer.text1": "Join hundreds of entrepreneurs who already",
-    "disclaimer.text2": "control their cash",
-    "disclaimer.text3": "with Conty.",
-    "disclaimer.sub":
-      "It's free, but if you want to take your business to the next level, Conty offers smart predictions, ticket expense uploads and inventory management for just $19.99/month.",
+    // Insights
+    "insights.badge": "Real value",
+    "insights.title1": "Not just numbers.",
+    "insights.title2": "Strategy.",
+    "insights.subtitle":
+      "Examples of the kind of analysis you receive. Every report ends with a clear decision you can take the same day.",
+    "insights.1.tag": "Peak hours",
+    "insights.1.finding":
+      "Most of your customers ask about prices between 8 PM and 11 PM, but sales only get recorded until 6 PM.",
+    "insights.1.action":
+      "Move your ads to the evening and make sure someone is ready to answer and close.",
+    "insights.2.tag": "Average ticket",
+    "insights.2.finding":
+      "Your best-selling item is usually bought alone, while the complement rarely gets offered.",
+    "insights.2.action":
+      "Create a combo with a small discount and offer it every time the main product is requested.",
+    "insights.3.tag": "Margins",
+    "insights.3.finding":
+      "Income grew 15% this month, but restocking and express shipping grew 35%, shrinking your real profit.",
+    "insights.3.action":
+      "Group deliveries on two fixed days and offer free shipping only above a minimum purchase.",
+    "insights.finding": "What we found",
+    "insights.action": "What to do",
+    "insights.report.title": "Your weekly executive summary",
+    "insights.report.sales": "Total sales",
+    "insights.report.best": "Best day",
+    "insights.report.star": "Star product",
+    "insights.report.tip": "Strategic tip of the week",
+    "insights.report.example": "Illustrative example",
 
     // Comparison
     "comparison.badge": "The difference",
@@ -103,125 +104,79 @@ export const ui = {
     "comparison.title2": "start growing",
     "comparison.before.label": "Before",
     "comparison.before.title": "Without Conty",
-    "comparison.before.1": "Messy and stained notebook",
-    "comparison.before.2": "Never know how much you earned",
-    "comparison.before.3": "Don't know where the money went",
-    "comparison.before.4": "Guessing how much you have",
-    "comparison.before.5": "Stress at the end of the day",
+    "comparison.before.1": "Receipts, notes and chats all over the place",
+    "comparison.before.2": "Never sure how much you really earned",
+    "comparison.before.3": "No idea where the money went",
+    "comparison.before.4": "Decisions based on gut feeling",
+    "comparison.before.5": "Stress at the end of every month",
     "comparison.after.label": "After",
     "comparison.after.title": "With Conty",
-    "comparison.after.1": "Clean app, everything in one place",
-    "comparison.after.2": "See your earnings in real time",
-    "comparison.after.3": "Record sales/expenses in 3 seconds",
-    "comparison.after.4": "Weekly goal always visible",
-    "comparison.after.5": "Close the day with peace of mind",
-    "comparison.after.premium": "+ Optional premium features for $19.99/month",
-
-    // Pricing (headings & static text)
-    "pricing.badge": "Transparent Pricing",
-    "pricing.title1": "Simple plans,",
-    "pricing.title2": "maximum value",
-    "pricing.billing.monthly": "Monthly",
-    "pricing.billing.yearly": "Yearly",
-    "pricing.free.name": "Free Plan",
-    "pricing.free.price": "$0",
-    "pricing.free.period": "/ forever",
-    "pricing.free.desc": "Everything essential to start using Conty",
-    "pricing.free.cta": "Start for free",
-    "pricing.free.feat1": "50 AI Assistant messages per week",
-    "pricing.free.feat2": "Unlimited sales recording",
-    "pricing.free.feat3": "Unlimited expense recording",
-    "pricing.free.feat4": "Up to 1 member per business",
-    "pricing.free.feat5": "Set your weekly goal",
-    "pricing.free.feat6": "Charts and reports",
-    "pricing.free.feat7": "Export to Excel",
-    "pricing.free.feat8": "30-day report history",
-    "pricing.lite.name": "Lite Plan",
-    "pricing.lite.cta": "Start with Lite",
-    "pricing.lite.yearly.price": "$49.99",
-    "pricing.lite.yearly.period": "/ year",
-    "pricing.lite.yearly.equiv": "Equals $4.17/month",
-    "pricing.lite.yearly.installments": "or 4 installments of $12.49 interest-free",
-    "pricing.lite.monthly.price": "$4.99",
-    "pricing.lite.monthly.period": "/ month",
-    "pricing.lite.monthly.save": "Or pay annually and save 2 months",
-    "pricing.lite.plus": "Everything in Free, plus:",
-    "pricing.lite.feat1": "350 AI Assistant messages per month",
-    "pricing.lite.feat2": "90-day report history",
-    "pricing.lite.installments.label": "Pay in",
-    "pricing.lite.installments.of": "installments interest-free of $12.49",
-    "pricing.premium.name": "Premium Plan",
-    "pricing.premium.badge": "Recommended",
-    "pricing.premium.cta": "Start with Premium",
-    "pricing.premium.yearly.price": "$199.99",
-    "pricing.premium.yearly.period": "/ year",
-    "pricing.premium.yearly.equiv": "Equals $16.67/month",
-    "pricing.premium.yearly.installments": "or 4 installments of $49.99 interest-free",
-    "pricing.premium.monthly.price": "$19.99",
-    "pricing.premium.monthly.period": "/ month",
-    "pricing.premium.monthly.save": "Or pay annually and save 2 months",
-    "pricing.premium.plus": "Everything in Free, plus:",
-    "pricing.premium.feat1": "Up to 1,000 AI Assistant messages",
-    "pricing.premium.feat1.sub": "+$0.50 per 100 additional messages",
-    "pricing.premium.feat2": "Up to 10 members per business",
-    "pricing.premium.feat3": "Unlimited report history",
-    "pricing.premium.feat4": "Smart predictions",
-    "pricing.premium.feat5": "Upload expenses from photos (receipts/tickets)",
-    "pricing.premium.installments.label": "Pay in",
-    "pricing.premium.installments.of": "installments interest-free of $49.99",
-    "pricing.footer": "You can start for free, when you experience that Conty saves you more than 21 hours per week, you can upgrade to Lite or Premium for even more.",
-
-    // Mockup
-    "mockup.msg1": "Sold 1 Burger $3.2",
-    "mockup.msg2": "Noted! ✅ <br/>Burger sale for <b>$3.2</b>.<br/><br/>You're building something amazing, step by step. 🧱",
-    "mockup.msg3": "Got it! I recorded an expense of <b>$3.00</b> for Paper.<br/><br/>Investing wisely is key to sustainable growth. 🌱",
-    "mockup.msg4": "How much did I sell today?",
-    "mockup.msg5": "Today you have <b>$48.50</b> in sales. You're doing great, you're at 85% of your daily goal! 🚀",
+    "comparison.after.1": "Everything recorded and organized for you",
+    "comparison.after.2": "Detailed strategic reports, ready to use",
+    "comparison.after.3": "You know your best products, days and hours",
+    "comparison.after.4": "Practical advice to cut costs and sell more",
+    "comparison.after.5": "Decisions backed by real data",
 
     // FAQ
     "faq.badge": "FAQ",
     "faq.title": "Frequently asked questions",
-    "faq.1.q": "Is Conty free?",
+    "faq.1.q": "Is Conty an app or a chat bot?",
     "faq.1.a":
-      "Yes! Conty is a free application. You can record sales, expenses, view reports, use charts and set your weekly goal without paying anything. Only if you want advanced features like smart predictions, uploading expenses from tickets or managing inventory, you can activate the Premium Plan.",
-    "faq.2.q": "What does the Premium Plan include?",
+      "No. Conty is an agency. You share your business data and our team returns detailed reports with strategic analysis.",
+    "faq.2.q": "What data do you need?",
     "faq.2.a":
-      "The Premium Plan unlocks features like smart predictions, automatic expense uploads, inventory management and advanced reports. Best of all, it's a single shared plan: one subscription activates premium features in both the app and the WhatsApp assistant.",
-    "faq.3.q": "Does it work without internet?",
+      "Income, sales, expenses and restock costs. Spreadsheets, exports or the records you already have. It does not need to be perfect.",
+    "faq.3.q": "What do I get in return?",
     "faq.3.a":
-      "Yes! The mobile app works perfectly offline so you can record your sales and expenses anywhere. Note that the AI assistant (via WhatsApp) does require internet to process your queries with artificial intelligence.",
-    "faq.4.q": "What type of businesses is it ideal for?",
+      "A detailed report: what came in, what went out, how restock and average ticket affected the margin, and the strategic moves worth making. The hours and the extra hire stay with us.",
+    "faq.4.q": "Do I need to know accounting?",
     "faq.4.a":
-      "For any entrepreneur who sells daily: shops, street vendors, bakeries, clothing, grocery stores, barbershops and more.",
-    "faq.5.q": "Do I need to know accounting?",
+      "No. You share what happened in the business. We turn it into numbers, context and decisions.",
+    "faq.5.q": "What type of businesses is it ideal for?",
     "faq.5.a":
-      "Not at all. The interface is intuitive and handles the difficult calculations for you, you just record your sales and expenses.",
-    "faq.6.q": "How is it different from a notebook?",
+      "Any small or medium business that sells every day: stores, fashion and beauty, restaurants, bakeries, services and more.",
+    "faq.6.q": "Is my information safe?",
     "faq.6.a":
-      "Unlike a notebook, Conty offers you automatic reports, cloud backups and instant searches. And all this for free.",
-    "faq.7.q": "Can I cancel the Premium Plan at any time?",
-    "faq.7.a":
-      "Yes, you can cancel whenever you want. Your app will continue to work with all the free features. You will only lose access to premium features.",
+      "Yes. Your business data is confidential and used only to prepare your reports and recommendations.",
 
     // CTA
-    "cta.title1": "Start today.",
-    "cta.title2": "Free.",
+    "cta.title1": "Ready to know",
+    "cta.title2": "your real numbers?",
     "cta.subtitle":
-      "Your peace of mind is waiting. Choose how to start and take control of your business today.",
-    "cta.whatsapp": "Talk to the Assistant",
-    "cta.play": "Get started free",
-    "cta.appSoon": "App Coming Soon",
-    "cta.byGadmin": "A product by",
+      "Tell us about your business. We will show you the kind of report Conty delivers, and the hours it takes off your plate.",
+    "cta.button": "Talk to the team",
+    "cta.whatsappMessage":
+      "Hi, I want to know the real numbers of my business with Conty.",
+    "cta.byGadmin": "A service by",
+
+    // Mockup (hero)
+    "mockup.msg1": "Sold 2 dresses $45 and 1 belt $12",
+    "mockup.msg2": "Got it! ✅<br/>Recorded <b>$57</b> in sales today.",
+    "mockup.msg3": "Paid $20 for shipping",
+    "mockup.msg4": "Expense of <b>$20</b> recorded under logistics. 📦",
+    "mockup.msg5": "📊 <b>Weekly summary</b><br/>Sales: <b>$1,240</b><br/>Best day: Friday, 5 PM<br/>Star product: dresses<br/><br/>💡 Your shipping costs grew. Let's group deliveries on 2 days.",
+
+    "report.kicker": "Conty report",
+    "report.title": "Strategic summary",
+    "report.period": "This month",
+    "report.sales": "Sales",
+    "report.margin": "Real margin",
+    "report.restock": "Restock",
+    "report.ticket": "Average ticket",
+    "report.finding": "What we found",
+    "report.findingText":
+      "Sales rose 18%, but restock grew faster than the products that actually sell. Real margin is being squeezed by inventory that barely moves.",
+    "report.action": "What to do",
+    "report.actionText":
+      "Pause restock on the slow line, buy the star product in two batches, and offer the complement every time the main product sells so the ticket goes up.",
+    "report.note": "Illustrative result. Your report uses your numbers.",
 
     // Footer
     "footer.privacy": "Privacy",
     "footer.terms": "Terms",
     "footer.contact": "Contact",
     "footer.rights": "All rights reserved.",
-    "footer.product": "A product by",
-
-    // Hero scroll
-    "hero.learnMore": "Learn more",
+    "footer.product": "A service by",
 
     // Pages - Contact
     "contact.title": "Contact - Conty",
@@ -343,94 +298,95 @@ export const ui = {
 
   es: {
     // SEO / Meta
-    "site.title": "Conty - Tu negocio en tu bolsillo",
+    "site.title": "Conty - Tus números, convertidos en decisiones",
     "site.description":
-      "La forma más sencilla y rápida de llevar las cuentas de tus negocios. Regístrate por WhatsApp o descarga nuestra App. Controla ventas, gastos y reportes.",
+      "Conty es la agencia que convierte tus ingresos, ventas, gastos y reposición en reportes estratégicos detallados. Te ahorra las horas y el equipo que tendrías que contratar.",
     "site.keywords":
-      "contabilidad, pymes, gestión de negocios, administración, ventas, gastos, venezuela, emprendimiento, whatsapp assistant, ai assistant",
+      "agencia de análisis de negocios, reportes estratégicos, analítica de ventas, control de gastos, pymes, asesoría financiera, flujo de caja, venezuela",
 
     // Navbar
-    "nav.assistant": "Asistente IA",
-    "nav.features": "Funciones",
-    "nav.testimonials": "Testimonios",
-    "nav.pricing": "Precios",
+    "nav.how": "Cómo funciona",
+    "nav.services": "Qué hacemos",
+    "nav.insights": "Análisis",
     "nav.faq": "FAQ",
-    "nav.tryfree": "Empezar",
-    "nav.tryfreeNow": "Empezar",
+    "nav.cta": "Hablemos",
+    "nav.ctaNow": "Habla con el equipo",
 
     // Hero
-    "hero.badge": "App & Asistente IA",
-    "hero.title1": "Tu negocio en orden,",
-    "hero.title2": "tus cuentas claras.",
+    "hero.badge": "La agencia detrás de tus números",
+    "hero.title1": "Los datos de tu negocio,",
+    "hero.title2": "convertidos en estrategia.",
     "hero.subtitle":
-      "Registra tus ventas y gastos enviando un simple mensaje. Olvida la libreta y administra tu negocio <strong>fácilmente</strong>.",
-    "hero.ctaWhatsapp": "Probar Asistente Gratis",
-    "hero.ctaPlay": "Empezar gratis",
-    "hero.appSoon": "App Próximamente",
-    "hero.socialProof": "Únete a los felices emprendedores que usan Conty",
+      "Recibimos tus ingresos, ventas, gastos y costos de reposición, y te entregamos reportes detallados con el análisis estratégico. Horas ahorradas, y un equipo que no tienes que contratar.",
+    "hero.cta": "Pide tu primer reporte",
+    "hero.socialProof": "Negocios que ya deciden con datos reales",
+    "hero.learnMore": "Conoce más",
 
-    // WhatsApp Assistant
-    "assistant.badge": "Nuevo: Asistente WhatsApp",
-    "assistant.title1": "Tu contabilidad, tan fácil como",
-    "assistant.title2": "chatear.",
-    "assistant.subtitle":
-      "¿No tienes tiempo de abrir una app? Mándale un mensaje o un audio a tu asistente Conty. Él se encarga de registrar todo y darte reportes al instante.",
-    "assistant.feat1": "Registra ventas y gastos por voz o texto",
-    "assistant.feat2": 'Pregunta "¿Cuánto vendí hoy?" y obtén respuesta',
-    "assistant.feat3": "Sincronizado con tu App de Conty",
-    "assistant.cta": "Probar Asistente Gratis",
+    // How it works
+    "how.badge": "Cómo funciona",
+    "how.title1": "Tú compartes los datos.",
+    "how.title2": "Nosotros entregamos el análisis.",
+    "how.subtitle":
+      "Conty no es una app ni un bot de chat. Somos el equipo que se queda con el dolor de cabeza de tus números y te devuelve un reporte para actuar.",
+    "how.step1.title": "Comparte lo que hizo el negocio",
+    "how.step1.desc":
+      "Ingresos, ventas, gastos y reposición. Hojas de cálculo, exportaciones o los registros que ya llevas.",
+    "how.step2.title": "Nuestro equipo lo analiza",
+    "how.step2.desc":
+      "Ordenamos cada movimiento y vemos qué está funcionando, dónde se fuga el dinero y hacia dónde conviene moverse.",
+    "how.step3.title": "Recibes el reporte",
+    "how.step3.desc":
+      "Un informe detallado con análisis estratégico: márgenes, reposición y ticket promedio y las decisiones que vale la pena tomar ahora.",
+    "how.cta": "Habla con el equipo",
 
-    // Features
-    "features.badge": "Funciones gratuitas",
-    "features.title1": "Todo esto,",
-    "features.title2": "100% gratis",
-    "features.subtitle":
-      "Empieza a controlar tu negocio hoy mismo. Las funciones esenciales son gratuitas para siempre.",
-    "features.fast.title": "Registro Veloz",
-    "features.fast.desc":
-      "Anota ventas en 3 segundos sin inventarios pesados. Tan simple como hablar con un amigo.",
-    "features.goals.title": "Metas Reales",
-    "features.goals.desc":
-      "Visualiza tu crecimiento semanal con gráficos intuitivos. Sabrás exactamente cuánto te falta.",
-    "features.offline.title": "Control Offline",
-    "features.offline.desc":
-      "Tus datos son tuyos. Funciona perfectamente sin internet. Sin excusas para no registrar.",
+    // Services
+    "services.badge": "Qué hacemos por ti",
+    "services.title1": "Todo lo que tus números",
+    "services.title2": "han querido decirte",
+    "services.subtitle":
+      "Tú pones los datos del negocio. Nosotros ponemos el orden, el análisis y la estrategia, sin que contrates un equipo financiero.",
+    "services.order.title": "Orden, sin el trabajo",
+    "services.order.desc":
+      "Clasificamos ingresos, ventas, gastos y reposición para que la foto del negocio quede limpia y lista para leer.",
+    "services.sales.title": "Descubre qué y cuándo vendes",
+    "services.sales.desc":
+      "Mejores horas, mejores días, productos estrella y los que solo ocupan espacio. Ve tu negocio como realmente es.",
+    "services.costs.title": "Gasta con inteligencia",
+    "services.costs.desc":
+      "Detectamos dónde se fuga el dinero y te sugerimos formas prácticas de reducir costos sin afectar tus ventas.",
+    "services.promos.title": "Ofertas que sí funcionan",
+    "services.promos.desc":
+      "Promociones y combos pensados según tus fechas pico y tus productos más vendidos, no a ciegas.",
 
-    // Choice
-    "choice.title": "Conty se adapta a tu ritmo",
-    "choice.subtitle":
-      "Usa el asistente para el día a día y la app para los detalles. Tú eliges cómo tener el control.",
-    "choice.whatsapp.title": "Asistente de WhatsApp",
-    "choice.whatsapp.desc":
-      "Ideal para cuando estás atendiendo clientes. Envía un mensaje rápido y olvida la libreta. ¡Incluso audios!",
-    "choice.whatsapp.badge": "Máxima Comodidad",
-    "choice.app.title": "Conty App",
-    "choice.app.desc":
-      "La experiencia completa. Gráficos detallados, trabajo sin conexión y gestión profunda de tu negocio.",
-    "choice.app.badge": "Control Total",
-    "choice.app.install": "Instalar App",
-    "choice.app.soon": "Próximamente",
-
-    // Testimonials
-    "testimonials.badge": "Testimonios",
-    "testimonials.title1": "Ellos ya",
-    "testimonials.title2": "controlan su caja",
-    "testimonials.1.quote":
-      '"Es excelente y muy fácil de usar. Me ha permitido profesionalizar mi contabilidad y tener todo bajo control de forma sencilla. ¡Es una maravilla! 🙏"',
-    "testimonials.1.role": "Suministros · Zulia, Venezuela",
-    "testimonials.2.quote":
-      '"Creé Conty para que tú puedas tener un negocio exitoso. La claridad en las cuentas y una buena administración son el fundamento para el éxito."',
-    "testimonials.2.role": "Fundador de Conty",
-    "testimonials.3.quote":
-      '"Tener las cuentas claras tan fácil ha sido lo mejor para Buen Gusto. Poder decir \'Gasté en tal cosa\' por audio de camino a casa es increíble."',
-    "testimonials.3.role": "@buengusto_ve · Mérida, Venezuela",
-
-    // Disclaimer
-    "disclaimer.text1": "Únete a cientos de emprendedores que ya",
-    "disclaimer.text2": "controlan su caja",
-    "disclaimer.text3": "con Conty.",
-    "disclaimer.sub":
-      "Es gratis, pero si quieres llevar tu negocio al siguiente nivel, Conty te ofrece predicciones inteligentes, carga de gastos desde tickets y gestión de inventario por solo $19.99/mes.",
+    // Insights
+    "insights.badge": "Valor real",
+    "insights.title1": "No solo números.",
+    "insights.title2": "Estrategia.",
+    "insights.subtitle":
+      "Ejemplos del tipo de análisis que recibes. Cada informe termina con una decisión clara que puedes tomar ese mismo día.",
+    "insights.1.tag": "Horas pico",
+    "insights.1.finding":
+      "La mayoría de tus clientes pregunta por precios entre las 8:00 PM y las 11:00 PM, pero tus ventas solo se registran hasta las 6:00 PM.",
+    "insights.1.action":
+      "Mueve tu publicidad a la noche y asegura que alguien esté listo para responder y cerrar.",
+    "insights.2.tag": "Ticket promedio",
+    "insights.2.finding":
+      "Tu producto más vendido suele comprarse solo, mientras que el complemento casi nunca se ofrece.",
+    "insights.2.action":
+      "Crea un combo con un pequeño descuento y ofrécelo cada vez que pidan el producto principal.",
+    "insights.3.tag": "Márgenes",
+    "insights.3.finding":
+      "Tus ingresos subieron 15% este mes, pero la reposición y los envíos express subieron 35%, reduciendo tu ganancia real.",
+    "insights.3.action":
+      "Agrupa los despachos en dos días fijos y ofrece envío gratis solo a partir de un monto mínimo.",
+    "insights.finding": "Qué encontramos",
+    "insights.action": "Qué hacer",
+    "insights.report.title": "Tu resumen ejecutivo semanal",
+    "insights.report.sales": "Ventas totales",
+    "insights.report.best": "Mejor día",
+    "insights.report.star": "Producto estrella",
+    "insights.report.tip": "Consejo estratégico de la semana",
+    "insights.report.example": "Ejemplo ilustrativo",
 
     // Comparison
     "comparison.badge": "La diferencia",
@@ -438,125 +394,79 @@ export const ui = {
     "comparison.title2": "empieza a crecer",
     "comparison.before.label": "Antes",
     "comparison.before.title": "Sin Conty",
-    "comparison.before.1": "Libreta desordenada y manchada",
-    "comparison.before.2": "Nunca sabes cuánto ganaste",
+    "comparison.before.1": "Comprobantes, notas y chats por todas partes",
+    "comparison.before.2": "Nunca sabes cuánto ganaste realmente",
     "comparison.before.3": "No sabes adónde se fue el dinero",
-    "comparison.before.4": "Calculas a ojo cuánto tienes",
-    "comparison.before.5": "Estrés al final del día",
+    "comparison.before.4": "Decisiones basadas en el instinto",
+    "comparison.before.5": "Estrés al final de cada mes",
     "comparison.after.label": "Después",
     "comparison.after.title": "Con Conty",
-    "comparison.after.1": "App limpia, todo en un lugar",
-    "comparison.after.2": "Ve tus ganancias en tiempo real",
-    "comparison.after.3": "Registra ventas/gastos en 3 segundos",
-    "comparison.after.4": "Meta semanal visible siempre",
-    "comparison.after.5": "Cierra el día con tranquilidad",
-    "comparison.after.premium": "+ Funciones premium opcionales por $19.99/mes",
-
-    // Pricing
-    "pricing.badge": "Precios Transparentes",
-    "pricing.title1": "Planes simples,",
-    "pricing.title2": "máximo valor",
-    "pricing.billing.monthly": "Mensual",
-    "pricing.billing.yearly": "Anual",
-    "pricing.free.name": "Plan Gratuito",
-    "pricing.free.price": "$0",
-    "pricing.free.period": "/ siempre",
-    "pricing.free.desc": "Todo lo esencial para empezar a usar Conty",
-    "pricing.free.cta": "Empezar gratis",
-    "pricing.free.feat1": "50 mensajes al Asistente IA por semana",
-    "pricing.free.feat2": "Registro ilimitado de ventas",
-    "pricing.free.feat3": "Registro ilimitado de gastos",
-    "pricing.free.feat4": "Hasta 1 miembro por negocio",
-    "pricing.free.feat5": "Define tu meta semanal",
-    "pricing.free.feat6": "Gráficos y reportes",
-    "pricing.free.feat7": "Exportación a Excel",
-    "pricing.free.feat8": "30 días de historial de reportes",
-    "pricing.lite.name": "Plan Lite",
-    "pricing.lite.cta": "Empezar con Lite",
-    "pricing.lite.yearly.price": "$49.99",
-    "pricing.lite.yearly.period": "/ año",
-    "pricing.lite.yearly.equiv": "Equivale a $4.17/mes",
-    "pricing.lite.yearly.installments": "o 4 cuotas de $12.49 sin interés",
-    "pricing.lite.monthly.price": "$4.99",
-    "pricing.lite.monthly.period": "/ mes",
-    "pricing.lite.monthly.save": "O paga anualmente y ahorra 2 meses",
-    "pricing.lite.plus": "Todo lo gratuito, más:",
-    "pricing.lite.feat1": "350 mensajes al Asistente IA al mes",
-    "pricing.lite.feat2": "90 días de historial de reportes",
-    "pricing.lite.installments.label": "Paga a",
-    "pricing.lite.installments.of": "cuotas sin intereses de $12.49",
-    "pricing.premium.name": "Plan Premium",
-    "pricing.premium.badge": "Recomendado",
-    "pricing.premium.cta": "Empezar con Premium",
-    "pricing.premium.yearly.price": "$199.99",
-    "pricing.premium.yearly.period": "/ año",
-    "pricing.premium.yearly.equiv": "Equivale a $16.67/mes",
-    "pricing.premium.yearly.installments": "o 4 cuotas de $49.99 sin interés",
-    "pricing.premium.monthly.price": "$19.99",
-    "pricing.premium.monthly.period": "/ mes",
-    "pricing.premium.monthly.save": "O paga anualmente y ahorra 2 meses",
-    "pricing.premium.plus": "Todo lo gratuito, más:",
-    "pricing.premium.feat1": "Hasta 1,000 mensajes al Asistente IA",
-    "pricing.premium.feat1.sub": "+$0.50 por cada 100 mensajes adicionales",
-    "pricing.premium.feat2": "Hasta 10 miembros por negocio",
-    "pricing.premium.feat3": "Historial de reportes ilimitado",
-    "pricing.premium.feat4": "Predicciones inteligentes",
-    "pricing.premium.feat5": "Cargar gastos desde fotos (recibos/tickets)",
-    "pricing.premium.installments.label": "Paga a",
-    "pricing.premium.installments.of": "cuotas sin intereses de $49.99",
-    "pricing.footer": "Puedes empezar gratis, cuando experimentes que Conty te ahorra más de 21 horas por semana, puedes pasarte al Lite o al Premium para tener aún más.",
-
-    // Mockup
-    "mockup.msg1": "Vendí 1 Hamburguesa $3.2",
-    "mockup.msg2": "¡Anotado! ✅ <br/>Venta de Hamburguesa por <b>$3.2</b>.<br/><br/>Estás construyendo algo increíble, paso a paso. 🧱",
-    "mockup.msg3": "¡Entendido! Registré un gasto de <b>$3.00</b> en Papeles.<br/><br/>Invertir sabiamente es clave para un crecimiento sostenible. 🌱",
-    "mockup.msg4": "¿Cuánto vendí hoy?",
-    "mockup.msg5": "Hoy llevas <b>$48.50</b> en ventas. Vas muy bien, ¡Estás al 85% de tu meta diaria! 🚀",
+    "comparison.after.1": "Todo registrado y ordenado por nosotros",
+    "comparison.after.2": "Reportes estratégicos detallados, listos para usar",
+    "comparison.after.3": "Conoces tus mejores productos, días y horas",
+    "comparison.after.4": "Consejos prácticos para gastar menos y vender más",
+    "comparison.after.5": "Decisiones respaldadas por datos reales",
 
     // FAQ
     "faq.badge": "FAQ",
     "faq.title": "Preguntas frecuentes",
-    "faq.1.q": "¿Es gratis Conty?",
+    "faq.1.q": "¿Conty es una app o un bot de chat?",
     "faq.1.a":
-      "¡Sí! Conty es una aplicación gratuita. Puedes registrar ventas, gastos, ver reportes, usar gráficos y establecer tu meta semanal sin pagar nada. Solo si quieres funciones avanzadas como predicciones inteligentes, cargar gastos desde tickets o gestionar inventario, puedes activar el Plan Premium.",
-    "faq.2.q": "¿Qué incluye el Plan Premium?",
+      "No. Conty es una agencia. Compartes los datos de tu negocio y nuestro equipo te devuelve reportes detallados con análisis estratégico.",
+    "faq.2.q": "¿Qué datos necesitan?",
     "faq.2.a":
-      "El Plan Premium desbloquea funciones como predicciones inteligentes, carga automática de gastos, gestión de inventario y reportes avanzados. Lo mejor es que es un plan único y compartido: una sola suscripción activa las funciones premium tanto en la aplicación como en el asistente de WhatsApp.",
-    "faq.3.q": "¿Funciona sin internet?",
+      "Ingresos, ventas, gastos y costos de reposición. Hojas de cálculo, exportaciones o los registros que ya tienes. No tienen que estar perfectos.",
+    "faq.3.q": "¿Qué recibo a cambio?",
     "faq.3.a":
-      "¡Sí! La aplicación móvil funciona perfectamente sin conexión para que registres tus ventas y gastos en cualquier lugar. Ten en cuenta que el asistente de IA (vía WhatsApp) sí requiere internet para procesar tus consultas con inteligencia artificial.",
-    "faq.4.q": "¿Para qué tipo de negocios es ideal?",
+      "Un reporte detallado: qué entró, qué salió, cómo la reposición y el ticket promedio afectaron el margen, y los movimientos estratégicos que conviene hacer. Las horas y la contratación extra se quedan con nosotros.",
+    "faq.4.q": "¿Necesito saber contabilidad?",
     "faq.4.a":
-      "Para cualquier emprendedor que vende a diario: tiendas, vendedores ambulantes, repostería, ropa, bodegas, barberías y más.",
-    "faq.5.q": "¿Necesito saber contabilidad?",
+      "No. Tú compartes lo que pasó en el negocio. Nosotros lo convertimos en números, contexto y decisiones.",
+    "faq.5.q": "¿Para qué tipo de negocios es ideal?",
     "faq.5.a":
-      "Para nada. La interfaz es intuitiva y se encarga de los cálculos difíciles por ti, tú solo registra tus ventas y gastos.",
-    "faq.6.q": "¿En qué se diferencia de una libreta?",
+      "Cualquier pequeña o mediana empresa que vende a diario: tiendas, moda y estética, restaurantes, panaderías, servicios y más.",
+    "faq.6.q": "¿Mi información está segura?",
     "faq.6.a":
-      "A diferencia de una libreta, Conty te ofrece reportes automáticos, copias de seguridad en la nube y búsquedas instantáneas. Y todo esto gratis.",
-    "faq.7.q": "¿Puedo cancelar el Plan Premium en cualquier momento?",
-    "faq.7.a":
-      "Sí, puedes cancelar cuando quieras. Tu app seguirá funcionando con todas las funciones gratuitas. Solo perderás acceso a las funciones premium.",
+      "Sí. Los datos de tu negocio son confidenciales y se usan únicamente para preparar tus informes y recomendaciones.",
 
     // CTA
-    "cta.title1": "Empieza hoy.",
-    "cta.title2": "Gratis.",
+    "cta.title1": "¿Listo para conocer",
+    "cta.title2": "tus números reales?",
     "cta.subtitle":
-      "Tu paz mental te está esperando. Elige cómo empezar y toma el control de tu negocio hoy mismo.",
-    "cta.whatsapp": "Hablar con el Asistente",
-    "cta.play": "Empezar gratis",
-    "cta.appSoon": "App Próximamente",
-    "cta.byGadmin": "Un producto de",
+      "Cuéntanos de tu negocio. Te mostramos el tipo de reporte que entrega Conty y las horas que te quita de encima.",
+    "cta.button": "Habla con el equipo",
+    "cta.whatsappMessage":
+      "Hola, quiero conocer los números reales de mi negocio con Conty.",
+    "cta.byGadmin": "Un servicio de",
+
+    // Mockup (hero)
+    "mockup.msg1": "Vendí 2 vestidos $45 y 1 cinturón $12",
+    "mockup.msg2": "¡Anotado! ✅<br/>Registré <b>$57</b> en ventas hoy.",
+    "mockup.msg3": "Pagué $20 de envío",
+    "mockup.msg4": "Gasto de <b>$20</b> registrado en logística. 📦",
+    "mockup.msg5": "📊 <b>Resumen semanal</b><br/>Ventas: <b>$1,240</b><br/>Mejor día: viernes, 5 PM<br/>Producto estrella: vestidos<br/><br/>💡 Tus costos de envío subieron. Agrupemos los despachos en 2 días.",
+
+    "report.kicker": "Reporte Conty",
+    "report.title": "Resumen estratégico",
+    "report.period": "Este mes",
+    "report.sales": "Ventas",
+    "report.margin": "Margen real",
+    "report.restock": "Reposición",
+    "report.ticket": "Ticket promedio",
+    "report.finding": "Qué encontramos",
+    "report.findingText":
+      "Las ventas subieron 18%, pero la reposición creció más rápido que los productos que sí se venden. El margen real se está apretando por inventario que casi no rota.",
+    "report.action": "Qué hacer",
+    "report.actionText":
+      "Pausa la reposición de la línea lenta, compra el producto estrella en dos lotes y ofrece el complemento cada vez que se venda el principal para subir el ticket.",
+    "report.note": "Resultado ilustrativo. Tu reporte usa tus números.",
 
     // Footer
     "footer.privacy": "Privacidad",
     "footer.terms": "Términos",
     "footer.contact": "Contacto",
     "footer.rights": "Todos los derechos reservados.",
-    "footer.product": "Un producto de",
-
-    // Hero scroll
-    "hero.learnMore": "Conoce más",
+    "footer.product": "Un servicio de",
 
     // Pages - Contact
     "contact.title": "Contacto - Conty",
