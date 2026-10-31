@@ -138,6 +138,9 @@ export const ui = {
     "faq.6.q": "Is my information safe?",
     "faq.6.a":
       "Yes. Your business data is confidential and used only to prepare your reports and recommendations.",
+    "faq.7.q": "Is it an accounting firm?",
+    "faq.7.a":
+      "We are a financial advisory agency. We support your business with analysis, reports, and recommendations so you can decide clearly about your numbers.",
 
     // CTA
     "cta.title1": "Ready to know",
@@ -428,6 +431,9 @@ export const ui = {
     "faq.6.q": "¿Mi información está segura?",
     "faq.6.a":
       "Sí. Los datos de tu negocio son confidenciales y se usan únicamente para preparar tus informes y recomendaciones.",
+    "faq.7.q": "¿Es una agencia de contaduría?",
+    "faq.7.a":
+      "Somos una agencia de asesores financieros. Acompañamos a tu negocio con análisis, reportes y recomendaciones para decidir con claridad sobre tus números.",
 
     // CTA
     "cta.title1": "¿Listo para conocer",
